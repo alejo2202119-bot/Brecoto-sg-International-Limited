@@ -1165,18 +1165,18 @@ footer{background:var(--dk);border-top:1px solid var(--gb);padding:56px 0 28px;}
         <div id="fform">
           <div class="cf-title">Solicitar <span class="gtxt">Cotización</span></div>
           <div class="cf-sub">Complete el formulario y Javier Villamizar se comunicará con usted en las próximas 24 horas.</div>
-          <form onsubmit="submitForm(event)">
+          <form id="cotizForm" onsubmit="submitForm(event)" novalidate>
             <div class="f-row">
-              <div class="fg"><label>Nombre Completo *</label><input type="text" placeholder="Su nombre" required></div>
-              <div class="fg"><label>Empresa / Negocio</label><input type="text" placeholder="Nombre de su negocio"></div>
+              <div class="fg"><label>Nombre Completo *</label><input id="cf-nombre" type="text" placeholder="Su nombre completo" required></div>
+              <div class="fg"><label>Empresa / Negocio</label><input id="cf-empresa" type="text" placeholder="Nombre de su negocio"></div>
             </div>
             <div class="f-row">
-              <div class="fg"><label>Correo Electrónico *</label><input type="email" placeholder="correo@ejemplo.com" required></div>
-              <div class="fg"><label>WhatsApp / Teléfono *</label><input type="tel" placeholder="+58 412 000 0000" required></div>
+              <div class="fg"><label>Correo Electrónico</label><input id="cf-email" type="email" placeholder="correo@ejemplo.com"></div>
+              <div class="fg"><label>WhatsApp / Teléfono *</label><input id="cf-tel" type="tel" placeholder="+58 412 000 0000" required></div>
             </div>
             <div class="fg">
               <label>Tipo de Consulta</label>
-              <select>
+              <select id="cf-tipo">
                 <option value="">Seleccione una opción</option>
                 <option>Cotización — Contenedor 40 Pies</option>
                 <option>Cotización — Contenedor 20 Pies</option>
@@ -1187,9 +1187,9 @@ footer{background:var(--dk);border-top:1px solid var(--gb);padding:56px 0 28px;}
                 <option>Consulta de catálogo de repuestos</option>
               </select>
             </div>
-            <div class="fg"><label>Mensaje *</label><textarea placeholder="Describa qué repuestos necesita, cantidad estimada, y cualquier detalle relevante..." required></textarea></div>
-            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Solicitud</button>
-            <a href="https://wa.me/584126801743?text=Hola%20Javier%2C%20soy%20distribuidor%20y%20deseo%20una%20cotizaci%C3%B3n%20de%20repuestos%20para%20motocicletas." target="_blank" rel="noopener" class="btn-wa2">
+            <div class="fg"><label>Mensaje *</label><textarea id="cf-msg" placeholder="Describa qué repuestos necesita, cantidad estimada, y cualquier detalle relevante..." required></textarea></div>
+            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar por WhatsApp</button>
+            <a href="https://wa.me/584126801743?text=Hola%2C%20deseo%20una%20cotizaci%C3%B3n%20de%20repuestos%20para%20motocicletas." target="_blank" rel="noopener" class="btn-wa2">
               <i class="fab fa-whatsapp"></i> Contactar por WhatsApp Directamente
             </a>
           </form>
@@ -1376,22 +1376,47 @@ if(c2){
   });
 }
 
-/* ── Form submit ── */
+/* ── Form submit → WhatsApp ── */
 function submitForm(e){
   e.preventDefault();
-  const f=document.getElementById('fform');
-  const s=document.getElementById('fsuccess');
-  f.style.transition='opacity .35s,transform .35s';
-  f.style.opacity='0';f.style.transform='scale(.96)';
-  setTimeout(()=>{
-    f.style.display='none';
-    s.style.display='block';
-    s.style.opacity='0';s.style.transform='scale(.94)';
-    requestAnimationFrame(()=>{
-      s.style.transition='opacity .35s,transform .35s';
-      s.style.opacity='1';s.style.transform='scale(1)';
+  var nombre  = document.getElementById('cf-nombre').value.trim();
+  var empresa = document.getElementById('cf-empresa').value.trim();
+  var email   = document.getElementById('cf-email').value.trim();
+  var tel     = document.getElementById('cf-tel').value.trim();
+  var tipo    = document.getElementById('cf-tipo').value.trim();
+  var msg     = document.getElementById('cf-msg').value.trim();
+
+  if(!nombre){alert('Por favor ingrese su nombre completo.');return;}
+  if(!tel){alert('Por favor ingrese su número de WhatsApp o teléfono.');return;}
+  if(!msg){alert('Por favor escriba su mensaje.');return;}
+
+  var texto = '🏍️ *SOLICITUD DE COTIZACIÓN — BRECOTO SG*\n\n';
+  texto += '👤 *Nombre:* ' + nombre + '\n';
+  if(empresa) texto += '🏢 *Empresa:* ' + empresa + '\n';
+  if(email)   texto += '📧 *Correo:* ' + email + '\n';
+  texto += '📱 *Teléfono:* ' + tel + '\n';
+  if(tipo)    texto += '📦 *Consulta:* ' + tipo + '\n';
+  texto += '\n💬 *Mensaje:*\n' + msg;
+
+  var url = 'https://wa.me/584126801743?text=' + encodeURIComponent(texto);
+  window.open(url, '_blank');
+
+  var f = document.getElementById('fform');
+  var s = document.getElementById('fsuccess');
+  f.style.transition = 'opacity .35s,transform .35s';
+  f.style.opacity = '0';
+  f.style.transform = 'scale(.96)';
+  setTimeout(function(){
+    f.style.display = 'none';
+    s.style.display = 'block';
+    s.style.opacity = '0';
+    s.style.transform = 'scale(.94)';
+    requestAnimationFrame(function(){
+      s.style.transition = 'opacity .35s,transform .35s';
+      s.style.opacity = '1';
+      s.style.transform = 'scale(1)';
     });
-  },360);
+  }, 360);
 }
 </script>
 </body>
