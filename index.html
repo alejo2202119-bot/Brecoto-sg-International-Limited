@@ -346,22 +346,22 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .pf-r{background:linear-gradient(90deg,var(--red),#f87171);}
 
 /* ═══ CONTACTO ═══ */
-#contact{background:#fff;}
-.ct-row{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start;}
+#contact{background:linear-gradient(180deg,var(--gray-soft) 0%,#fff 100%);}
+.ct-row{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start;}
 .ct-info{}
 .ct-item{display:flex;align-items:flex-start;gap:16px;padding:20px;background:#fff;border:1.5px solid var(--border);border-radius:16px;margin-bottom:14px;transition:var(--tr);}
 .ct-item:hover{border-color:var(--green);transform:translateX(5px);box-shadow:var(--shadow);}
-.ct-ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;}
+.ct-ic{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;}
 .ct-ic-g{background:linear-gradient(135deg,var(--green),var(--green-light));}
 .ct-ic-b{background:linear-gradient(135deg,var(--blue),var(--blue-light));}
 .ct-ic-r{background:linear-gradient(135deg,var(--red),#f87171);}
 .ct-ic-a{background:linear-gradient(135deg,var(--gold),var(--gold-light));}
 .ct-ic-wa{background:linear-gradient(135deg,#128c3b,#25D366);}
-.ct-l{font-size:11px;color:var(--gray);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+.ct-l{font-size:10.5px;color:var(--gray);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
 .ct-v{font-size:15px;font-weight:700;color:var(--ink);}
 .ct-v a{color:var(--ink);transition:var(--tr);}
 .ct-v a:hover{color:var(--green);}
-.ct-v .sub{font-size:12.5px;color:var(--gray);font-weight:500;margin-top:2px;}
+.ct-item .ct-sub{font-size:12px;color:var(--gray);font-weight:500;margin-top:2px;}
 .soc-row{display:flex;gap:10px;margin-top:24px;}
 .soc{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;background:#fff;border:1.5px solid var(--border);transition:var(--tr);}
 .soc:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
@@ -369,24 +369,46 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .soc-ig{color:#E1306C;}.soc-ig:hover{background:#E1306C;color:#fff;border-color:#E1306C;}
 .soc-fb{color:#1877F2;}.soc-fb:hover{background:#1877F2;color:#fff;border-color:#1877F2;}
 .soc-li{color:#0A66C2;}.soc-li:hover{background:#0A66C2;color:#fff;border-color:#0A66C2;}
-.ct-form{background:linear-gradient(135deg,var(--green-tint),var(--blue-tint));border-radius:24px;padding:40px;border:1px solid var(--border);box-shadow:var(--shadow-lg);}
-.cf-head{margin-bottom:28px;}
-.cf-t{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:800;color:var(--ink);margin-bottom:6px;}
-.cf-s{font-size:13.5px;color:var(--ink-3);}
+/* Form card */
+.ct-form{background:#fff;border-radius:24px;padding:0;border:1px solid var(--border);box-shadow:var(--shadow-lg);overflow:hidden;}
+.cf-header{background:linear-gradient(135deg,#128c3b 0%,#25D366 100%);padding:28px 36px;display:flex;align-items:center;gap:18px;}
+.cf-header-icon{width:54px;height:54px;background:rgba(255,255,255,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;}
+.cf-header-text{}
+.cf-t{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:4px;}
+.cf-s{font-size:13px;color:rgba(255,255,255,.88);line-height:1.4;}
+.cf-body{padding:32px 36px;}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.fg{margin-bottom:18px;}
-.fg label{display:block;font-size:12px;font-weight:700;color:var(--ink-2);margin-bottom:7px;letter-spacing:.3px;text-transform:uppercase;}
-.fg input,.fg select,.fg textarea{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:13px 16px;font-size:14.5px;color:var(--ink);font-family:inherit;transition:var(--tr);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft);}
+.fg{margin-bottom:16px;position:relative;}
+.fg label{display:block;font-size:11px;font-weight:800;color:var(--ink-2);margin-bottom:7px;letter-spacing:.5px;text-transform:uppercase;}
+.fg .fi-wrap{position:relative;}
+.fg .fi-wrap .fi-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gray);font-size:14px;pointer-events:none;z-index:1;}
+.fg .fi-wrap input,.fg .fi-wrap select{padding-left:40px;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--gray-soft);border:1.5px solid var(--border);border-radius:11px;padding:13px 16px;font-size:14px;color:var(--ink);font-family:inherit;transition:var(--tr);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:#25D366;box-shadow:0 0 0 3px rgba(37,211,102,.18);background:#fff;}
 .fg input::placeholder,.fg textarea::placeholder{color:var(--gray-light);}
-.fg textarea{resize:vertical;min-height:110px;}
-.fg select{cursor:pointer;}
-.btn-send{width:100%;padding:16px;font-size:15.5px;font-weight:800;background:linear-gradient(135deg,#128c3b,#25D366);color:#fff;border-radius:13px;transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 30px rgba(37,211,102,.3);letter-spacing:.3px;}
-.btn-send:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(37,211,102,.45);}
-.btn-wa-alt{width:100%;padding:14px;font-size:14px;font-weight:700;background:#fff;color:var(--ink);border:1.5px solid var(--border);border-radius:13px;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:10px;transition:var(--tr);}
-.btn-wa-alt:hover{border-color:#25D366;color:#25D366;transform:translateY(-2px);box-shadow:var(--shadow);}
-.btn-wa-alt i{color:#25D366;font-size:18px;}
-#ok-msg{display:none;text-align:center;padding:40px 16px;}
+.fg textarea{resize:vertical;min-height:110px;padding:13px 16px;}
+.fg select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.fg-full{grid-column:1/-1;}
+.btn-send{width:100%;padding:17px;font-size:16px;font-weight:800;background:linear-gradient(135deg,#128c3b,#25D366);color:#fff;border-radius:13px;transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 28px rgba(37,211,102,.38);letter-spacing:.5px;margin-top:6px;}
+.btn-send:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(37,211,102,.5);}
+.btn-send i{font-size:20px;}
+.btn-wa-alt{width:100%;padding:13px;font-size:13.5px;font-weight:700;background:#fff;color:#128c3b;border:1.5px solid #25D366;border-radius:13px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;transition:var(--tr);}
+.btn-wa-alt:hover{background:#25D366;color:#fff;transform:translateY(-2px);box-shadow:var(--shadow);}
+.btn-wa-alt i{font-size:18px;}
+#ok-msg{display:none;text-align:center;padding:52px 36px;}
+.ok-ico{width:80px;height:80px;background:linear-gradient(135deg,#128c3b,#25D366);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;margin:0 auto 20px;box-shadow:0 8px 28px rgba(37,211,102,.4);}
+.ok-title{font-family:'Rajdhani',sans-serif;font-size:30px;font-weight:800;color:var(--ink);margin-bottom:10px;}
+.ok-sub{font-size:15px;color:var(--ink-3);line-height:1.7;margin-bottom:28px;}
+/* Responsive contact */
+@media(max-width:900px){
+  .ct-row{grid-template-columns:1fr;}
+  .cf-header{padding:22px 24px;}
+  .cf-body{padding:24px;}
+  .f-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  #ok-msg{padding:36px 20px;}
+}
 
 /* ═══ FOOTER ═══ */
 footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;padding:64px 0 28px;position:relative;overflow:hidden;}
@@ -1453,7 +1475,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div>
             <div class="ct-l">WhatsApp</div>
             <div class="ct-v"><a href="https://wa.me/584126801743">+58 412 680 1743</a></div>
-            <div class="sub">Respuesta inmediata</div>
+            <div class="ct-sub">Respuesta inmediata</div>
           </div>
         </div>
         <div class="ct-item">
@@ -1461,7 +1483,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div>
             <div class="ct-l">Teléfono</div>
             <div class="ct-v"><a href="tel:+584126801743">0412 - 680 1743</a></div>
-            <div class="sub">Línea principal</div>
+            <div class="ct-sub">Línea principal</div>
           </div>
         </div>
         <div class="ct-item">
@@ -1469,7 +1491,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div>
             <div class="ct-l">Correo Electrónico</div>
             <div class="ct-v"><a href="mailto:Sg_jg@hotmail.com">Sg_jg@hotmail.com</a></div>
-            <div class="sub">Consultas comerciales</div>
+            <div class="ct-sub">Consultas comerciales</div>
           </div>
         </div>
         <div class="ct-item">
@@ -1477,7 +1499,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div>
             <div class="ct-l">Ubicación</div>
             <div class="ct-v">San Cristóbal, Estado Táchira</div>
-            <div class="sub">Venezuela</div>
+            <div class="ct-sub">Venezuela</div>
           </div>
         </div>
         <div class="ct-item">
@@ -1485,7 +1507,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div>
             <div class="ct-l">Razón Social</div>
             <div class="ct-v">Inversiones y Comercializadora SG C.A.</div>
-            <div class="sub">Constituida en 2014</div>
+            <div class="ct-sub">Constituida en 2014</div>
           </div>
         </div>
         <div class="soc-row">
@@ -1498,54 +1520,81 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
       <div class="ct-form sr">
         <div id="cot-form">
-          <div class="cf-head">
-            <div class="cf-t">Solicitar <span class="gtxt-g">Cotización</span></div>
-            <div class="cf-s">Complete el formulario y al enviarlo recibirá su mensaje directamente en WhatsApp al <strong style="color:var(--ink);">+58 412 680 1743</strong>.</div>
+          <div class="cf-header">
+            <div class="cf-header-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="cf-header-text">
+              <div class="cf-t">Solicitar Cotización</div>
+              <div class="cf-s">Complete el formulario — su mensaje llegará directo a WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong></div>
+            </div>
           </div>
+          <div class="cf-body">
           <form onsubmit="sendForm(event)" novalidate>
             <div class="f-row">
-              <div class="fg"><label>Nombre Completo *</label><input id="f-nom" type="text" placeholder="Su nombre completo" required></div>
-              <div class="fg"><label>Empresa / Negocio</label><input id="f-emp" type="text" placeholder="Nombre del negocio (opcional)"></div>
+              <div class="fg">
+                <label>Nombre Completo *</label>
+                <div class="fi-wrap"><i class="fas fa-user fi-icon"></i><input id="f-nom" type="text" placeholder="Su nombre completo" required></div>
+              </div>
+              <div class="fg">
+                <label>Empresa / Negocio</label>
+                <div class="fi-wrap"><i class="fas fa-building fi-icon"></i><input id="f-emp" type="text" placeholder="Nombre del negocio (opcional)"></div>
+              </div>
             </div>
             <div class="f-row">
-              <div class="fg"><label>Correo Electrónico</label><input id="f-cor" type="email" placeholder="correo@ejemplo.com"></div>
-              <div class="fg"><label>WhatsApp / Teléfono *</label><input id="f-tel" type="tel" placeholder="0412 000 0000" required></div>
+              <div class="fg">
+                <label>WhatsApp / Teléfono *</label>
+                <div class="fi-wrap"><i class="fab fa-whatsapp fi-icon"></i><input id="f-tel" type="tel" placeholder="0412 000 0000" required></div>
+              </div>
+              <div class="fg">
+                <label>Correo Electrónico</label>
+                <div class="fi-wrap"><i class="fas fa-envelope fi-icon"></i><input id="f-cor" type="email" placeholder="correo@ejemplo.com"></div>
+              </div>
             </div>
-            <div class="fg">
-              <label>Tipo de Cliente</label>
-              <select id="f-tip">
-                <option value="">Seleccione una opción</option>
-                <option>Motorizado particular</option>
-                <option>Taller mecánico</option>
-                <option>Distribuidor / Comercio</option>
-                <option>Consulta general</option>
-              </select>
+            <div class="f-row">
+              <div class="fg">
+                <label>Tipo de Cliente</label>
+                <div class="fi-wrap"><i class="fas fa-users fi-icon"></i>
+                <select id="f-tip">
+                  <option value="">Seleccione su perfil</option>
+                  <option>Motorizado particular</option>
+                  <option>Taller mecánico</option>
+                  <option>Distribuidor / Comercio</option>
+                  <option>Importador mayorista</option>
+                  <option>Consulta general</option>
+                </select></div>
+              </div>
+              <div class="fg">
+                <label>Tipo de Consulta</label>
+                <div class="fi-wrap"><i class="fas fa-tag fi-icon"></i>
+                <select id="f-cons">
+                  <option value="">Tipo de consulta</option>
+                  <option>Cotización de repuestos</option>
+                  <option>Importación — Contenedor 40 pies</option>
+                  <option>Importación — Contenedor 20 pies</option>
+                  <option>Importación — Consolidado LCL</option>
+                  <option>Distribución mayorista BRECOTO</option>
+                  <option>Catálogo completo</option>
+                  <option>Alianza comercial</option>
+                  <option>Otra consulta</option>
+                </select></div>
+              </div>
             </div>
-            <div class="fg">
-              <label>Tipo de Consulta</label>
-              <select id="f-cons">
-                <option value="">Seleccione una opción</option>
-                <option>Cotización de repuestos</option>
-                <option>Información sobre marca BRECOTO</option>
-                <option>Distribución mayorista</option>
-                <option>Catálogo completo</option>
-                <option>Alianza comercial</option>
-                <option>Otra consulta</option>
-              </select>
+            <div class="fg fg-full">
+              <label>Mensaje *</label>
+              <textarea id="f-msg" placeholder="Describa qué repuestos necesita, cantidad estimada, marca/modelo de la moto, modalidad de importación preferida, y cualquier detalle relevante..." required></textarea>
             </div>
-            <div class="fg"><label>Mensaje *</label><textarea id="f-msg" placeholder="Describa qué repuestos necesita, cantidad estimada, marca/modelo de la moto, y cualquier detalle relevante..." required></textarea></div>
-            <button type="submit" class="btn-send"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</button>
-            <a href="https://wa.me/584126801743?text=Hola%2C%20deseo%20una%20cotizaci%C3%B3n%20de%20repuestos%20para%20motocicletas." target="_blank" rel="noopener" class="btn-wa-alt">
-              <i class="fab fa-whatsapp"></i> O contáctenos directamente
+            <button type="submit" class="btn-send"><i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp</button>
+            <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20deseo%20información%20sobre%20repuestos%20e%20importación." target="_blank" rel="noopener" class="btn-wa-alt">
+              <i class="fab fa-whatsapp"></i> Contacto directo sin formulario
             </a>
           </form>
+          </div>
         </div>
         <div id="ok-msg">
-          <div style="font-size:60px;margin-bottom:18px;">✅</div>
-          <div style="font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:800;color:var(--green);margin-bottom:12px;">¡Mensaje Enviado!</div>
-          <div style="font-size:14.5px;color:var(--ink-3);margin-bottom:24px;line-height:1.7;">Su solicitud fue dirigida a WhatsApp al <strong>+58 412 680 1743</strong>. Nuestro equipo se comunicará con usted lo antes posible.</div>
-          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn btn-wa" style="display:inline-flex;">
-            <i class="fab fa-whatsapp"></i> Ir a WhatsApp
+          <div class="ok-ico"><i class="fas fa-check"></i></div>
+          <div class="ok-title">¡Mensaje Enviado!</div>
+          <div class="ok-sub">Su solicitud fue enviada directamente a WhatsApp al número <strong>+58 412 680 1743</strong>.<br>Nuestro equipo le responderá a la brevedad.</div>
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn-send" style="width:auto;display:inline-flex;padding:14px 32px;">
+            <i class="fab fa-whatsapp"></i> Abrir WhatsApp
           </a>
         </div>
       </div>
@@ -1743,17 +1792,25 @@ function sendForm(e){
   if(!tel){ alert('Por favor ingrese su WhatsApp o teléfono.'); return; }
   if(!msg){ alert('Por favor escriba su mensaje.'); return; }
 
-  var t = '🏍️ *NUEVA SOLICITUD — BRECOTO SG*\n';
-  t += '────────────────────\n\n';
-  t += '👤 *Nombre:* ' + nom + '\n';
-  if(emp)  t += '🏢 *Empresa:* ' + emp + '\n';
-  if(cor)  t += '📧 *Correo:* ' + cor + '\n';
-  t += '📱 *Teléfono:* ' + tel + '\n';
-  if(tip)  t += '👥 *Tipo de cliente:* ' + tip + '\n';
+  var sep = '━━━━━━━━━━━━━━━━━━━━━━━';
+  var t = '🏍️ *NUEVA SOLICITUD — BRECOTO SG* 🏍️\n';
+  t += sep + '\n\n';
+  t += '📋 *DATOS DEL CLIENTE*\n';
+  t += '👤 *Nombre:*  ' + nom + '\n';
+  if(emp)  t += '🏢 *Empresa:*  ' + emp + '\n';
+  t += '📱 *WhatsApp:* ' + tel + '\n';
+  if(cor)  t += '📧 *Correo:*   ' + cor + '\n';
+  t += '\n' + sep + '\n\n';
+  t += '🎯 *TIPO DE CONSULTA*\n';
+  if(tip)  t += '👥 *Perfil:*   ' + tip + '\n';
   if(cons) t += '📦 *Consulta:* ' + cons + '\n';
-  t += '\n💬 *Mensaje:*\n' + msg + '\n\n';
-  t += '────────────────────\n';
-  t += 'Enviado desde brecoto-sg.com';
+  t += '\n' + sep + '\n\n';
+  t += '💬 *MENSAJE DEL CLIENTE*\n';
+  t += '_' + msg + '_\n\n';
+  t += sep + '\n';
+  t += '🏪 *Inversiones y Comercializadora SG C.A.*\n';
+  t += '🌐 Marca BRECOTO · Importación directa China\n';
+  t += '📍 San Cristóbal, Táchira, Venezuela';
 
   var url = 'https://wa.me/584126801743?text=' + encodeURIComponent(t);
   window.open(url, '_blank');
