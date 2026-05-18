@@ -619,83 +619,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .srv-cont-grid{flex-direction:column;align-items:center;}
 }
 
-/* ═══ BANNERS BRECOTO ═══ */
-.br-banner{background:#060e06;overflow:hidden;position:relative;padding:56px 0;}
-.br-banner::before{content:'';position:absolute;inset:0;background:
-  radial-gradient(ellipse 60% 80% at 70% 50%,rgba(34,197,94,.18) 0%,transparent 70%),
-  radial-gradient(ellipse 40% 60% at 30% 50%,rgba(22,163,74,.12) 0%,transparent 60%);}
-.br-b-wrap{max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;z-index:2;}
-.br-b-left{}
-.br-logo-big{display:flex;align-items:center;gap:8px;margin-bottom:28px;}
-.br-logo-big .bl{font-family:'Rajdhani',sans-serif;font-size:62px;font-weight:900;color:#dc2626;line-height:1;text-shadow:2px 2px 0 #7f1d1d;}
-.br-logo-big .br{font-family:'Rajdhani',sans-serif;font-size:62px;font-weight:900;color:#fff;line-height:1;letter-spacing:2px;}
-.br-tagline{font-family:'Rajdhani',sans-serif;color:#fff;line-height:1.1;margin-bottom:32px;}
-.br-tagline .t1{font-size:22px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.75);}
-.br-tagline .t2{font-size:58px;font-weight:900;color:#22c55e;text-transform:uppercase;display:block;line-height:.95;text-shadow:0 0 40px rgba(34,197,94,.4);}
-.br-tagline .t3{font-size:26px;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:1px;}
-.br-tagline .t4{font-size:26px;font-weight:900;color:#22c55e;text-transform:uppercase;letter-spacing:1px;}
-.br-feats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;}
-.br-feat{text-align:center;}
-.br-feat i{font-size:24px;color:#22c55e;display:block;margin-bottom:6px;}
-.br-feat span{font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;line-height:1.3;display:block;}
-.br-b-right{display:flex;flex-direction:column;align-items:center;gap:24px;}
-.br-parts-visual{position:relative;width:100%;max-width:460px;}
-.br-parts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.br-part{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:20px 14px;text-align:center;transition:all .3s ease;}
-.br-part:hover{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);transform:translateY(-3px);}
-.br-part i{font-size:28px;color:#22c55e;display:block;margin-bottom:8px;}
-.br-part span{font-size:11px;color:rgba(255,255,255,.75);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.br-iso{background:rgba(255,255,255,.06);border:2px solid rgba(34,197,94,.4);border-radius:50%;width:110px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:absolute;top:-16px;right:-16px;}
-.br-iso .iso-emp{font-size:8px;font-weight:800;color:#22c55e;letter-spacing:1.5px;text-transform:uppercase;}
-.br-iso .iso-num{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:900;color:#fff;line-height:1;}
-.br-iso .iso-sub{font-size:9px;color:#22c55e;font-weight:700;letter-spacing:1px;}
-/* 3-panel grid */
-.br-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-.br-panel{position:relative;padding:52px 32px 44px;overflow:hidden;}
-.br-panel::before{content:'';position:absolute;inset:0;opacity:.08;}
-.br-p1{background:linear-gradient(160deg,#0a1a0a 0%,#0d2a10 100%);}
-.br-p1::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%2322c55e' stroke-width='1' opacity='.3'/%3E%3C/svg%3E") repeat;}
-.br-p2{background:linear-gradient(160deg,#0a0f1a 0%,#0d1a2a 100%);}
-.br-p3{background:linear-gradient(160deg,#0a120a 0%,#112010 100%);}
-.br-p-logo{display:flex;align-items:center;gap:6px;margin-bottom:20px;}
-.br-p-logo .bl{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:900;color:#dc2626;}
-.br-p-logo .br{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:900;color:#fff;letter-spacing:1px;}
-.br-p-h{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:6px;text-transform:uppercase;}
-.br-p-h span{color:#22c55e;}
-.br-p-sub{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.5;}
-.br-p-ico{font-size:64px;margin:20px 0;display:block;text-align:center;}
-.br-iso-lg{display:flex;flex-direction:column;align-items:center;margin:20px auto;}
-.br-iso-lg .iso-ring{width:120px;height:120px;border-radius:50%;border:3px solid #22c55e;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(34,197,94,.06);box-shadow:0 0 30px rgba(34,197,94,.25);}
-.br-iso-lg .iso-ring .ie{font-size:9px;font-weight:800;color:#22c55e;letter-spacing:2px;text-transform:uppercase;}
-.br-iso-lg .iso-ring .in{font-family:'Rajdhani',sans-serif;font-size:34px;font-weight:900;color:#fff;line-height:1;}
-.br-iso-lg .iso-ring .is{font-size:10px;color:#22c55e;font-weight:700;letter-spacing:1.5px;}
-.br-iso-lg .iso-label{font-size:11px;color:rgba(255,255,255,.7);text-align:center;margin-top:14px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;line-height:1.5;}
-.br-p-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;}
-.br-tag{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);border-radius:20px;padding:5px 12px;font-size:10px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
-.br-tag i{font-size:10px;}
-.br-bot-bar{background:#0d1f0d;border-top:1px solid rgba(34,197,94,.2);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.br-bot-txt{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:1px;text-transform:uppercase;}
-.br-bot-txt strong{color:#22c55e;}
-.br-bot-items{display:flex;gap:24px;}
-.br-bot-item{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.5px;}
-.br-bot-item i{color:#22c55e;font-size:14px;}
-@media(max-width:900px){
-  .br-b-wrap{grid-template-columns:1fr;text-align:center;}
-  .br-logo-big{justify-content:center;}
-  .br-tagline .t2{font-size:42px;}
-  .br-feats{grid-template-columns:repeat(2,1fr);}
-  .br-iso{top:8px;right:8px;width:80px;height:80px;}
-  .br-iso .iso-num{font-size:20px;}
-  .br-panels{grid-template-columns:1fr;}
-}
-@media(max-width:600px){
-  .br-b-wrap{padding:0 20px;}
-  .br-tagline .t2{font-size:34px;}
-  .br-feats{grid-template-columns:repeat(2,1fr);}
-  .br-panel{padding:36px 24px;}
-  .br-bot-bar{padding:14px 20px;}
-  .br-bot-items{gap:14px;}
-}
+
+/* ═══ GALERÍA IMÁGENES ═══ */
+#galeria{padding:0;line-height:0;background:#060e06;}
+.gal-img{width:100%;display:block;height:auto;object-fit:cover;}
+.gal-img:hover{opacity:.97;}
 </style>
 </head>
 <body>
@@ -837,98 +765,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 
-<!-- ═══════════ BANNERS BRECOTO ═══════════ -->
-<section id="galeria" style="padding:0;line-height:1;">
-  <!-- BANNER PRINCIPAL -->
-  <div class="br-banner">
-    <div class="br-b-wrap">
-      <div class="br-b-left fi">
-        <div class="br-logo-big">
-          <span class="bl">B</span><span class="br">RECOTO</span>
-        </div>
-        <div class="br-tagline">
-          <span class="t1">Repuestos de</span>
-          <span class="t2">MOTOS</span>
-          <span class="t3">de estándar</span>
-          <span class="t4">de calidad</span>
-        </div>
-        <div class="br-feats">
-          <div class="br-feat"><i class="fas fa-shield-alt"></i><span>Calidad<br>Garantizada</span></div>
-          <div class="br-feat"><i class="fas fa-tachometer-alt"></i><span>Máximo<br>Rendimiento</span></div>
-          <div class="br-feat"><i class="fas fa-link"></i><span>Durabilidad<br>Comprobada</span></div>
-          <div class="br-feat"><i class="fas fa-thumbs-up"></i><span>Confianza<br>Total</span></div>
-        </div>
-      </div>
-      <div class="br-b-right fi d1">
-        <div class="br-parts-visual">
-          <div class="br-iso">
-            <span class="iso-emp">Empresa<br>Certificada</span>
-            <span class="iso-num">ISO</span>
-            <span class="iso-sub">9001 ✓</span>
-          </div>
-          <div class="br-parts-grid">
-            <div class="br-part"><i class="fas fa-cog"></i><span>Motor</span></div>
-            <div class="br-part"><i class="fas fa-circle-notch"></i><span>Transmisión</span></div>
-            <div class="br-part"><i class="fas fa-bolt"></i><span>Eléctrico</span></div>
-            <div class="br-part"><i class="fas fa-compress-arrows-alt"></i><span>Suspensión</span></div>
-            <div class="br-part"><i class="fas fa-circle"></i><span>Rodamientos</span></div>
-            <div class="br-part"><i class="fas fa-fire"></i><span>Frenos</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="br-bot-bar">
-      <div class="br-bot-txt">Tu mejor opción en <strong>repuestos de motos</strong></div>
-      <div class="br-bot-items">
-        <div class="br-bot-item"><i class="fas fa-truck"></i> Entrega Rápida</div>
-        <div class="br-bot-item"><i class="fas fa-globe"></i> Cobertura Nacional</div>
-        <div class="br-bot-item"><i class="fas fa-headset"></i> Atención Profesional</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3 PANELES -->
-  <div class="br-panels">
-    <!-- Panel 1: Calidad que te lleva más lejos -->
-    <div class="br-panel br-p1 fi">
-      <div class="br-p-logo"><span class="bl">B</span><span class="br">RECOTO</span></div>
-      <div class="br-p-h">Calidad que<br>te lleva <span>más lejos</span></div>
-      <span class="br-p-ico">🏍️</span>
-      <div class="br-p-tags">
-        <div class="br-tag"><i class="fas fa-shield-alt"></i> Seguridad</div>
-        <div class="br-tag"><i class="fas fa-check-circle"></i> Confianza</div>
-        <div class="br-tag"><i class="fas fa-tachometer-alt"></i> Desempeño</div>
-      </div>
-      <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:20px;text-transform:uppercase;letter-spacing:1px;font-weight:700;">
-        Repuestos de motos de estándar de calidad
-      </div>
-    </div>
-    <!-- Panel 2: ISO 9001 -->
-    <div class="br-panel br-p2 fi d1" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
-      <div class="br-p-logo" style="justify-content:center;"><span class="bl">B</span><span class="br">RECOTO</span></div>
-      <div class="br-p-h" style="text-align:center;">Calidad certificada con <span>estándares</span> internacionales</div>
-      <div class="br-iso-lg">
-        <div class="iso-ring">
-          <span class="ie">Empresa<br>Certificada</span>
-          <span class="in">ISO</span>
-          <span class="is">9001 ✓</span>
-        </div>
-        <div class="iso-label">Comprometidos con la<br><strong style="color:#22c55e;">mejora continua</strong></div>
-      </div>
-    </div>
-    <!-- Panel 3: Empresa de importación -->
-    <div class="br-panel br-p3 fi d2">
-      <div class="br-p-logo"><span class="bl">B</span><span class="br">RECOTO</span></div>
-      <div class="br-p-h">Empresa de <span>importación</span></div>
-      <div class="br-p-sub">Conectamos calidad, llevamos confianza.</div>
-      <span class="br-p-ico">🚢</span>
-      <div class="br-p-tags">
-        <div class="br-tag"><i class="fas fa-globe-americas"></i> Importación Global</div>
-        <div class="br-tag"><i class="fas fa-medal"></i> Productos de Calidad</div>
-        <div class="br-tag"><i class="fas fa-handshake"></i> Alianzas Confiables</div>
-      </div>
-    </div>
-  </div>
+<!-- ═══════════ GALERÍA BRECOTO ═══════════ -->
+<section id="galeria">
+  <img src="images/banner.jpg" class="gal-img" alt="BRECOTO — Repuestos de Motos de Estándar de Calidad ISO 9001" loading="lazy">
+  <img src="images/galeria.jpg" class="gal-img" alt="BRECOTO — Calidad certificada · Empresa de importación" loading="lazy">
 </section>
 
 <!-- ═══════════ SOBRE NOSOTROS ═══════════ -->
