@@ -621,32 +621,40 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 
 
-/* ═══ IMAGE BREAKS — Full-bleed completo ═══ */
-.img-break{position:relative;line-height:0;overflow:hidden;background:#050d05;}
-.img-break img{width:100%;display:block;height:auto;}
+/* ═══ IMAGE SECTIONS — Cada imagen completa según su aspect ratio ═══ */
 
-/* galeria.jpg */
-.img-break-hero{background:#050d05;}
+/* Section frame for ALL images */
+.img-sec{padding:60px 0;position:relative;}
+.img-sec-dark{background:linear-gradient(135deg,#0a1f0a 0%,#0a1a2e 100%);}
+.img-sec-light{background:linear-gradient(180deg,var(--gray-soft) 0%,#fff 100%);}
+.img-sec .wrap{max-width:1240px;}
 
-/* importacion.jpg — con overlay de texto */
-.img-break-import{background:#020a02;position:relative;}
-.img-break-import .img-over{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,5,.45) 0%,transparent 25%,transparent 72%,rgba(5,13,5,.55) 100%);pointer-events:none;}
-.img-break-import .img-label{position:absolute;bottom:0;left:0;right:0;padding:32px 40px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
-.img-label-txt{color:#fff;}
-.img-label-txt h3{font-family:'Rajdhani',sans-serif;font-size:clamp(22px,3.2vw,40px);font-weight:800;line-height:1.15;text-shadow:0 2px 14px rgba(0,0,0,.6);}
-.img-label-txt p{font-size:14px;color:rgba(255,255,255,.85);margin-top:6px;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
-.img-label-badge{display:flex;gap:10px;flex-wrap:wrap;align-self:flex-end;}
-.ilb{padding:8px 18px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.4);color:#fff;backdrop-filter:blur(8px);background:rgba(0,0,0,.35);}
-.ilb-g{border-color:rgba(34,197,94,.7);background:rgba(22,163,74,.3);color:#86efac;}
+/* Galeria — square-ish (4:3) — centered max 920px */
+.img-card{background:#fff;border-radius:24px;padding:14px;box-shadow:0 30px 80px rgba(15,23,42,.18);max-width:920px;margin:0 auto;border:1px solid rgba(255,255,255,.5);overflow:hidden;}
+.img-card img{width:100%;height:auto;display:block;border-radius:16px;}
 
-/* banner.jpg */
-.img-break-banner{background:#020a02;}
-.img-break-banner .img-over{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,5,.35) 0%,transparent 20%,transparent 80%,rgba(5,13,5,.35) 100%);pointer-events:none;}
+/* Importacion — PORTRAIT 0.75 — side-by-side desktop, stacked mobile */
+.imp-row{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;max-width:1180px;margin:0 auto;}
+.imp-img-wrap{background:#fff;border-radius:24px;padding:12px;box-shadow:0 30px 80px rgba(15,23,42,.25);max-width:520px;justify-self:center;}
+.imp-img-wrap img{width:100%;height:auto;display:block;border-radius:16px;}
+.imp-text{color:#fff;}
+.imp-text .chip{background:rgba(34,197,94,.25);color:#86efac;border:1px solid rgba(34,197,94,.4);}
+.imp-text h2{color:#fff;margin-bottom:18px;}
+.imp-text h2 .accent{background:linear-gradient(135deg,#fbbf24,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.imp-text p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.85);margin-bottom:16px;}
+.imp-text p strong{color:#fff;}
+.imp-flags{display:flex;align-items:center;gap:18px;margin-top:26px;padding:18px 22px;background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:16px;}
+.imp-flag{font-size:36px;line-height:1;}
+.imp-flag-txt{flex:1;font-size:13.5px;color:#fff;font-weight:600;line-height:1.4;}
+.imp-arrow{color:#fbbf24;font-size:22px;}
 
-@media(max-width:768px){
-  .img-label-txt h3{font-size:20px;}
-  .img-break-import .img-label{padding:18px 20px;}
-  .ilb{font-size:11px;padding:6px 14px;}
+/* Banner — wide 16:9 — full bleed contained */
+.banner-wrap{max-width:1400px;margin:0 auto;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(15,23,42,.18);}
+.banner-wrap img{width:100%;height:auto;display:block;}
+
+@media(max-width:900px){
+  .imp-row{grid-template-columns:1fr;gap:36px;}
+  .img-sec{padding:48px 0;}
 }
 </style>
 </head>
@@ -670,7 +678,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <a href="#modalidades">Importación</a>
         <a href="#proceso">Proceso</a>
         <a href="#rutas">Rutas</a>
-        <a href="#servicios">Servicios</a>
         <a href="#contact">Contacto</a>
       </div>
       <div class="nav-cta">
@@ -692,7 +699,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <a href="#modalidades" onclick="toggleMenu()">Importación</a>
   <a href="#proceso"     onclick="toggleMenu()">Proceso</a>
   <a href="#rutas"       onclick="toggleMenu()">Rutas Marítimas</a>
-  <a href="#servicios"   onclick="toggleMenu()">Servicios</a>
   <a href="#contact"     onclick="toggleMenu()">Contacto</a>
 </div>
 
@@ -790,10 +796,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </div>
 
 
-<!-- ═══════════ IMAGE BREAK 1 — Galería BRECOTO ═══════════ -->
-<div class="img-break img-break-hero">
-  <img src="images/galeria.jpg" alt="BRECOTO — Calidad certificada ISO 9001 · Empresa de importación China–Venezuela" loading="lazy">
-</div>
+<!-- ═══════════ IMAGEN 1 · BRECOTO en imágenes ═══════════ -->
+<section class="img-sec img-sec-light">
+  <div class="wrap">
+    <div class="text-center fi" style="margin-bottom:36px;">
+      <span class="chip chip-g"><i class="fas fa-medal"></i> Calidad Certificada</span>
+      <h2 class="h2">BRECOTO — Estándar <span class="gtxt-g">ISO 9001</span></h2>
+    </div>
+    <div class="img-card fi">
+      <img src="images/galeria.jpg" alt="BRECOTO — Calidad certificada ISO 9001 · Empresa de importación" loading="lazy">
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════ SOBRE NOSOTROS ═══════════ -->
 <section id="about" class="sec">
@@ -827,190 +841,38 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           Nuestra marca <strong style="color:var(--green);">BRECOTO</strong> es el resultado de años de relaciones directas con fábricas aliadas bajo estándar ISO 9001 — sin intermediarios, con trazabilidad completa y tres modalidades de envío adaptadas a la capacidad de cada cliente.
         </p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
-          <a href="#history" class="btn btn-out"><i class="fas fa-history"></i> Ver Historia</a>
-          <a href="#mvv" class="btn btn-out"><i class="fas fa-bullseye"></i> Misión y Visión</a>
+          <a href="#calidad" class="btn btn-g"><i class="fas fa-medal"></i> Ver Calidad</a>
+          <a href="#contact" class="btn btn-out"><i class="fab fa-whatsapp"></i> Contactar</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ HISTORIA / TIMELINE ═══════════ -->
-<section id="history" class="sec">
+
+<!-- ═══════════ IMAGEN 2 · IMPORTAMOS CALIDAD ═══════════ -->
+<section class="img-sec img-sec-dark">
   <div class="wrap">
-    <div class="text-center fi">
-      <span class="chip chip-a"><i class="fas fa-history"></i> Nuestra Historia</span>
-      <h2 class="h2">Un camino de <span class="gtxt-r">esfuerzo y constancia</span></h2>
-      <p class="lead" style="margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto;">Desde nuestros inicios hasta convertirnos en una marca propia con proyección nacional.</p>
-    </div>
-    <div class="timeline">
-      <div class="t-it fi">
-        <div class="t-content">
-          <div class="t-year">Inicio</div>
-          <div class="t-title">Más de 15 años de experiencia</div>
-          <div class="t-desc">Trayectoria operativa en importación directa desde China — alianzas con fábricas, rutas logísticas y conocimiento técnico del mercado asiático.</div>
-        </div>
-        <div class="t-dot">🏢</div>
-        <div></div>
+    <div class="imp-row">
+      <div class="imp-img-wrap fi">
+        <img src="images/importacion.jpg" alt="BRECOTO — Importamos Calidad · China a Venezuela" loading="lazy">
       </div>
-      <div class="t-it fi d1">
-        <div></div>
-        <div class="t-dot">📈</div>
-        <div class="t-content">
-          <div class="t-year">Crecimiento</div>
-          <div class="t-title">Red comercial consolidada</div>
-          <div class="t-desc">Construcción de una red de clientes, proveedores y aliados estratégicos en Venezuela — base operativa para la expansión nacional.</div>
-        </div>
-      </div>
-      <div class="t-it fi d2">
-        <div class="t-content">
-          <div class="t-year">2025</div>
-          <div class="t-title">Lanzamiento de BRECOTO International</div>
-          <div class="t-desc">Consolidación como corporación internacional: almacén en Cantón (China), bodega en San Cristóbal y tres modalidades de envío hacia Venezuela.</div>
-        </div>
-        <div class="t-dot">🚢</div>
-        <div></div>
-      </div>
-      <div class="t-it fi d3">
-        <div></div>
-        <div class="t-dot">⭐</div>
-        <div class="t-content">
-          <div class="t-year">2025</div>
-          <div class="t-title">Nace BRECOTO</div>
-          <div class="t-desc">Lanzamos nuestra marca propia registrada, símbolo de calidad, innovación y compromiso con el mercado venezolano de repuestos para motocicletas.</div>
-        </div>
-      </div>
-      <div class="t-it fi d4">
-        <div class="t-content">
-          <div class="t-year">Hoy</div>
-          <div class="t-title">Expansión y crecimiento continuo</div>
-          <div class="t-desc">Operación binacional activa — FCL 40/20 pies y LCL, logística integral sin costo, distribución nacional en crecimiento.</div>
-        </div>
-        <div class="t-dot">🚀</div>
-        <div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ DASHBOARD ═══════════ -->
-<section id="dashboard" class="sec">
-  <div class="wrap">
-    <div class="dash-head fi">
-      <div>
-        <span class="chip chip-g"><i class="fas fa-chart-bar"></i> Panel Corporativo</span>
-        <h2 class="h2">Indicadores en <span class="gtxt-g">tiempo real</span></h2>
-        <p class="text" style="margin-top:8px;">Métricas operativas y de gestión empresarial</p>
-      </div>
-      <div style="display:flex;gap:10px;">
-        <span class="chip chip-g" style="margin:0;"><i class="fas fa-circle" style="font-size:7px;"></i> En Vivo</span>
-        <span class="chip chip-b" style="margin:0;"><i class="fas fa-calendar"></i> 2025</span>
-      </div>
-    </div>
-
-    <div class="kpi-row fi">
-      <div class="kpi kpi-g">
-        <div class="kpi-ic"><i class="fas fa-motorcycle"></i></div>
-        <div class="kpi-l">SKUs en Catálogo</div>
-        <div class="kpi-v">2,400+</div>
-        <div class="kpi-tr kpi-up"><i class="fas fa-arrow-up"></i> Repuestos activos</div>
-      </div>
-      <div class="kpi kpi-b">
-        <div class="kpi-ic"><i class="fas fa-users"></i></div>
-        <div class="kpi-l">Clientes Activos</div>
-        <div class="kpi-v">180+</div>
-        <div class="kpi-tr kpi-up"><i class="fas fa-arrow-up"></i> Crecimiento sostenido</div>
-      </div>
-      <div class="kpi kpi-r">
-        <div class="kpi-ic"><i class="fas fa-ship"></i></div>
-        <div class="kpi-l">Rutas de Despacho</div>
-        <div class="kpi-v">2</div>
-        <div class="kpi-tr kpi-up"><i class="fas fa-arrow-up"></i> Colombia · Venezuela</div>
-      </div>
-      <div class="kpi kpi-a">
-        <div class="kpi-ic"><i class="fas fa-calendar-check"></i></div>
-        <div class="kpi-l">Años de Experiencia</div>
-        <div class="kpi-v">15+</div>
-        <div class="kpi-tr kpi-up"><i class="fas fa-arrow-up"></i> Operación activa</div>
-      </div>
-    </div>
-
-    <div class="ch-row fi">
-      <div class="ch-card">
-        <div class="ch-t">Crecimiento de Ventas por Trimestre</div>
-        <div class="ch-s">Evolución de operaciones — 2024 a 2025</div>
-        <div class="ch-wrap"><canvas id="ch1"></canvas></div>
-      </div>
-      <div class="ch-card">
-        <div class="ch-t">Distribución de Clientes</div>
-        <div class="ch-s">Por perfil de cliente activo</div>
-        <div class="ch-wrap" style="height:220px;"><canvas id="ch2"></canvas></div>
-      </div>
-    </div>
-
-    <div class="dash-bot fi">
-      <div class="bot-card">
-        <div class="ch-t">Últimas Actividades</div>
-        <div class="ch-s" style="margin-bottom:14px;">Movimientos recientes del sistema</div>
-        <table>
-          <thead>
-            <tr><th>Actividad</th><th>Tipo</th><th>Estado</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Contenedor desde China</td><td>Importación</td><td><span class="sb sb-g">Recibido</span></td></tr>
-            <tr><td>Lanzamiento marca BRECOTO</td><td>Marca</td><td><span class="sb sb-g">Activo</span></td></tr>
-            <tr><td>Nueva sede en preparación</td><td>Expansión</td><td><span class="sb sb-a">En proceso</span></td></tr>
-            <tr><td>Distribución mayorista</td><td>Ventas</td><td><span class="sb sb-b">En curso</span></td></tr>
-            <tr><td>Plataforma online</td><td>Tecnología</td><td><span class="sb sb-a">Planeado</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="bot-card">
-        <div class="ch-t">Progreso de Objetivos 2025</div>
-        <div class="ch-s" style="margin-bottom:18px;">Avance de metas estratégicas</div>
-        <div class="pr-it">
-          <div class="pr-hd"><span>Importación directa desde China</span><span>100%</span></div>
-          <div class="pr-bar"><div class="pr-fl pf-g" style="width:100%"></div></div>
-        </div>
-        <div class="pr-it">
-          <div class="pr-hd"><span>Registro de marca BRECOTO</span><span>100%</span></div>
-          <div class="pr-hd-r"></div>
-          <div class="pr-bar"><div class="pr-fl pf-b" style="width:100%"></div></div>
-        </div>
-        <div class="pr-it">
-          <div class="pr-hd"><span>Apertura de nueva sede</span><span>75%</span></div>
-          <div class="pr-bar"><div class="pr-fl pf-a" style="width:75%"></div></div>
-        </div>
-        <div class="pr-it">
-          <div class="pr-hd"><span>Aumento de stock y variedad</span><span>60%</span></div>
-          <div class="pr-bar"><div class="pr-fl pf-r" style="width:60%"></div></div>
-        </div>
-        <div class="pr-it">
-          <div class="pr-hd"><span>Plataforma online de ventas</span><span>30%</span></div>
-          <div class="pr-bar"><div class="pr-fl pf-b" style="width:30%"></div></div>
+      <div class="imp-text sr">
+        <span class="chip"><i class="fas fa-ship"></i> Importación Directa</span>
+        <h2 class="h2">De China a Venezuela,<br><span class="accent">llevamos calidad</span></h2>
+        <p>Conectamos fábricas certificadas <strong>ISO 9001</strong> en China con clientes en toda Venezuela. Importación 100% directa, sin intermediarios, con trazabilidad completa.</p>
+        <p>Más de <strong>15 años</strong> construyendo alianzas en Asia y rutas logísticas confiables que entregan exactamente lo que se promete.</p>
+        <div class="imp-flags">
+          <span class="imp-flag">🇨🇳</span>
+          <div class="imp-flag-txt"><strong>China</strong><br>Fábricas certificadas</div>
+          <i class="fas fa-arrow-right imp-arrow"></i>
+          <span class="imp-flag">🇻🇪</span>
+          <div class="imp-flag-txt"><strong>Venezuela</strong><br>Entrega confiable</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<!-- ═══════════ IMAGE BREAK 2 — IMPORTAMOS CALIDAD ═══════════ -->
-<div class="img-break img-break-import">
-  <img src="images/importacion.jpg" alt="BRECOTO — Importamos Calidad · China a Venezuela · Fábricas Certificadas ISO 9001" loading="lazy">
-  <div class="img-over"></div>
-  <div class="img-label">
-    <div class="img-label-txt">
-      <h3>De China a Venezuela,<br>llevamos calidad que impulsa tu camino</h3>
-      <p>Importación directa · Fábricas certificadas ISO 9001 · Logística eficiente</p>
-    </div>
-    <div class="img-label-badge">
-      <span class="ilb ilb-g"><i class="fas fa-ship" style="margin-right:6px;"></i>Importación Directa</span>
-      <span class="ilb"><i class="fas fa-medal" style="margin-right:6px;"></i>ISO 9001</span>
-      <span class="ilb"><i class="fas fa-truck" style="margin-right:6px;"></i>Logística Integral</span>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════ LÍNEAS DE CALIDAD ═══════════ -->
 <section id="calidad" class="sec">
@@ -1116,44 +978,26 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="proc-step fi">
         <div class="proc-num">01</div>
         <div class="proc-icon"><i class="fas fa-file-invoice"></i></div>
-        <div class="proc-title">Solicitud y Cotización</div>
-        <p>Cotización detallada con precios, modalidades y plazos según su requerimiento.</p>
+        <div class="proc-title">Cotización</div>
+        <p>Precios, modalidades y plazos según su requerimiento.</p>
       </div>
       <div class="proc-step fi">
         <div class="proc-num">02</div>
-        <div class="proc-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-        <div class="proc-title">Pago Inicial 30%</div>
-        <p>Anticipo del 30% que activa la fabricación en fábrica aliada.</p>
+        <div class="proc-icon"><i class="fas fa-industry"></i></div>
+        <div class="proc-title">Fabricación</div>
+        <p>Anticipo 30% · supervisión en fábrica China · 30–35 días.</p>
       </div>
       <div class="proc-step fi">
         <div class="proc-num">03</div>
-        <div class="proc-icon"><i class="fas fa-industry"></i></div>
-        <div class="proc-title">Fabricación Supervisada</div>
-        <p>Supervisión presencial de producción en China. Plazo: 30–35 días.</p>
+        <div class="proc-icon"><i class="fas fa-ship"></i></div>
+        <div class="proc-title">Tránsito Marítimo</div>
+        <p>Saldo 70% antes del despacho. Vía Colombia o directo a Venezuela.</p>
       </div>
       <div class="proc-step fi">
         <div class="proc-num">04</div>
-        <div class="proc-icon"><i class="fas fa-circle-check"></i></div>
-        <div class="proc-title">Pago Restante 70%</div>
-        <p>Cancelación previa al despacho del contenedor desde China, una vez aprobada la producción.</p>
-      </div>
-      <div class="proc-step fi">
-        <div class="proc-num">05</div>
-        <div class="proc-icon"><i class="fas fa-ship"></i></div>
-        <div class="proc-title">Tránsito Marítimo</div>
-        <p>Ruta elegida por el cliente: vía Colombia (hasta 35 días) o directa a Venezuela (60–70 días).</p>
-      </div>
-      <div class="proc-step fi">
-        <div class="proc-num">06</div>
-        <div class="proc-icon"><i class="fas fa-stamp"></i></div>
-        <div class="proc-title">Nacionalización</div>
-        <p>Gestión propia del cliente o asesoría aduanal sin costo incluida según necesidad (≈ 5 días).</p>
-      </div>
-      <div class="proc-step fi">
-        <div class="proc-num">07</div>
         <div class="proc-icon"><i class="fas fa-truck"></i></div>
         <div class="proc-title">Entrega Final</div>
-        <p>Directa al cliente para FCL (40/20 pies) o desde bodega San Cristóbal para consolidados LCL.</p>
+        <p>Nacionalización con asesoría aduanal sin costo · entrega directa.</p>
       </div>
     </div>
     <div class="proc-pagos fi">
@@ -1172,13 +1016,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     </div>
   </div>
 </section>
-
-
-<!-- ═══════════ IMAGE BREAK 3 — Banner BRECOTO ═══════════ -->
-<div class="img-break img-break-banner">
-  <img src="images/banner.jpg" alt="BRECOTO — Repuestos de Motos Estándar de Calidad ISO 9001 · Entrega rápida · Cobertura nacional" loading="lazy">
-  <div class="img-over"></div>
-</div>
 
 <!-- ═══════════ RUTAS MARÍTIMAS ═══════════ -->
 <section id="rutas" class="sec" style="background:var(--blue-tint);">
@@ -1222,57 +1059,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- ═══════════ SERVICIOS SIN COSTO ═══════════ -->
-<section id="servicios" class="sec">
-  <div class="wrap">
-    <div class="sec-head fi">
-      <span class="chip chip-g"><i class="fas fa-gift"></i> Servicios Incluidos</span>
-      <h2 class="h2">Servicios de Apoyo Integral</h2>
-      <p class="sub">Acompañamiento operativo completo — sin costo adicional para el cliente</p>
-    </div>
-    <div class="srv-grid">
-      <div class="srv-card fi">
-        <div class="srv-badge">SIN COSTO</div>
-        <div class="srv-icon"><i class="fas fa-boxes-stacked"></i></div>
-        <div class="srv-title">Logística de Carga</div>
-        <p>Coordinación integral de embarque, consolidación y supervisión del despacho desde China hacia Venezuela.</p>
-      </div>
-      <div class="srv-card fi">
-        <div class="srv-badge">SIN COSTO</div>
-        <div class="srv-icon"><i class="fas fa-money-bill-transfer"></i></div>
-        <div class="srv-title">Logística de Pago</div>
-        <p>Asesoría y asistencia en la gestión de pagos internacionales al proveedor en China.</p>
-      </div>
-      <div class="srv-card fi">
-        <div class="srv-badge">SIN COSTO</div>
-        <div class="srv-icon"><i class="fas fa-building-columns"></i></div>
-        <div class="srv-title">Asesoría Aduanal</div>
-        <p>Acompañamiento técnico completo en la nacionalización para clientes sin agente aduanal propio.</p>
-      </div>
-      <div class="srv-card fi">
-        <div class="srv-badge">SIN COSTO</div>
-        <div class="srv-icon"><i class="fas fa-satellite-dish"></i></div>
-        <div class="srv-title">Seguimiento Permanente</div>
-        <p>Comunicación y reportes de estado en tiempo real durante toda la operación logística.</p>
-      </div>
-    </div>
-    <div class="srv-nota fi">
-      <i class="fas fa-info-circle"></i>
-      El cliente que ya cuente con agente aduanal o canales de pago propios puede recibir la mercancía directamente en China y gestionar de forma autónoma el resto del proceso. <strong>La elección siempre es del cliente.</strong>
-    </div>
 
-  </div>
-</section>
-
-<!-- ═══════════ VERSÍCULO ═══════════ -->
-<section id="closing" class="sec" style="background:linear-gradient(135deg,var(--green),var(--blue));padding:60px 0;">
+<!-- ═══════════ IMAGEN 3 · Banner BRECOTO ═══════════ -->
+<section class="img-sec img-sec-light">
   <div class="wrap">
-    <div class="cl-row fi" style="position:relative;z-index:2;text-align:center;max-width:760px;margin:0 auto;">
-      <div class="cl-quote" style="background:rgba(255,255,255,.15);border-radius:18px;padding:36px;border-left:5px solid var(--gold);">
-        <div class="cl-quote-t">"Dios es mi pastor, y nada me faltará."</div>
-        <div class="cl-quote-a">— Salmo 23:1 —</div>
-      </div>
-      <div class="cl-final" style="margin-top:28px;">¡Seguimos <span>avanzando!</span></div>
+    <div class="banner-wrap fi">
+      <img src="images/banner.jpg" alt="BRECOTO — Repuestos de Motos Estándar de Calidad ISO 9001" loading="lazy">
     </div>
   </div>
 </section>
@@ -1451,7 +1243,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <a href="#modalidades">Importación</a>
           <a href="#proceso">Proceso</a>
           <a href="#rutas">Rutas</a>
-          <a href="#servicios">Servicios</a>
           <a href="#contact">Contacto</a>
         </div>
       </div>
@@ -1459,10 +1250,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="ft-col-t">Empresa</div>
         <div class="ft-lks">
           <a href="#about">Razón social</a>
-          <a href="#history">Trayectoria</a>
-          <a href="#mvv">Valores</a>
-          <a href="#expansion">Expansión</a>
-          <a href="#dashboard">Panel corporativo</a>
+          <a href="#calidad">Líneas de calidad</a>
+          <a href="#modalidades">Modalidades</a>
+          <a href="#rutas">Rutas logísticas</a>
         </div>
       </div>
       <div>
@@ -1496,7 +1286,7 @@ window.addEventListener('scroll', function(){
   var y = window.scrollY;
   document.getElementById('nav').classList.toggle('scrolled', y > 40);
   document.getElementById('top-btn').classList.toggle('show', y > 400);
-  var ids = ['hero','about','history','calidad','modalidades','proceso','rutas','servicios','contact'];
+  var ids = ['hero','about','calidad','modalidades','proceso','rutas','contact'];
   var cur = 'hero';
   ids.forEach(function(id){
     var el = document.getElementById(id);
