@@ -620,10 +620,41 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 }
 
 
-/* ═══ GALERÍA IMÁGENES ═══ */
-#galeria{padding:0;line-height:0;background:#060e06;}
-.gal-img{width:100%;display:block;height:auto;object-fit:cover;}
-.gal-img:hover{opacity:.97;}
+
+/* ═══ IMAGE BREAKS — Cinematic full-bleed ═══ */
+.img-break{position:relative;line-height:0;overflow:hidden;background:#050d05;}
+.img-break img{width:100%;display:block;height:auto;object-fit:cover;transition:transform 6s ease;}
+.img-break:hover img{transform:scale(1.015);}
+
+/* HERO IMAGE (galeria.jpg) — full bleed after ticker */
+.img-break-hero{background:#050d05;}
+.img-break-hero img{max-height:620px;object-fit:cover;}
+
+/* IMPORTACION — dramatic centered break */
+.img-break-import{background:#020a02;position:relative;}
+.img-break-import img{max-height:680px;object-fit:cover;}
+.img-break-import .img-over{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,5,.55) 0%,transparent 30%,transparent 70%,rgba(5,13,5,.55) 100%);pointer-events:none;}
+.img-break-import .img-label{position:absolute;bottom:0;left:0;right:0;padding:32px 40px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.img-label-txt{color:#fff;}
+.img-label-txt h3{font-family:'Rajdhani',sans-serif;font-size:clamp(24px,3.5vw,42px);font-weight:800;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.img-label-txt p{font-size:14px;color:rgba(255,255,255,.82);margin-top:6px;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 6px rgba(0,0,0,.4);}
+.img-label-badge{display:flex;gap:10px;flex-wrap:wrap;}
+.ilb{padding:8px 18px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.4);color:#fff;backdrop-filter:blur(8px);background:rgba(255,255,255,.15);}
+.ilb-g{border-color:rgba(34,197,94,.6);background:rgba(34,197,94,.2);color:#86efac;}
+
+/* BANNER — before rutas */
+.img-break-banner{background:#020a02;}
+.img-break-banner img{max-height:500px;object-fit:cover;}
+.img-break-banner .img-over{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,5,.4) 0%,transparent 25%,transparent 75%,rgba(5,13,5,.4) 100%);pointer-events:none;}
+
+@media(max-width:768px){
+  .img-break-hero img,.img-break-import img,.img-break-banner img{max-height:340px;}
+  .img-label-txt h3{font-size:22px;}
+  .img-break-import .img-label{padding:20px 20px;}
+}
+@media(max-width:480px){
+  .img-break-hero img,.img-break-import img,.img-break-banner img{max-height:260px;}
+}
 </style>
 </head>
 <body>
@@ -765,11 +796,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 
-<!-- ═══════════ GALERÍA BRECOTO ═══════════ -->
-<section id="galeria">
-  <img src="images/banner.jpg" class="gal-img" alt="BRECOTO — Repuestos de Motos de Estándar de Calidad ISO 9001" loading="lazy">
-  <img src="images/galeria.jpg" class="gal-img" alt="BRECOTO — Calidad certificada · Empresa de importación" loading="lazy">
-</section>
+
+<!-- ═══════════ IMAGE BREAK 1 — Galería BRECOTO ═══════════ -->
+<div class="img-break img-break-hero">
+  <img src="images/galeria.jpg" alt="BRECOTO — Calidad certificada ISO 9001 · Empresa de importación China–Venezuela" loading="lazy">
+</div>
 
 <!-- ═══════════ SOBRE NOSOTROS ═══════════ -->
 <section id="about" class="sec">
@@ -970,6 +1001,24 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
+
+<!-- ═══════════ IMAGE BREAK 2 — IMPORTAMOS CALIDAD ═══════════ -->
+<div class="img-break img-break-import">
+  <img src="images/importacion.jpg" alt="BRECOTO — Importamos Calidad · China a Venezuela · Fábricas Certificadas ISO 9001" loading="lazy">
+  <div class="img-over"></div>
+  <div class="img-label">
+    <div class="img-label-txt">
+      <h3>De China a Venezuela,<br>llevamos calidad que impulsa tu camino</h3>
+      <p>Importación directa · Fábricas certificadas ISO 9001 · Logística eficiente</p>
+    </div>
+    <div class="img-label-badge">
+      <span class="ilb ilb-g"><i class="fas fa-ship" style="margin-right:6px;"></i>Importación Directa</span>
+      <span class="ilb"><i class="fas fa-medal" style="margin-right:6px;"></i>ISO 9001</span>
+      <span class="ilb"><i class="fas fa-truck" style="margin-right:6px;"></i>Logística Integral</span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════ LÍNEAS DE CALIDAD ═══════════ -->
 <section id="calidad" class="sec">
   <div class="wrap">
@@ -1130,6 +1179,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     </div>
   </div>
 </section>
+
+
+<!-- ═══════════ IMAGE BREAK 3 — Banner BRECOTO ═══════════ -->
+<div class="img-break img-break-banner">
+  <img src="images/banner.jpg" alt="BRECOTO — Repuestos de Motos Estándar de Calidad ISO 9001 · Entrega rápida · Cobertura nacional" loading="lazy">
+  <div class="img-over"></div>
+</div>
 
 <!-- ═══════════ RUTAS MARÍTIMAS ═══════════ -->
 <section id="rutas" class="sec" style="background:var(--blue-tint);">
