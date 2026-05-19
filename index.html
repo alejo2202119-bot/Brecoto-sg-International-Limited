@@ -184,7 +184,9 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 #hero{
   position:relative;min-height:100vh;
   display:flex;align-items:center;overflow:hidden;
-  background:linear-gradient(135deg,#020914 0%,#061020 50%,#0b031f 100%);
+  background:
+    linear-gradient(135deg,rgba(2,9,20,.92) 0%,rgba(6,16,32,.82) 45%,rgba(11,3,31,.90) 100%),
+    url('images/banner.jpg') center/cover no-repeat;
 }
 .hero-bg-1{
   position:absolute;top:-200px;right:-150px;width:700px;height:700px;
@@ -1360,14 +1362,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- Banner visual -->
-<div style="padding:0 0 80px;">
-  <div style="max-width:1240px;margin:0 auto;padding:0 24px;">
-    <div style="border-radius:28px;overflow:hidden;box-shadow:var(--sh4);">
-      <img src="images/banner.jpg" alt="BRECOTO — Repuestos de Motos Calidad ISO 9001" loading="lazy" style="width:100%;height:auto;display:block;">
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════ FAQ ═══════════ -->
 <section id="faq">
