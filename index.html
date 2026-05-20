@@ -1151,6 +1151,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .cat-info-num{font-size:18px;}
 }
 
+/* ══ LANG SWITCHER ══ */
+.lang-sw{display:flex;align-items:center;gap:3px;margin-left:6px;}
+.lang-btn{padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;color:var(--ink3);background:transparent;border:1.5px solid transparent;cursor:pointer;transition:var(--tr);letter-spacing:.3px;font-family:'Instrument Sans',sans-serif;line-height:1;}
+.lang-btn:hover{background:var(--green-t);color:var(--green);}
+.lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.22);}
+@media(max-width:768px){.lang-sw{display:none;}}
+.mob-lang{display:flex;gap:8px;padding:12px 0;border-bottom:1px solid var(--border);}
+.mob-lang-btn{flex:1;text-align:center;padding:9px 6px;border-radius:10px;font-size:12px;font-weight:700;color:var(--ink3);background:var(--bg);border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);font-family:'Instrument Sans',sans-serif;}
+.mob-lang-btn:hover,.mob-lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);}
+
 </style>
 </head>
 <body>
@@ -1166,19 +1176,24 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </a>
       <div class="nav-lks">
-        <a href="#hero" class="act">Inicio</a>
-        <a href="#about">Nosotros</a>
-        <a href="#bento">Por qué</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#calidad">Calidad</a>
-        <a href="#modalidades">Importación</a>
+        <a href="#hero" class="act" data-i18n="nav.inicio">Inicio</a>
+        <a href="#about" data-i18n="nav.nosotros">Nosotros</a>
+        <a href="#bento" data-i18n="nav.porq">Por qué</a>
+        <a href="#catalogo" data-i18n="nav.catalogo">Catálogo</a>
+        <a href="#calidad" data-i18n="nav.calidad">Calidad</a>
+        <a href="#modalidades" data-i18n="nav.import">Importación</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contacto</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav-cta">
-        <a href="https://wa.me/584126801743?text=Hola%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BRECOTO." target="_blank" rel="noopener" class="btn btn-g">
+        <a href="https://wa.me/584126801743?text=Hola%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BRECOTO." target="_blank" rel="noopener" class="btn btn-g" data-i18n="nav.cta">
           <i class="fab fa-whatsapp"></i> Cotizar
         </a>
+      </div>
+      <div class="lang-sw">
+        <button class="lang-btn lang-act" data-lang="es" onclick="setLang('es')">🇪🇸 ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳 中</button>
       </div>
       <div class="burger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -1188,15 +1203,20 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </nav>
 
 <div id="mob">
-  <a href="#hero"        onclick="toggleMenu()">Inicio</a>
-  <a href="#about"       onclick="toggleMenu()">Nosotros</a>
+  <div class="mob-lang">
+    <button class="mob-lang-btn lang-act" data-lang="es" onclick="setLang('es');toggleMenu()">🇪🇸 Español</button>
+    <button class="mob-lang-btn" data-lang="en" onclick="setLang('en');toggleMenu()">🇺🇸 English</button>
+    <button class="mob-lang-btn" data-lang="zh" onclick="setLang('zh');toggleMenu()">🇨🇳 中文</button>
+  </div>
+  <a href="#hero"        onclick="toggleMenu()" data-i18n="nav.inicio">Inicio</a>
+  <a href="#about"       onclick="toggleMenu()" data-i18n="nav.nosotros">Nosotros</a>
   <a href="#bento"       onclick="toggleMenu()">Por qué BRECOTO</a>
-  <a href="#catalogo"    onclick="toggleMenu()">Catálogo 2026</a>
-  <a href="#calidad"     onclick="toggleMenu()">Calidad</a>
-  <a href="#modalidades" onclick="toggleMenu()">Importación</a>
+  <a href="#catalogo"    onclick="toggleMenu()" data-i18n="nav.catalogo">Catálogo 2026</a>
+  <a href="#calidad"     onclick="toggleMenu()" data-i18n="nav.calidad">Calidad</a>
+  <a href="#modalidades" onclick="toggleMenu()" data-i18n="nav.import">Importación</a>
   <a href="#proceso"     onclick="toggleMenu()">Proceso</a>
   <a href="#faq"         onclick="toggleMenu()">FAQ</a>
-  <a href="#contact"     onclick="toggleMenu()">Contacto</a>
+  <a href="#contact"     onclick="toggleMenu()" data-i18n="nav.contact">Contacto</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -1210,26 +1230,26 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="wrap">
     <div class="hero-row">
       <div>
-        <div class="hero-pill"><i class="fas fa-circle"></i> Marca propia · Importación directa · ISO 9001</div>
+        <div class="hero-pill" data-i18n="hero.pill"><i class="fas fa-circle"></i> Marca propia · Importación directa · ISO 9001</div>
         <h1 class="h1 hero-h1">
-          <span class="l1">Repuestos para</span><br>
-          <span class="l2">motocicletas</span><br>
-          <span class="l1">de calidad superior</span>
+          <span class="l1" data-i18n="hero.h1.l1">Repuestos para</span><br>
+          <span class="l2" data-i18n="hero.h1.l2">motocicletas</span><br>
+          <span class="l1" data-i18n="hero.h1.l3">de calidad superior</span>
           <span class="l3">Inversiones y Comercializadora SG C.A — Venezuela</span>
         </h1>
-        <p class="hero-sub">
+        <p class="hero-sub" data-i18n="hero.sub">
           Importación directa desde fábricas aliadas en China con <strong>+15 años de trayectoria</strong>. Marca propia <strong style="color:var(--green);">BRECOTO</strong> — calidad Triple A, certificación <strong>ISO 9001</strong>.
         </p>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-g"><i class="fas fa-paper-plane"></i> Solicitar Cotización</a>
-          <a href="#calidad" class="btn btn-b"><i class="fas fa-medal"></i> Ver Calidad</a>
-          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="#contact" class="btn btn-g" data-i18n="hero.btn.quote"><i class="fas fa-paper-plane"></i> Solicitar Cotización</a>
+          <a href="#calidad" class="btn btn-b" data-i18n="hero.btn.quality"><i class="fas fa-medal"></i> Ver Calidad</a>
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="hero.btn.wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div class="hero-stats">
-          <div class="hs"><div class="hs-n" data-count="15">0+</div><div class="hs-l">Años de experiencia</div></div>
-          <div class="hs"><div class="hs-n" data-count="100">0%</div><div class="hs-l">Importación directa</div></div>
-          <div class="hs"><div class="hs-n" data-count="2">0</div><div class="hs-l">Líneas de calidad</div></div>
-          <div class="hs"><div class="hs-n" data-count="3">0</div><div class="hs-l">Modalidades de envío</div></div>
+          <div class="hs"><div class="hs-n" data-count="15">0+</div><div class="hs-l" data-i18n="hero.stat.years">Años de experiencia</div></div>
+          <div class="hs"><div class="hs-n" data-count="100">0%</div><div class="hs-l" data-i18n="hero.stat.direct">Importación directa</div></div>
+          <div class="hs"><div class="hs-n" data-count="2">0</div><div class="hs-l" data-i18n="hero.stat.lines">Líneas de calidad</div></div>
+          <div class="hs"><div class="hs-n" data-count="3">0</div><div class="hs-l" data-i18n="hero.stat.modes">Modalidades de envío</div></div>
         </div>
       </div>
       <div class="hero-card">
@@ -1309,9 +1329,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div class="sr">
-        <span class="chip chip-g"><i class="fas fa-building"></i> Sobre Nosotros</span>
-        <h2 class="h2">Quiénes <span class="gtxt-g">somos</span></h2>
-        <p class="lead" style="margin-top:18px;">
+        <span class="chip chip-g" data-i18n="about.chip"><i class="fas fa-building"></i> Sobre Nosotros</span>
+        <h2 class="h2" data-i18n="about.h2">Quiénes <span class="gtxt-g">somos</span></h2>
+        <p class="lead" style="margin-top:18px;" data-i18n="about.lead">
           Corporación venezolana con operación directa en Asia. Almacén propio en <strong style="color:var(--ink);">Cantón (Guangzhou)</strong> para supervisión técnica, control de calidad y consolidación de carga.
         </p>
         <p class="text" style="margin-top:14px;">
@@ -1322,8 +1342,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="adv"><strong>INVERSIONES Y COMERCIALIZADORA SG C.A.</strong><br>San Cristóbal, Estado Táchira — Venezuela<br><span style="color:var(--green);font-weight:600;">+15 años de experiencia</span></div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
-          <a href="#calidad" class="btn btn-g"><i class="fas fa-medal"></i> Ver Calidad</a>
-          <a href="#contact" class="btn btn-out"><i class="fab fa-whatsapp"></i> Contactar</a>
+          <a href="#calidad" class="btn btn-g" data-i18n="about.btn1"><i class="fas fa-medal"></i> Ver Calidad</a>
+          <a href="#contact" class="btn btn-out" data-i18n="about.btn2"><i class="fab fa-whatsapp"></i> Contactar</a>
         </div>
       </div>
     </div>
@@ -1338,8 +1358,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <img src="images/importacion.jpg" alt="BRECOTO — Importamos Calidad · China a Venezuela" loading="lazy">
       </div>
       <div class="imp-text sr">
-        <span class="chip"><i class="fas fa-ship"></i> Importación Directa</span>
-        <h2 class="h2">De China a Venezuela,<br><span class="accent">llevamos calidad</span></h2>
+        <span class="chip" data-i18n="imp.chip"><i class="fas fa-ship"></i> Importación Directa</span>
+        <h2 class="h2" data-i18n="imp.h2">De China a Venezuela,<br><span class="accent">llevamos calidad</span></h2>
         <p>Conectamos fábricas certificadas <strong>ISO 9001</strong> en China con clientes en toda Venezuela. Importación 100% directa, sin intermediarios, con trazabilidad completa.</p>
         <p>Más de <strong>15 años</strong> construyendo alianzas en Asia y rutas logísticas confiables que entregan exactamente lo que se promete.</p>
         <div class="imp-flags">
@@ -1359,9 +1379,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="bento">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-g"><i class="fas fa-star"></i> Por qué elegirnos</span>
-      <h2 class="h2">¿Por qué <span class="gtxt-vibrant">BRECOTO?</span></h2>
-      <p class="sub">Una propuesta integral que combina calidad certificada, logística directa y respaldo corporativo</p>
+      <span class="chip chip-g" data-i18n="bento.chip"><i class="fas fa-star"></i> Por qué elegirnos</span>
+      <h2 class="h2" data-i18n="bento.h2">¿Por qué <span class="gtxt-vibrant">BRECOTO?</span></h2>
+      <p class="sub" data-i18n="bento.sub">Una propuesta integral que combina calidad certificada, logística directa y respaldo corporativo</p>
     </div>
     <div class="bento-grid">
       <div class="bento bento-1 fi">
@@ -1408,9 +1428,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="catalogo" class="sec" style="background:radial-gradient(ellipse at 50% 0%,rgba(22,163,74,.06) 0%,transparent 60%),linear-gradient(180deg,var(--bg) 0%,var(--white) 100%);">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-g"><i class="fas fa-book-open"></i> Catálogo 2026</span>
-      <h2 class="h2">Nuestro catálogo <span class="gtxt-g">completo</span></h2>
-      <p class="sub">+500 referencias certificadas · 5 líneas de producto · Tecnología japonesa · ISO 9001</p>
+      <span class="chip chip-g" data-i18n="cat.chip"><i class="fas fa-book-open"></i> Catálogo 2026</span>
+      <h2 class="h2" data-i18n="cat.h2">Nuestro catálogo <span class="gtxt-g">completo</span></h2>
+      <p class="sub" data-i18n="cat.sub">+500 referencias certificadas · 5 líneas de producto · Tecnología japonesa · ISO 9001</p>
     </div>
 
     <!-- PREVIEW CARD -->
@@ -1476,9 +1496,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="calidad" class="sec">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-g"><i class="fas fa-medal"></i> Líneas de Calidad</span>
-      <h2 class="h2">Líneas de <span class="gtxt-g">Calidad</span></h2>
-      <p class="sub"><strong>BRECOTO</strong> es Triple A ISO 9001. En pedidos de importación puede combinarse con línea A·B en el mismo contenedor</p>
+      <span class="chip chip-g" data-i18n="cal.chip"><i class="fas fa-medal"></i> Líneas de Calidad</span>
+      <h2 class="h2" data-i18n="cal.h2">Líneas de <span class="gtxt-g">Calidad</span></h2>
+      <p class="sub" data-i18n="cal.sub"><strong>BRECOTO</strong> es Triple A ISO 9001. En pedidos de importación puede combinarse con línea A·B en el mismo contenedor</p>
     </div>
     <div class="cal-grid">
       <div class="cal-card cal-premium fi">
@@ -1515,9 +1535,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="modalidades" class="sec">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-b"><i class="fas fa-ship"></i> Modalidades</span>
-      <h2 class="h2">Modalidades de <span class="gtxt-b">Importación</span></h2>
-      <p class="sub">Tres esquemas asignados acorde a la capacidad operativa de cada cliente</p>
+      <span class="chip chip-b" data-i18n="mod.chip"><i class="fas fa-ship"></i> Modalidades</span>
+      <h2 class="h2" data-i18n="mod.h2">Modalidades de <span class="gtxt-b">Importación</span></h2>
+      <p class="sub" data-i18n="mod.sub">Tres esquemas asignados acorde a la capacidad operativa de cada cliente</p>
     </div>
     <div class="mod-grid">
       <div class="mod-card fi">
@@ -1568,9 +1588,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="proceso" class="sec">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-g"><i class="fas fa-list-check"></i> Proceso y Rutas</span>
-      <h2 class="h2">De la cotización a la <span class="gtxt-g">entrega</span></h2>
-      <p class="sub">4 etapas · estructura de pagos · 2 rutas marítimas a su elección</p>
+      <span class="chip chip-g" data-i18n="proc.chip"><i class="fas fa-list-check"></i> Proceso y Rutas</span>
+      <h2 class="h2" data-i18n="proc.h2">De la cotización a la <span class="gtxt-g">entrega</span></h2>
+      <p class="sub" data-i18n="proc.sub">4 etapas · estructura de pagos · 2 rutas marítimas a su elección</p>
     </div>
     <div class="proc-grid">
       <div class="proc-step fi">
@@ -1654,9 +1674,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="faq">
   <div class="wrap">
     <div class="sec-head fi">
-      <span class="chip chip-b"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</span>
-      <h2 class="h2">Todo lo que necesitas <span class="gtxt-cool">saber</span></h2>
-      <p class="sub">Las dudas más comunes sobre nuestro proceso de importación y distribución</p>
+      <span class="chip chip-b" data-i18n="faq.chip"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</span>
+      <h2 class="h2" data-i18n="faq.h2">Todo lo que necesitas <span class="gtxt-cool">saber</span></h2>
+      <p class="sub" data-i18n="faq.sub">Las dudas más comunes sobre nuestro proceso de importación y distribución</p>
     </div>
     <div class="faq-list">
       <div class="faq-item fi" onclick="this.classList.toggle('open')">
@@ -1707,9 +1727,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="contact" class="sec">
   <div class="wrap">
     <div class="text-center fi" style="margin-bottom:52px;">
-      <span class="chip chip-g"><i class="fas fa-envelope"></i> Contacto</span>
-      <h2 class="h2">Hablemos de <span class="gtxt-g">negocios</span></h2>
-      <p class="lead" style="margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;">Complete el formulario y reciba respuesta directa por WhatsApp en menos de 24 horas.</p>
+      <span class="chip chip-g" data-i18n="ct.chip"><i class="fas fa-envelope"></i> Contacto</span>
+      <h2 class="h2" data-i18n="ct.h2">Hablemos de <span class="gtxt-g">negocios</span></h2>
+      <p class="lead" style="margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;" data-i18n="ct.lead">Complete el formulario y reciba respuesta directa por WhatsApp en menos de 24 horas.</p>
     </div>
 
     <div class="ct-row">
@@ -1767,35 +1787,35 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="cf-header">
             <div class="cf-header-icon"><i class="fab fa-whatsapp"></i></div>
             <div class="cf-header-text">
-              <div class="cf-t">Solicitar Cotización</div>
-              <div class="cf-s">Complete el formulario — su mensaje llegará directo a WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong></div>
+              <div class="cf-t" data-i18n="form.cf.t">Solicitar Cotización</div>
+              <div class="cf-s" data-i18n="form.cf.s">Complete el formulario — su mensaje llegará directo a WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong></div>
             </div>
           </div>
           <div class="cf-body">
           <form onsubmit="sendForm(event)" novalidate>
             <div class="f-row">
               <div class="fg">
-                <label>Nombre Completo *</label>
+                <label data-i18n="form.nom">Nombre Completo *</label>
                 <div class="fi-wrap"><i class="fas fa-user fi-icon"></i><input id="f-nom" type="text" placeholder="Su nombre completo" required></div>
               </div>
               <div class="fg">
-                <label>Empresa / Negocio</label>
+                <label data-i18n="form.emp">Empresa / Negocio</label>
                 <div class="fi-wrap"><i class="fas fa-building fi-icon"></i><input id="f-emp" type="text" placeholder="Nombre del negocio (opcional)"></div>
               </div>
             </div>
             <div class="f-row">
               <div class="fg">
-                <label>WhatsApp / Teléfono *</label>
+                <label data-i18n="form.tel">WhatsApp / Teléfono *</label>
                 <div class="fi-wrap"><i class="fab fa-whatsapp fi-icon"></i><input id="f-tel" type="tel" placeholder="0412 000 0000" required></div>
               </div>
               <div class="fg">
-                <label>Correo Electrónico</label>
+                <label data-i18n="form.cor">Correo Electrónico</label>
                 <div class="fi-wrap"><i class="fas fa-envelope fi-icon"></i><input id="f-cor" type="email" placeholder="correo@ejemplo.com"></div>
               </div>
             </div>
             <div class="f-row">
               <div class="fg">
-                <label>Tipo de Cliente</label>
+                <label data-i18n="form.tip">Tipo de Cliente</label>
                 <div class="fi-wrap"><i class="fas fa-users fi-icon"></i>
                 <select id="f-tip">
                   <option value="">Seleccione su perfil</option>
@@ -1807,7 +1827,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
                 </select></div>
               </div>
               <div class="fg">
-                <label>Tipo de Consulta</label>
+                <label data-i18n="form.cons">Tipo de Consulta</label>
                 <div class="fi-wrap"><i class="fas fa-tag fi-icon"></i>
                 <select id="f-cons">
                   <option value="">Tipo de consulta</option>
@@ -1823,11 +1843,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
               </div>
             </div>
             <div class="fg fg-full">
-              <label>Mensaje *</label>
+              <label data-i18n="form.msg">Mensaje *</label>
               <textarea id="f-msg" placeholder="Describa qué repuestos necesita, cantidad estimada, marca/modelo de la moto, modalidad de importación preferida, y cualquier detalle relevante..." required></textarea>
             </div>
-            <button type="submit" class="btn-send"><i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp</button>
-            <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20deseo%20información%20sobre%20repuestos%20e%20importación." target="_blank" rel="noopener" class="btn-wa-alt">
+            <button type="submit" class="btn-send" data-i18n="form.send"><i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp</button>
+            <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20deseo%20información%20sobre%20repuestos%20e%20importación." target="_blank" rel="noopener" class="btn-wa-alt" data-i18n="form.wa.direct">
               <i class="fab fa-whatsapp"></i> Contacto directo sin formulario
             </a>
           </form>
@@ -1840,35 +1860,35 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
               <div class="ok-pulse"></div>
               <div class="ok-ico"><i class="fas fa-check"></i></div>
             </div>
-            <div class="ok-title">¡Solicitud enviada!</div>
-            <div class="ok-sub">Tu mensaje llegó directo a nuestro WhatsApp.<br>Te respondemos en menos de 24 horas.</div>
+            <div class="ok-title" data-i18n="ok.title">¡Solicitud enviada!</div>
+            <div class="ok-sub" data-i18n="ok.sub">Tu mensaje llegó directo a nuestro WhatsApp.<br>Te respondemos en menos de 24 horas.</div>
           </div>
           <!-- Cuerpo -->
           <div class="ok-body">
             <!-- Resumen de datos -->
             <div class="ok-receipt">
-              <div class="ok-receipt-head"><i class="fas fa-receipt"></i> Resumen de tu solicitud</div>
+              <div class="ok-receipt-head" data-i18n="ok.receipt.h"><i class="fas fa-receipt"></i> Resumen de tu solicitud</div>
               <div id="ok-summary"></div>
             </div>
             <!-- Pasos -->
             <div class="ok-steps">
               <div class="ok-step ok-step-done">
                 <div class="ok-step-ic"><i class="fas fa-check"></i></div>
-                <span>Enviado</span>
+                <span data-i18n="ok.step1">Enviado</span>
               </div>
               <div class="ok-step-line"></div>
               <div class="ok-step ok-step-active">
                 <div class="ok-step-ic"><i class="fas fa-clock"></i></div>
-                <span>En revisión</span>
+                <span data-i18n="ok.step2">En revisión</span>
               </div>
               <div class="ok-step-line"></div>
               <div class="ok-step">
                 <div class="ok-step-ic"><i class="fab fa-whatsapp"></i></div>
-                <span>Respuesta WA</span>
+                <span data-i18n="ok.step3">Respuesta WA</span>
               </div>
             </div>
             <!-- CTA -->
-            <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ok-cta">
+            <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ok-cta" data-i18n="ok.cta">
               <i class="fab fa-whatsapp"></i> Abrir conversación en WhatsApp
             </a>
           </div>
@@ -1890,7 +1910,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="ft-sb">Inversiones &amp; Comercializadora SG</div>
           </div>
         </div>
-        <div class="ft-desc">
+        <div class="ft-desc" data-i18n="ft.desc">
           Importación directa de repuestos para motocicletas desde China. Marca propia <strong>BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.
         </div>
         <div class="ft-soc">
@@ -1901,7 +1921,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div>
-        <div class="ft-col-t">Navegación</div>
+        <div class="ft-col-t" data-i18n="ft.nav">Navegación</div>
         <div class="ft-lks">
           <a href="#hero">Inicio</a>
           <a href="#about">Nosotros</a>
@@ -1913,7 +1933,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div>
-        <div class="ft-col-t">Empresa</div>
+        <div class="ft-col-t" data-i18n="ft.empresa">Empresa</div>
         <div class="ft-lks">
           <a href="#about">Razón social</a>
           <a href="#calidad">Líneas de calidad</a>
@@ -1921,7 +1941,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div>
-        <div class="ft-col-t">Contacto</div>
+        <div class="ft-col-t" data-i18n="ft.contacto">Contacto</div>
         <div class="ft-lks">
           <a href="https://wa.me/584126801743"><i class="fab fa-whatsapp" style="color:#25D366;margin-right:6px;"></i> +58 412 680 1743</a>
           <a href="tel:+584126801743"><i class="fas fa-phone" style="color:var(--green-light);margin-right:6px;"></i> 0412 - 680 1743</a>
@@ -1932,11 +1952,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
     </div>
     <div class="ft-bot">
-      <div class="ft-copy">© 2025 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO. Todos los derechos reservados.</div>
+      <div class="ft-copy" data-i18n="ft.copy">© 2025 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO. Todos los derechos reservados.</div>
       <div class="ft-certs">
-        <span class="fct">+15 AÑOS DE EXPERIENCIA</span>
-        <span class="fct">MARCA PROPIA</span>
-        <span class="fct">IMPORTACIÓN DIRECTA</span>
+        <span class="fct" data-i18n="ft.cert1">+15 AÑOS DE EXPERIENCIA</span>
+        <span class="fct" data-i18n="ft.cert2">MARCA PROPIA</span>
+        <span class="fct" data-i18n="ft.cert3">IMPORTACIÓN DIRECTA</span>
       </div>
     </div>
   </div>
@@ -2075,6 +2095,189 @@ function sendForm(e){
     });
   }, 320);
 }
+
+/* ── i18n / Language Switcher ── */
+var T = {
+  es: {
+    'nav.inicio':'Inicio','nav.nosotros':'Nosotros','nav.porq':'Por qué','nav.catalogo':'Catálogo','nav.calidad':'Calidad','nav.import':'Importación','nav.contact':'Contacto',
+    'nav.cta':'<i class="fab fa-whatsapp"></i> Cotizar',
+    'hero.pill':'<i class="fas fa-circle"></i> Marca propia · Importación directa · ISO 9001',
+    'hero.h1.l1':'Repuestos para','hero.h1.l2':'motocicletas','hero.h1.l3':'de calidad superior',
+    'hero.sub':'Importación directa desde fábricas aliadas en China con <strong>+15 años de trayectoria</strong>. Marca propia <strong style="color:var(--green);">BRECOTO</strong> — calidad Triple A, certificación <strong>ISO 9001</strong>.',
+    'hero.btn.quote':'<i class="fas fa-paper-plane"></i> Solicitar Cotización',
+    'hero.btn.quality':'<i class="fas fa-medal"></i> Ver Calidad',
+    'hero.btn.wa':'<i class="fab fa-whatsapp"></i> WhatsApp',
+    'hero.stat.years':'Años de experiencia','hero.stat.direct':'Importación directa','hero.stat.lines':'Líneas de calidad','hero.stat.modes':'Modalidades de envío',
+    'about.chip':'<i class="fas fa-building"></i> Sobre Nosotros',
+    'about.h2':'Quiénes <span class="gtxt-g">somos</span>',
+    'about.lead':'Corporación venezolana con operación directa en Asia. Almacén propio en <strong style="color:var(--ink);">Cantón (Guangzhou)</strong> para supervisión técnica, control de calidad y consolidación de carga.',
+    'about.btn1':'<i class="fas fa-medal"></i> Ver Calidad','about.btn2':'<i class="fab fa-whatsapp"></i> Contactar',
+    'imp.chip':'<i class="fas fa-ship"></i> Importación Directa',
+    'imp.h2':'De China a Venezuela,<br><span class="accent">llevamos calidad</span>',
+    'bento.chip':'<i class="fas fa-star"></i> Por qué elegirnos',
+    'bento.h2':'¿Por qué <span class="gtxt-vibrant">BRECOTO?</span>',
+    'bento.sub':'Una propuesta integral que combina calidad certificada, logística directa y respaldo corporativo',
+    'cat.chip':'<i class="fas fa-book-open"></i> Catálogo 2026',
+    'cat.h2':'Nuestro catálogo <span class="gtxt-g">completo</span>',
+    'cat.sub':'+500 referencias certificadas · 5 líneas de producto · Tecnología japonesa · ISO 9001',
+    'cal.chip':'<i class="fas fa-medal"></i> Líneas de Calidad',
+    'cal.h2':'Líneas de <span class="gtxt-g">Calidad</span>',
+    'cal.sub':'<strong>BRECOTO</strong> es Triple A ISO 9001. En pedidos de importación puede combinarse con línea A·B en el mismo contenedor',
+    'mod.chip':'<i class="fas fa-ship"></i> Modalidades',
+    'mod.h2':'Modalidades de <span class="gtxt-b">Importación</span>',
+    'mod.sub':'Tres esquemas asignados acorde a la capacidad operativa de cada cliente',
+    'proc.chip':'<i class="fas fa-list-check"></i> Proceso y Rutas',
+    'proc.h2':'De la cotización a la <span class="gtxt-g">entrega</span>',
+    'proc.sub':'4 etapas · estructura de pagos · 2 rutas marítimas a su elección',
+    'faq.chip':'<i class="fas fa-circle-question"></i> Preguntas Frecuentes',
+    'faq.h2':'Todo lo que necesitas <span class="gtxt-cool">saber</span>',
+    'faq.sub':'Las dudas más comunes sobre nuestro proceso de importación y distribución',
+    'ct.chip':'<i class="fas fa-envelope"></i> Contacto',
+    'ct.h2':'Hablemos de <span class="gtxt-g">negocios</span>',
+    'ct.lead':'Complete el formulario y reciba respuesta directa por WhatsApp en menos de 24 horas.',
+    'form.cf.t':'Solicitar Cotización',
+    'form.cf.s':'Complete el formulario — su mensaje llegará directo a WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
+    'form.nom':'Nombre Completo *','form.emp':'Empresa / Negocio','form.tel':'WhatsApp / Teléfono *','form.cor':'Correo Electrónico','form.tip':'Tipo de Cliente','form.cons':'Tipo de Consulta','form.msg':'Mensaje *',
+    'form.send':'<i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp',
+    'form.wa.direct':'<i class="fab fa-whatsapp"></i> Contacto directo sin formulario',
+    'ok.title':'¡Solicitud enviada!','ok.sub':'Tu mensaje llegó directo a nuestro WhatsApp.<br>Te respondemos en menos de 24 horas.',
+    'ok.receipt.h':'<i class="fas fa-receipt"></i> Resumen de tu solicitud',
+    'ok.step1':'Enviado','ok.step2':'En revisión','ok.step3':'Respuesta WA',
+    'ok.cta':'<i class="fab fa-whatsapp"></i> Abrir conversación en WhatsApp',
+    'ft.nav':'Navegación','ft.empresa':'Empresa','ft.contacto':'Contacto',
+    'ft.desc':'Importación directa de repuestos para motocicletas desde China. Marca propia <strong>BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.',
+    'ft.copy':'© 2025 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO. Todos los derechos reservados.',
+    'ft.cert1':'+15 AÑOS DE EXPERIENCIA','ft.cert2':'MARCA PROPIA','ft.cert3':'IMPORTACIÓN DIRECTA',
+    ph:{'f-nom':'Su nombre completo','f-emp':'Nombre del negocio (opcional)','f-tel':'0412 000 0000','f-cor':'correo@ejemplo.com','f-msg':'Describa qué repuestos necesita, cantidad estimada, marca/modelo de la moto, modalidad de importación preferida, y cualquier detalle relevante...'}
+  },
+  en: {
+    'nav.inicio':'Home','nav.nosotros':'About','nav.porq':'Why Us','nav.catalogo':'Catalog','nav.calidad':'Quality','nav.import':'Import','nav.contact':'Contact',
+    'nav.cta':'<i class="fab fa-whatsapp"></i> Get Quote',
+    'hero.pill':'<i class="fas fa-circle"></i> Own Brand · Direct Import · ISO 9001',
+    'hero.h1.l1':'Parts for','hero.h1.l2':'motorcycles','hero.h1.l3':'of superior quality',
+    'hero.sub':'Direct import from allied factories in China with <strong>+15 years of experience</strong>. Own brand <strong style="color:var(--green);">BRECOTO</strong> — Triple A quality, <strong>ISO 9001</strong> certified.',
+    'hero.btn.quote':'<i class="fas fa-paper-plane"></i> Request Quote',
+    'hero.btn.quality':'<i class="fas fa-medal"></i> See Quality',
+    'hero.btn.wa':'<i class="fab fa-whatsapp"></i> WhatsApp',
+    'hero.stat.years':'Years of experience','hero.stat.direct':'Direct import','hero.stat.lines':'Quality lines','hero.stat.modes':'Shipping modes',
+    'about.chip':'<i class="fas fa-building"></i> About Us',
+    'about.h2':'Who <span class="gtxt-g">we are</span>',
+    'about.lead':'Venezuelan corporation with direct operations in Asia. Own warehouse in <strong style="color:var(--ink);">Canton (Guangzhou)</strong> for technical supervision, quality control and cargo consolidation.',
+    'about.btn1':'<i class="fas fa-medal"></i> See Quality','about.btn2':'<i class="fab fa-whatsapp"></i> Contact',
+    'imp.chip':'<i class="fas fa-ship"></i> Direct Import',
+    'imp.h2':'From China to Venezuela,<br><span class="accent">we bring quality</span>',
+    'bento.chip':'<i class="fas fa-star"></i> Why choose us',
+    'bento.h2':'Why <span class="gtxt-vibrant">BRECOTO?</span>',
+    'bento.sub':'A comprehensive proposal combining certified quality, direct logistics and corporate backing',
+    'cat.chip':'<i class="fas fa-book-open"></i> Catalog 2026',
+    'cat.h2':'Our <span class="gtxt-g">complete</span> catalog',
+    'cat.sub':'+500 certified references · 5 product lines · Japanese technology · ISO 9001',
+    'cal.chip':'<i class="fas fa-medal"></i> Quality Lines',
+    'cal.h2':'Quality <span class="gtxt-g">Lines</span>',
+    'cal.sub':'<strong>BRECOTO</strong> is Triple A ISO 9001. Import orders can combine A·B line in the same container',
+    'mod.chip':'<i class="fas fa-ship"></i> Modalities',
+    'mod.h2':'Import <span class="gtxt-b">Modalities</span>',
+    'mod.sub':'Three schemes assigned according to each client\'s operational capacity',
+    'proc.chip':'<i class="fas fa-list-check"></i> Process & Routes',
+    'proc.h2':'From quote to <span class="gtxt-g">delivery</span>',
+    'proc.sub':'4 stages · payment structure · 2 maritime routes of your choice',
+    'faq.chip':'<i class="fas fa-circle-question"></i> Frequently Asked Questions',
+    'faq.h2':'Everything you need to <span class="gtxt-cool">know</span>',
+    'faq.sub':'The most common questions about our import and distribution process',
+    'ct.chip':'<i class="fas fa-envelope"></i> Contact',
+    'ct.h2':'Let\'s talk <span class="gtxt-g">business</span>',
+    'ct.lead':'Fill out the form and receive a direct reply via WhatsApp in less than 24 hours.',
+    'form.cf.t':'Request a Quote',
+    'form.cf.s':'Fill out the form — your message will go directly to WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
+    'form.nom':'Full Name *','form.emp':'Company / Business','form.tel':'WhatsApp / Phone *','form.cor':'Email','form.tip':'Client Type','form.cons':'Query Type','form.msg':'Message *',
+    'form.send':'<i class="fab fa-whatsapp"></i> Send Message via WhatsApp',
+    'form.wa.direct':'<i class="fab fa-whatsapp"></i> Direct contact without form',
+    'ok.title':'Request Sent!','ok.sub':'Your message went directly to our WhatsApp.<br>We\'ll reply in less than 24 hours.',
+    'ok.receipt.h':'<i class="fas fa-receipt"></i> Your request summary',
+    'ok.step1':'Sent','ok.step2':'Under review','ok.step3':'WA Reply',
+    'ok.cta':'<i class="fab fa-whatsapp"></i> Open WhatsApp conversation',
+    'ft.nav':'Navigation','ft.empresa':'Company','ft.contacto':'Contact',
+    'ft.desc':'Direct import of motorcycle parts from China. Own brand <strong>BRECOTO</strong>, Triple A ISO 9001 quality. San Cristóbal, Táchira, Venezuela.',
+    'ft.copy':'© 2025 <strong>Inversiones y Comercializadora SG C.A.</strong> — BRECOTO brand. All rights reserved.',
+    'ft.cert1':'+15 YEARS EXPERIENCE','ft.cert2':'OWN BRAND','ft.cert3':'DIRECT IMPORT',
+    ph:{'f-nom':'Your full name','f-emp':'Business name (optional)','f-tel':'0412 000 0000','f-cor':'email@example.com','f-msg':'Describe the parts you need, estimated quantity, motorcycle make/model, preferred import mode, and any other relevant details...'}
+  },
+  zh: {
+    'nav.inicio':'首页','nav.nosotros':'关于我们','nav.porq':'为什么','nav.catalogo':'目录','nav.calidad':'品质','nav.import':'进口','nav.contact':'联系我们',
+    'nav.cta':'<i class="fab fa-whatsapp"></i> 获取报价',
+    'hero.pill':'<i class="fas fa-circle"></i> 自主品牌 · 直接进口 · ISO 9001',
+    'hero.h1.l1':'摩托车','hero.h1.l2':'零配件','hero.h1.l3':'品质卓越',
+    'hero.sub':'直接从中国合作工厂进口，<strong>拥有超过15年的经验</strong>。自主品牌 <strong style="color:var(--green);">BRECOTO</strong> — 三甲品质，<strong>ISO 9001</strong> 认证。',
+    'hero.btn.quote':'<i class="fas fa-paper-plane"></i> 申请报价',
+    'hero.btn.quality':'<i class="fas fa-medal"></i> 查看品质',
+    'hero.btn.wa':'<i class="fab fa-whatsapp"></i> WhatsApp',
+    'hero.stat.years':'年经验','hero.stat.direct':'直接进口','hero.stat.lines':'品质系列','hero.stat.modes':'运输方式',
+    'about.chip':'<i class="fas fa-building"></i> 关于我们',
+    'about.h2':'我们 <span class="gtxt-g">是谁</span>',
+    'about.lead':'委内瑞拉公司，在亚洲直接运营。在 <strong style="color:var(--ink);">广州（广东）</strong> 拥有自己的仓库，用于技术监督、质量控制和货物整合。',
+    'about.btn1':'<i class="fas fa-medal"></i> 查看品质','about.btn2':'<i class="fab fa-whatsapp"></i> 联系我们',
+    'imp.chip':'<i class="fas fa-ship"></i> 直接进口',
+    'imp.h2':'从中国到委内瑞拉，<br><span class="accent">我们带来品质</span>',
+    'bento.chip':'<i class="fas fa-star"></i> 为什么选择我们',
+    'bento.h2':'为什么选择 <span class="gtxt-vibrant">BRECOTO？</span>',
+    'bento.sub':'综合提案，结合认证品质、直接物流和企业支持',
+    'cat.chip':'<i class="fas fa-book-open"></i> 2026年目录',
+    'cat.h2':'我们的 <span class="gtxt-g">完整</span> 目录',
+    'cat.sub':'+500个认证参考 · 5条产品线 · 日本技术 · ISO 9001',
+    'cal.chip':'<i class="fas fa-medal"></i> 品质系列',
+    'cal.h2':'品质 <span class="gtxt-g">系列</span>',
+    'cal.sub':'<strong>BRECOTO</strong> 是三甲ISO 9001认证。进口订单可在同一集装箱内组合A·B系列',
+    'mod.chip':'<i class="fas fa-ship"></i> 进口方式',
+    'mod.h2':'进口 <span class="gtxt-b">方式</span>',
+    'mod.sub':'根据每个客户的运营能力分配三种方案',
+    'proc.chip':'<i class="fas fa-list-check"></i> 流程与路线',
+    'proc.h2':'从报价到 <span class="gtxt-g">交货</span>',
+    'proc.sub':'4个阶段 · 付款结构 · 2条海运路线供您选择',
+    'faq.chip':'<i class="fas fa-circle-question"></i> 常见问题',
+    'faq.h2':'您需要了解的 <span class="gtxt-cool">一切</span>',
+    'faq.sub':'关于我们进口和分销流程的最常见问题',
+    'ct.chip':'<i class="fas fa-envelope"></i> 联系我们',
+    'ct.h2':'与我们 <span class="gtxt-g">洽谈</span>',
+    'ct.lead':'填写表格，在24小时内通过WhatsApp直接收到回复。',
+    'form.cf.t':'申请报价',
+    'form.cf.s':'填写表格 — 您的消息将直接发送至 WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
+    'form.nom':'全名 *','form.emp':'企业 / 商号','form.tel':'WhatsApp / 电话 *','form.cor':'电子邮箱','form.tip':'客户类型','form.cons':'查询类型','form.msg':'留言 *',
+    'form.send':'<i class="fab fa-whatsapp"></i> 通过 WhatsApp 发送消息',
+    'form.wa.direct':'<i class="fab fa-whatsapp"></i> 不需要表格直接联系',
+    'ok.title':'请求已发送！','ok.sub':'您的消息已直接发送到我们的WhatsApp。<br>我们将在24小时内回复您。',
+    'ok.receipt.h':'<i class="fas fa-receipt"></i> 您的请求摘要',
+    'ok.step1':'已发送','ok.step2':'审核中','ok.step3':'WA回复',
+    'ok.cta':'<i class="fab fa-whatsapp"></i> 打开 WhatsApp 对话',
+    'ft.nav':'导航','ft.empresa':'公司','ft.contacto':'联系方式',
+    'ft.desc':'直接从中国进口摩托车零配件。自主品牌 <strong>BRECOTO</strong>，三甲ISO 9001品质。圣克里斯托瓦尔，塔奇拉，委内瑞拉。',
+    'ft.copy':'© 2025 <strong>Inversiones y Comercializadora SG C.A.</strong> — BRECOTO品牌。版权所有。',
+    'ft.cert1':'+15年经验','ft.cert2':'自主品牌','ft.cert3':'直接进口',
+    ph:{'f-nom':'您的全名','f-emp':'商号（选填）','f-tel':'0412 000 0000','f-cor':'邮箱@示例.com','f-msg':'请描述您所需的零配件、预计数量、摩托车品牌/型号、首选进口方式及其他相关详情...'}
+  }
+};
+
+var _lang = localStorage.getItem('brecoto_lang') || 'es';
+
+function setLang(lang){
+  if(!T[lang]) return;
+  _lang = lang;
+  localStorage.setItem('brecoto_lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k = el.getAttribute('data-i18n');
+    if(T[lang][k] !== undefined) el.innerHTML = T[lang][k];
+  });
+  var ph = T[lang].ph || {};
+  Object.keys(ph).forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.placeholder = ph[id];
+  });
+  document.querySelectorAll('.lang-btn, .mob-lang-btn').forEach(function(btn){
+    btn.classList.toggle('lang-act', btn.getAttribute('data-lang') === lang);
+  });
+}
+
+setLang(_lang);
 </script>
 
 
