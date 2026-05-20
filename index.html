@@ -949,6 +949,122 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .about-stats-row{grid-template-columns:1fr 1fr;}
 }
 
+/* ══ CATÁLOGO CARD COMPONENTS ══ */
+.cat-info-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--border);}
+.cat-info-cell{padding:18px 16px;text-align:center;}
+.cat-info-cell-br{border-right:1px solid var(--border);}
+.cat-info-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--green);}
+.cat-info-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-top:2px;}
+.cat-cta-row{padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1.5px solid var(--border);}
+.cat-cta-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.3px;}
+.cat-cta-sub{font-size:12px;color:var(--ink3);margin-top:3px;}
+.cat-cta-btns{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+
+/* ══ RESPONSIVE MOBILE COMPLETO ══ */
+
+/* 768px — ya definido arriba, complementos */
+@media(max-width:768px){
+  .about-row{gap:36px;}
+  .imp-row{gap:28px;}
+  .rut-grid{grid-template-columns:1fr;}
+  .rut-card{padding:32px 28px;}
+  .hero-pill{font-size:11px;letter-spacing:1px;padding:7px 16px;}
+}
+
+/* ═══ 600px — complementos ═══ */
+@media(max-width:600px){
+  .sec{padding:64px 0;}
+  .sec-head{margin-bottom:40px;}
+  .sec-head .sub{font-size:15px;}
+  .img-sec{padding:52px 0;}
+
+  /* Hero */
+  .hero-row{padding:88px 0 52px;}
+  .hero-sub{font-size:15px;line-height:1.7;}
+  .hero-stats{gap:12px;padding-top:28px;}
+  .hs-n{font-size:28px;letter-spacing:-1px;}
+  .hs-l{font-size:10.5px;}
+  .hero-btns .btn{padding:13px 20px;font-size:13px;}
+
+  /* Bento: evitar que bento-1 ocupe 2 filas vacías en 1 col */
+  .bento-1{grid-row:span 1!important;min-height:180px;}
+  .bento-1 h3{font-size:22px;letter-spacing:-.5px;}
+  .bento-5 h3{font-size:19px;letter-spacing:-.3px;}
+  .bento-feat-num{font-size:42px;}
+
+  /* Modalidades */
+  .mod-title{font-size:26px;letter-spacing:-.8px;}
+  .mod-card{padding:28px 22px;}
+
+  /* Proceso */
+  .proc-step{padding:28px 16px 22px;}
+  .proc-pago-pct{font-size:38px;letter-spacing:-1.5px;}
+  .proc-pago-item{padding:18px 20px;}
+  .proc-pagos{padding:26px 22px;}
+
+  /* Rutas */
+  .rut-card{padding:28px 22px;}
+  .rut-tiempo{font-size:32px;letter-spacing:-1px;}
+  .rut-puerto{font-size:18px;letter-spacing:-.4px;}
+
+  /* Stats strip */
+  .stat-cell{padding:26px 16px;}
+
+  /* Calidad */
+  .cal-card{padding:32px 22px;}
+  .cal-grid{gap:16px;}
+
+  /* FAQ */
+  .faq-q{padding:16px 16px;}
+  .faq-q-title{font-size:14px;letter-spacing:-.2px;}
+  .faq-q-ic{width:34px;height:34px;font-size:12px;}
+  .faq-a-inner{padding:0 16px 20px 16px;}
+
+  /* Contacto */
+  .cf-header{padding:22px 22px;gap:12px;}
+  .cf-t{font-size:20px;}
+  .cf-body{padding:22px 18px;}
+
+  /* Footer */
+  .ft-nm{font-size:18px;}
+
+  /* Image sections */
+  .imp-flags{gap:10px;padding:14px 16px;}
+  .imp-flag{font-size:22px;padding:5px 7px;}
+  .imp-flag-txt{font-size:12.5px;}
+  .imp-arrow{font-size:16px;}
+
+  /* Catálogo card */
+  .cat-info-row{grid-template-columns:repeat(2,1fr);}
+  .cat-info-cell-br:nth-child(2){border-right:none;}
+  .cat-info-cell:nth-child(1),.cat-info-cell:nth-child(2){border-bottom:1px solid var(--border);}
+  .cat-cta-row{padding:20px 20px;flex-direction:column;align-items:stretch;gap:12px;}
+  .cat-cta-btns{flex-direction:column;}
+  .cat-cta-btns .btn{width:100%;justify-content:center;font-size:13px;padding:13px 20px;}
+}
+
+/* ═══ 400px — móviles muy pequeños ═══ */
+@media(max-width:400px){
+  .wrap{padding:0 12px;}
+  .sec{padding:52px 0;}
+  .hero-row{padding:80px 0 44px;}
+  .hero-pill{font-size:9.5px;letter-spacing:.6px;padding:6px 12px;white-space:normal;line-height:1.45;text-align:center;}
+  .hs-n{font-size:24px;}
+  .h2{letter-spacing:-1.5px;}
+  .mod-title{font-size:22px;}
+  .rut-tiempo{font-size:28px;}
+  .proc-pago-pct{font-size:32px;}
+  .stat-num{font-size:38px!important;}
+  .stat-cell{padding:20px 12px;}
+  .cf-header{flex-direction:column;text-align:center;}
+  .cf-header-icon{margin:0 auto;}
+  .faq-q-title{font-size:13px;}
+  .bento-1{min-height:160px;}
+  .bento-feat-num{font-size:36px;}
+  .rut-card{padding:24px 18px;}
+  .cat-info-num{font-size:18px;}
+}
+
 </style>
 </head>
 <body>
@@ -1224,22 +1340,22 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           </div>
         </div>
         <!-- info row -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--border);">
-          <div style="padding:18px 16px;text-align:center;border-right:1px solid var(--border);">
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--green);">+500</div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-top:2px;">Referencias</div>
+        <div class="cat-info-row">
+          <div class="cat-info-cell cat-info-cell-br">
+            <div class="cat-info-num">+500</div>
+            <div class="cat-info-lbl">Referencias</div>
           </div>
-          <div style="padding:18px 16px;text-align:center;border-right:1px solid var(--border);">
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--green);">5</div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-top:2px;">Líneas</div>
+          <div class="cat-info-cell cat-info-cell-br">
+            <div class="cat-info-num">5</div>
+            <div class="cat-info-lbl">Líneas</div>
           </div>
-          <div style="padding:18px 16px;text-align:center;border-right:1px solid var(--border);">
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--green);">ISO</div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-top:2px;">9001</div>
+          <div class="cat-info-cell cat-info-cell-br">
+            <div class="cat-info-num">ISO</div>
+            <div class="cat-info-lbl">9001</div>
           </div>
-          <div style="padding:18px 16px;text-align:center;">
-            <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--green);">2026</div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-top:2px;">Edición</div>
+          <div class="cat-info-cell">
+            <div class="cat-info-num">2026</div>
+            <div class="cat-info-lbl">Edición</div>
           </div>
         </div>
         <!-- lines -->
@@ -1251,16 +1367,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <span style="display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1.5px solid var(--border);border-radius:999px;padding:6px 14px;font-size:11px;font-weight:700;color:var(--ink3);"><i class="fas fa-motorcycle" style="color:#7c3aed;"></i> Carrocería</span>
         </div>
         <!-- CTA -->
-        <div style="padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1.5px solid var(--border);">
+        <div class="cat-cta-row">
           <div>
-            <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.3px;">Catálogo 2026 — Edición completa</div>
-            <div style="font-size:12px;color:var(--ink3);margin-top:3px;">Fichas técnicas · Precios mayoristas · Disponibilidad de stock</div>
+            <div class="cat-cta-title">Catálogo 2026 — Edición completa</div>
+            <div class="cat-cta-sub">Fichas técnicas · Precios mayoristas · Disponibilidad de stock</div>
           </div>
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <a href="catalogo.html" target="_blank" rel="noopener" class="btn" style="background:linear-gradient(135deg,var(--green),#15803d);color:#fff;box-shadow:0 4px 16px rgba(22,163,74,.35);display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:13px;transition:all .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-              <i class="fas fa-file-pdf"></i> Ver Catálogo · Descargar PDF
+          <div class="cat-cta-btns">
+            <a href="catalogo.html" target="_blank" rel="noopener" class="btn btn-g">
+              <i class="fas fa-file-pdf"></i> Ver Catálogo · PDF
             </a>
-            <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20solicito%20el%20Cat%C3%A1logo%202026%20completo%20con%20precios%20mayoristas%20y%20disponibilidad." target="_blank" rel="noopener" class="btn btn-wa" style="display:inline-flex;align-items:center;gap:8px;">
+            <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20solicito%20el%20Cat%C3%A1logo%202026%20completo%20con%20precios%20mayoristas%20y%20disponibilidad." target="_blank" rel="noopener" class="btn btn-wa">
               <i class="fab fa-whatsapp"></i> Cotizar
             </a>
           </div>
