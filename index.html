@@ -132,7 +132,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 
 /* ══ NAVBAR ══ */
 #nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
+  position:fixed;top:38px;left:0;right:0;z-index:1000;
   background:rgba(255,255,255,.88);
   backdrop-filter:blur(20px) saturate(180%);
   -webkit-backdrop-filter:blur(20px) saturate(180%);
@@ -171,7 +171,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .burger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;}
 .burger span{width:22px;height:2.5px;background:var(--ink);border-radius:2px;transition:var(--tr);}
 #mob{
-  display:none;position:fixed;top:68px;left:0;right:0;
+  display:none;position:fixed;top:106px;left:0;right:0;
   background:#fff;border-bottom:1px solid var(--border);
   box-shadow:0 8px 30px rgba(15,23,42,.1);
   padding:12px 24px 20px;z-index:998;
@@ -1151,31 +1151,68 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .cat-info-num{font-size:18px;}
 }
 
-/* ══ LANG SWITCHER ══ */
-.lang-sw{display:flex;align-items:center;gap:3px;margin-left:6px;}
-.lang-btn{
+/* ══ TOPBAR — BARRA SUPERIOR DE IDIOMA ══ */
+#topbar{
+  position:fixed;top:0;left:0;right:0;z-index:1001;
+  background:var(--ink2);
+  height:38px;display:flex;align-items:center;
+}
+.topbar-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;max-width:1240px;margin:0 auto;padding:0 24px;
+}
+.topbar-left{
+  display:flex;align-items:center;gap:18px;
+  font-size:11.5px;color:rgba(255,255,255,.5);
+  font-family:'Instrument Sans',sans-serif;
+}
+.topbar-left span{display:flex;align-items:center;gap:5px;}
+.topbar-left i{color:var(--green-l);font-size:10px;}
+.topbar-lang{display:flex;align-items:center;gap:2px;}
+.topbar-lang-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-right:8px;font-family:'Instrument Sans',sans-serif;}
+.tl-btn{
   display:inline-flex;align-items:center;gap:5px;
-  padding:6px 11px;border-radius:9px;
-  font-size:11.5px;font-weight:700;color:var(--ink3);
-  background:var(--bg);border:1.5px solid var(--border);
+  padding:4px 11px;border-radius:6px;
+  font-size:11.5px;font-weight:700;
+  color:rgba(255,255,255,.6);
+  background:transparent;border:1px solid transparent;
   cursor:pointer;transition:var(--tr);
-  font-family:'Instrument Sans',sans-serif;line-height:1;white-space:nowrap;
+  font-family:'Instrument Sans',sans-serif;white-space:nowrap;
 }
-.lang-btn:hover{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);}
-.lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);font-weight:800;}
-.lang-code{font-size:10.5px;letter-spacing:.4px;}
-@media(max-width:768px){
-  .lang-sw{margin-left:0;gap:2px;}
-  .lang-btn{padding:7px 9px;font-size:14px;border-radius:8px;gap:0;}
-  .lang-code{display:none;}
+.tl-btn:hover{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);}
+.tl-btn.lang-act{color:#fff;background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.35);}
+.tl-sep{color:rgba(255,255,255,.18);padding:0 2px;user-select:none;font-size:11px;}
+@media(max-width:600px){
+  #topbar{height:36px;}
+  .topbar-left{display:none;}
+  .topbar-inner{justify-content:center;}
+  .topbar-lang-label{display:none;}
+  .tl-btn{padding:4px 10px;font-size:11px;}
+  #nav{top:36px;}
+  #mob{top:104px;}
 }
-.mob-lang{display:flex;gap:8px;padding:12px 0;border-bottom:1px solid var(--border);}
-.mob-lang-btn{flex:1;text-align:center;padding:9px 6px;border-radius:10px;font-size:12px;font-weight:700;color:var(--ink3);background:var(--bg);border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);font-family:'Instrument Sans',sans-serif;}
-.mob-lang-btn:hover,.mob-lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);}
 
 </style>
 </head>
 <body>
+<!-- ═══════════ TOPBAR — IDIOMA ═══════════ -->
+<div id="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-map-marker-alt"></i> San Cristóbal, Táchira · Venezuela</span>
+      <span><i class="fab fa-whatsapp"></i> +58 412 680 1743</span>
+    </div>
+    <div class="topbar-lang">
+      <span class="topbar-lang-label">Idioma /</span>
+      <button class="tl-btn lang-act" data-lang="es" onclick="setLang('es')">🇪🇸 Español</button>
+      <span class="tl-sep">|</span>
+      <button class="tl-btn" data-lang="en" onclick="setLang('en')">🇺🇸 English</button>
+      <span class="tl-sep">|</span>
+      <button class="tl-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳 中文</button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════ NAVBAR ═══════════ -->
 <nav id="nav">
   <div class="wrap">
@@ -1202,11 +1239,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <i class="fab fa-whatsapp"></i> Cotizar
         </a>
       </div>
-      <div class="lang-sw">
-        <button class="lang-btn lang-act" data-lang="es" onclick="setLang('es')">🇪🇸<span class="lang-code"> ES</span></button>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸<span class="lang-code"> EN</span></button>
-        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳<span class="lang-code"> 中</span></button>
-      </div>
       <div class="burger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
@@ -1215,11 +1247,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </nav>
 
 <div id="mob">
-  <div class="mob-lang">
-    <button class="mob-lang-btn lang-act" data-lang="es" onclick="setLang('es');toggleMenu()">🇪🇸 Español</button>
-    <button class="mob-lang-btn" data-lang="en" onclick="setLang('en');toggleMenu()">🇺🇸 English</button>
-    <button class="mob-lang-btn" data-lang="zh" onclick="setLang('zh');toggleMenu()">🇨🇳 中文</button>
-  </div>
   <a href="#hero"        onclick="toggleMenu()" data-i18n="nav.inicio">Inicio</a>
   <a href="#about"       onclick="toggleMenu()" data-i18n="nav.nosotros">Nosotros</a>
   <a href="#bento"       onclick="toggleMenu()">Por qué BRECOTO</a>
@@ -2284,7 +2311,7 @@ function setLang(lang){
     var el = document.getElementById(id);
     if(el) el.placeholder = ph[id];
   });
-  document.querySelectorAll('.lang-btn, .mob-lang-btn').forEach(function(btn){
+  document.querySelectorAll('.tl-btn').forEach(function(btn){
     btn.classList.toggle('lang-act', btn.getAttribute('data-lang') === lang);
   });
 }
