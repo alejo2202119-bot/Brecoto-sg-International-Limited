@@ -1153,10 +1153,22 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 /* ══ LANG SWITCHER ══ */
 .lang-sw{display:flex;align-items:center;gap:3px;margin-left:6px;}
-.lang-btn{padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;color:var(--ink3);background:transparent;border:1.5px solid transparent;cursor:pointer;transition:var(--tr);letter-spacing:.3px;font-family:'Instrument Sans',sans-serif;line-height:1;}
-.lang-btn:hover{background:var(--green-t);color:var(--green);}
-.lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.22);}
-@media(max-width:768px){.lang-sw{display:none;}}
+.lang-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 11px;border-radius:9px;
+  font-size:11.5px;font-weight:700;color:var(--ink3);
+  background:var(--bg);border:1.5px solid var(--border);
+  cursor:pointer;transition:var(--tr);
+  font-family:'Instrument Sans',sans-serif;line-height:1;white-space:nowrap;
+}
+.lang-btn:hover{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);}
+.lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);font-weight:800;}
+.lang-code{font-size:10.5px;letter-spacing:.4px;}
+@media(max-width:768px){
+  .lang-sw{margin-left:0;gap:2px;}
+  .lang-btn{padding:7px 9px;font-size:14px;border-radius:8px;gap:0;}
+  .lang-code{display:none;}
+}
 .mob-lang{display:flex;gap:8px;padding:12px 0;border-bottom:1px solid var(--border);}
 .mob-lang-btn{flex:1;text-align:center;padding:9px 6px;border-radius:10px;font-size:12px;font-weight:700;color:var(--ink3);background:var(--bg);border:1.5px solid var(--border);cursor:pointer;transition:var(--tr);font-family:'Instrument Sans',sans-serif;}
 .mob-lang-btn:hover,.mob-lang-btn.lang-act{background:var(--green-t);color:var(--green);border-color:rgba(22,163,74,.3);}
@@ -1191,9 +1203,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </a>
       </div>
       <div class="lang-sw">
-        <button class="lang-btn lang-act" data-lang="es" onclick="setLang('es')">🇪🇸 ES</button>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸 EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳 中</button>
+        <button class="lang-btn lang-act" data-lang="es" onclick="setLang('es')">🇪🇸<span class="lang-code"> ES</span></button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸<span class="lang-code"> EN</span></button>
+        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳<span class="lang-code"> 中</span></button>
       </div>
       <div class="burger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
