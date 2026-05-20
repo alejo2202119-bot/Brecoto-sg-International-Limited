@@ -1266,7 +1266,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .testi-role{font-size:11.5px;color:var(--gray);margin-top:2px;}
 .cob-desc{font-size:14.5px;color:var(--ink3);line-height:1.72;flex:1;}
 @media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.testi-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.testi-grid{grid-template-columns:1fr;}.testi-card[style*="grid-column:span 2"]{grid-column:span 1;}}
 
 /* ══ RESPONSIVE AMPLIADO ══ */
 @media(min-width:1440px){
@@ -1591,30 +1591,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--green-s);color:var(--green-d);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-circle" style="font-size:7px;"></i> <span data-i18n="cob.sede">Sede principal</span></span>
         </div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card" style="grid-column:span 2;background:linear-gradient(135deg,var(--green-t) 0%,var(--blue-t) 100%);border-color:rgba(22,163,74,.18);">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--blue),var(--blue-l));font-size:20px;">🌆</div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--green),var(--blue-l));font-size:22px;width:52px;height:52px;">🚚</div>
           <div>
-            <div class="testi-name" data-i18n="cob.z2.name">Zona Central</div>
-            <div class="testi-role" data-i18n="cob.z2.states">Caracas · Carabobo · Aragua · Miranda</div>
+            <div class="testi-name" style="font-size:16px;" data-i18n="cob.nac.name">Despachos a nivel nacional</div>
+            <div class="testi-role" data-i18n="cob.nac.states">Todo Venezuela · Envío a tu puerta</div>
           </div>
         </div>
-        <p class="cob-desc" data-i18n="cob.z2.desc">Despacho vía transportista aliado a los principales centros de distribución del centro del país. Coordinación directa por WhatsApp.</p>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
+        <p class="cob-desc" style="font-size:15px;" data-i18n="cob.nac.desc">Llena el formulario al final de la página y envíanos tu pedido — nosotros te lo enviamos a donde estés.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(22,163,74,.15);flex-wrap:wrap;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;border-radius:10px;padding:8px 18px;font-size:12px;font-weight:700;text-decoration:none;transition:.2s;" onmouseover="this.style.background='var(--green-d)'" onmouseout="this.style.background='var(--green)'" data-i18n="cob.nac.cta"><i class="fas fa-arrow-down"></i> Ir al formulario</a>
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--blue-s);color:var(--blue-d);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-truck" style="font-size:10px;"></i> <span data-i18n="cob.envio">Envío disponible</span></span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-l));font-size:20px;">🌊</div>
-          <div>
-            <div class="testi-name" data-i18n="cob.z3.name">Zona Occidente y Oriente</div>
-            <div class="testi-role" data-i18n="cob.z3.states">Zulia · Lara · Bolívar · Anzoátegui</div>
-          </div>
-        </div>
-        <p class="cob-desc" data-i18n="cob.z3.desc">Cobertura a pedido en grandes volúmenes. Contáctenos para coordinar logística y tiempos de entrega según su ubicación.</p>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
-          <span style="display:inline-flex;align-items:center;gap:5px;background:var(--gold-s);color:#92400e;border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-phone" style="font-size:10px;"></i> <span data-i18n="cob.consultar">Consultar disponibilidad</span></span>
         </div>
       </div>
     </div>
@@ -2355,11 +2343,10 @@ var T = {
     'cob.sub':'Desde San Cristóbal operamos hacia los principales estados del país. Consulte disponibilidad en su región.',
     'cob.z1.name':'Zona Andina','cob.z1.states':'Táchira · Mérida · Barinas · Trujillo',
     'cob.z1.desc':'Sede principal en San Cristóbal, Táchira. Entrega directa y despacho inmediato en toda la región andina. Bodega disponible para retiro en almacén.',
-    'cob.z2.name':'Zona Central','cob.z2.states':'Caracas · Carabobo · Aragua · Miranda',
-    'cob.z2.desc':'Despacho vía transportista aliado a los principales centros de distribución del centro del país. Coordinación directa por WhatsApp.',
-    'cob.z3.name':'Zona Occidente y Oriente','cob.z3.states':'Zulia · Lara · Bolívar · Anzoátegui',
-    'cob.z3.desc':'Cobertura a pedido en grandes volúmenes. Contáctenos para coordinar logística y tiempos de entrega según su ubicación.',
-    'cob.sede':'Sede principal','cob.envio':'Envío disponible','cob.consultar':'Consultar disponibilidad',
+    'cob.nac.name':'Despachos a nivel nacional','cob.nac.states':'Todo Venezuela · Envío a tu puerta',
+    'cob.nac.desc':'Llena el formulario al final de la página y envíanos tu pedido — nosotros te lo enviamos a donde estés.',
+    'cob.nac.cta':'<i class="fas fa-arrow-down"></i> Ir al formulario',
+    'cob.sede':'Sede principal','cob.envio':'Envío disponible',
     'cob.cta':'<i class="fab fa-whatsapp"></i> Consultar disponibilidad en mi región',
     ph:{'f-nom':'Su nombre completo','f-emp':'Nombre del negocio (opcional)','f-tel':'0412 000 0000','f-cor':'correo@ejemplo.com','f-msg':'Describa qué repuestos necesita, cantidad estimada, marca/modelo de la moto, modalidad de importación preferida, y cualquier detalle relevante...'}
   },
@@ -2418,11 +2405,10 @@ var T = {
     'cob.sub':'From San Cristóbal we operate to the main states in the country. Ask about availability in your region.',
     'cob.z1.name':'Andean Region','cob.z1.states':'Táchira · Mérida · Barinas · Trujillo',
     'cob.z1.desc':'Main headquarters in San Cristóbal, Táchira. Direct delivery and immediate dispatch throughout the Andean region. Warehouse available for pickup.',
-    'cob.z2.name':'Central Region','cob.z2.states':'Caracas · Carabobo · Aragua · Miranda',
-    'cob.z2.desc':'Dispatch via allied carrier to the main distribution centers in central Venezuela. Direct coordination via WhatsApp.',
-    'cob.z3.name':'West & East Regions','cob.z3.states':'Zulia · Lara · Bolívar · Anzoátegui',
-    'cob.z3.desc':'Coverage available for large volumes on request. Contact us to coordinate logistics and delivery times for your location.',
-    'cob.sede':'Main office','cob.envio':'Shipping available','cob.consultar':'Check availability',
+    'cob.nac.name':'Nationwide Shipping','cob.nac.states':'All Venezuela · Delivery to your door',
+    'cob.nac.desc':'Fill out the form at the bottom of the page and send us your order — we will ship it to wherever you are.',
+    'cob.nac.cta':'<i class="fas fa-arrow-down"></i> Go to form',
+    'cob.sede':'Main office','cob.envio':'Shipping available',
     'cob.cta':'<i class="fab fa-whatsapp"></i> Check availability in my region',
     ph:{'f-nom':'Your full name','f-emp':'Business name (optional)','f-tel':'0412 000 0000','f-cor':'email@example.com','f-msg':'Describe the parts you need, estimated quantity, motorcycle make/model, preferred import mode, and any other relevant details...'}
   },
@@ -2481,11 +2467,10 @@ var T = {
     'cob.sub':'我们从圣克里斯托瓦尔运营至全国各主要州。请咨询您所在地区的配送情况。',
     'cob.z1.name':'安第斯地区','cob.z1.states':'塔奇拉 · 梅里达 · 巴里纳斯 · 特鲁希略',
     'cob.z1.desc':'总部位于塔奇拉州圣克里斯托瓦尔。安第斯地区全境直接配送，可到仓库自提。',
-    'cob.z2.name':'中部地区','cob.z2.states':'加拉加斯 · 卡拉沃沃 · 阿拉瓜 · 米兰达',
-    'cob.z2.desc':'通过合作承运商发货至全国中部主要分销中心。可直接通过WhatsApp协调。',
-    'cob.z3.name':'西部和东部地区','cob.z3.states':'苏利亚 · 拉拉 · 玻利瓦尔 · 安索阿特吉',
-    'cob.z3.desc':'大批量订单按需配送。请联系我们根据您的位置协调物流和交货时间。',
-    'cob.sede':'总部','cob.envio':'可配送','cob.consultar':'咨询配送',
+    'cob.nac.name':'全国配送','cob.nac.states':'委内瑞拉全境 · 送货上门',
+    'cob.nac.desc':'填写页面底部的表格并发送您的订单 — 我们会将货物送到您所在的任何地方。',
+    'cob.nac.cta':'<i class="fas fa-arrow-down"></i> 前往表格',
+    'cob.sede':'总部','cob.envio':'可配送',
     'cob.cta':'<i class="fab fa-whatsapp"></i> 咨询我所在地区的配送情况',
     ph:{'f-nom':'您的全名','f-emp':'商号（选填）','f-tel':'0412 000 0000','f-cor':'邮箱@示例.com','f-msg':'请描述您所需的零配件、预计数量、摩托车品牌/型号、首选进口方式及其他相关详情...'}
   }
