@@ -1252,7 +1252,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   #mob{top:104px;}
 }
 
-/* ══ TESTIMONIOS ══ */
+/* ══ COBERTURA ══ */
 #testimonios{background:var(--bg);padding:80px 0;}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .testi-card{
@@ -1261,16 +1261,40 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   display:flex;flex-direction:column;gap:16px;transition:var(--tr);
 }
 .testi-card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
-.testi-stars{display:flex;gap:3px;color:#f59e0b;font-size:13px;}
-.testi-text{font-size:14.5px;color:var(--ink3);line-height:1.72;font-style:italic;flex:1;position:relative;padding-left:20px;}
-.testi-text::before{content:'\201C';font-size:36px;color:var(--green);line-height:0;vertical-align:-14px;margin-right:2px;font-style:normal;position:absolute;left:0;top:14px;}
-.testi-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:16px;}
 .testi-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#fff;}
 .testi-name{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.2;}
 .testi-role{font-size:11.5px;color:var(--gray);margin-top:2px;}
-.testi-verified{display:inline-flex;align-items:center;gap:4px;background:var(--green-s);color:var(--green-d);border-radius:6px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:.3px;margin-top:4px;}
+.cob-desc{font-size:14.5px;color:var(--ink3);line-height:1.72;flex:1;}
 @media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.testi-grid{grid-template-columns:1fr;}}
+
+/* ══ RESPONSIVE AMPLIADO ══ */
+@media(min-width:1440px){
+  .wrap{max-width:1320px;}
+  .hero-h{font-size:66px;}
+  .ft-row{max-width:1320px;}
+}
+@media(min-width:1920px){
+  .wrap{max-width:1520px;}
+  .hero-h{font-size:74px;}
+}
+@media(max-width:1024px){
+  .hero-row{gap:40px;padding:96px 0 60px;}
+  .bento-grid{grid-template-columns:1fr 1fr;}
+  .proc-grid{grid-template-columns:1fr 1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .ft-row{grid-template-columns:1fr 1fr;gap:28px;}
+}
+@media(max-width:480px){
+  .wrap{padding:0 14px;}
+  .testi-grid{gap:16px;}
+  .testi-card{padding:22px 18px;}
+  .hero-h{font-size:clamp(28px,8vw,42px);letter-spacing:-1.5px;}
+  .chip{font-size:10px;padding:5px 12px;}
+  .h2{font-size:clamp(24px,6vw,34px);}
+  .btn{font-size:13px;padding:12px 18px;}
+  .nav-logo-txt{font-size:16px;}
+}
 
 </style>
 </head>
@@ -1562,7 +1586,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="testi-role" data-i18n="cob.z1.states">Táchira · Mérida · Barinas · Trujillo</div>
           </div>
         </div>
-        <p class="testi-text" style="font-style:normal;" data-i18n="cob.z1.desc">Sede principal en <a href="https://maps.app.goo.gl/EA2eksFPo7Lq1hAU8" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">C.C. Doña Matilde, San Cristóbal, Táchira</a>. Entrega directa y despacho inmediato en toda la región andina.</p>
+        <p class="cob-desc" data-i18n="cob.z1.desc">Sede principal en <a href="https://maps.app.goo.gl/EA2eksFPo7Lq1hAU8" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">C.C. Doña Matilde, San Cristóbal, Táchira</a>. Entrega directa y despacho inmediato en toda la región andina.</p>
         <div style="display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--green-s);color:var(--green-d);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-circle" style="font-size:7px;"></i> <span data-i18n="cob.sede">Sede principal</span></span>
         </div>
@@ -1575,7 +1599,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="testi-role" data-i18n="cob.z2.states">Caracas · Carabobo · Aragua · Miranda</div>
           </div>
         </div>
-        <p class="testi-text" style="font-style:normal;" data-i18n="cob.z2.desc">Despacho vía transportista aliado a los principales centros de distribución del centro del país. Coordinación directa por WhatsApp.</p>
+        <p class="cob-desc" data-i18n="cob.z2.desc">Despacho vía transportista aliado a los principales centros de distribución del centro del país. Coordinación directa por WhatsApp.</p>
         <div style="display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--blue-s);color:var(--blue-d);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-truck" style="font-size:10px;"></i> <span data-i18n="cob.envio">Envío disponible</span></span>
         </div>
@@ -1588,7 +1612,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="testi-role" data-i18n="cob.z3.states">Zulia · Lara · Bolívar · Anzoátegui</div>
           </div>
         </div>
-        <p class="testi-text" style="font-style:normal;" data-i18n="cob.z3.desc">Cobertura a pedido en grandes volúmenes. Contáctenos para coordinar logística y tiempos de entrega según su ubicación.</p>
+        <p class="cob-desc" data-i18n="cob.z3.desc">Cobertura a pedido en grandes volúmenes. Contáctenos para coordinar logística y tiempos de entrega según su ubicación.</p>
         <div style="display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
           <span style="display:inline-flex;align-items:center;gap:5px;background:var(--gold-s);color:#92400e;border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;"><i class="fas fa-phone" style="font-size:10px;"></i> <span data-i18n="cob.consultar">Consultar disponibilidad</span></span>
         </div>
