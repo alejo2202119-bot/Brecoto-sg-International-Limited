@@ -949,6 +949,60 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .about-stats-row{grid-template-columns:1fr 1fr;}
 }
 
+
+/* ══ CATÁLOGO 2026 ══ */
+#catalogo{
+  background:radial-gradient(ellipse at 50% 0%,rgba(22,163,74,.06) 0%,transparent 55%),
+             linear-gradient(180deg,var(--bg) 0%,var(--white) 100%);
+}
+.cat-tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;}
+.cat-tab{
+  font-family:'Instrument Sans',sans-serif;
+  display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:999px;
+  font-size:13px;font-weight:700;background:var(--white);color:var(--ink3);
+  border:1.5px solid var(--border);transition:var(--tr);cursor:pointer;
+}
+.cat-tab:hover{border-color:var(--green);color:var(--green);}
+.cat-tab.active{background:linear-gradient(135deg,var(--green),var(--green-l));color:#fff;border-color:transparent;box-shadow:var(--sh-g);}
+.cat-tab i{font-size:12px;}
+.cat-pane{display:none;}
+.cat-pane.active{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.prod-card{
+  background:var(--white);border-radius:20px;padding:22px 20px;
+  border:1.5px solid var(--border);box-shadow:var(--sh1);
+  transition:var(--tr-s);position:relative;overflow:hidden;
+}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--sh3);}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:999px 999px 0 0;}
+#cat-electrico .prod-card::before{background:linear-gradient(90deg,var(--gold),var(--gold-l));}
+#cat-motor .prod-card::before{background:linear-gradient(90deg,var(--blue),var(--blue-l));}
+#cat-frenos .prod-card::before{background:linear-gradient(90deg,var(--red),var(--coral));}
+#cat-transmision .prod-card::before{background:linear-gradient(90deg,var(--green),var(--teal-l));}
+#cat-carroceria .prod-card::before{background:linear-gradient(90deg,var(--purple),var(--purple-l));}
+.prod-ref{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-l);margin-bottom:10px;}
+.prod-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:10px;}
+#cat-electrico .prod-icon{background:var(--gold-s);color:var(--gold);}
+#cat-motor .prod-icon{background:var(--blue-s);color:var(--blue);}
+#cat-frenos .prod-icon{background:var(--red-s);color:var(--red);}
+#cat-transmision .prod-icon{background:var(--green-s);color:var(--green);}
+#cat-carroceria .prod-icon{background:var(--purple-s);color:var(--purple);}
+.prod-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.2px;margin-bottom:7px;line-height:1.2;}
+.prod-desc{font-size:12.5px;color:var(--ink3);line-height:1.62;margin-bottom:10px;}
+.prod-tags{display:flex;gap:5px;flex-wrap:wrap;}
+.prod-tag{font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--bg2);color:var(--ink3);}
+.cat-cta-box{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  border-radius:24px;padding:36px 40px;margin-top:44px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;position:relative;overflow:hidden;
+}
+.cat-cta-box::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.18),transparent 70%);}
+.cat-cta-txt h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.3px;position:relative;z-index:1;}
+.cat-cta-txt p{font-size:13.5px;color:rgba(255,255,255,.68);position:relative;z-index:1;}
+@media(max-width:900px){.cat-pane.active{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.cat-pane.active{grid-template-columns:1fr;}.cat-cta-box{padding:28px 24px;}}
+
 </style>
 </head>
 <body>
@@ -967,6 +1021,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <a href="#hero" class="act">Inicio</a>
         <a href="#about">Nosotros</a>
         <a href="#bento">Por qué</a>
+        <a href="#catalogo">Catálogo</a>
         <a href="#calidad">Calidad</a>
         <a href="#modalidades">Importación</a>
         <a href="#faq">FAQ</a>
@@ -988,6 +1043,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <a href="#hero"        onclick="toggleMenu()">Inicio</a>
   <a href="#about"       onclick="toggleMenu()">Nosotros</a>
   <a href="#bento"       onclick="toggleMenu()">Por qué BRECOTO</a>
+  <a href="#catalogo"    onclick="toggleMenu()">Catálogo 2026</a>
   <a href="#calidad"     onclick="toggleMenu()">Calidad</a>
   <a href="#modalidades" onclick="toggleMenu()">Importación</a>
   <a href="#proceso"     onclick="toggleMenu()">Proceso</a>
@@ -1200,6 +1256,74 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
+<!-- ═══════════ CATÁLOGO 2026 ═══════════ -->
+<section id="catalogo" class="sec">
+  <div class="wrap">
+    <div class="sec-head fi">
+      <span class="chip chip-g"><i class="fas fa-book-open"></i> Catálogo 2026</span>
+      <h2 class="h2">+500 referencias <span class="gtxt-g">certificadas</span></h2>
+      <p class="sub">Cinco líneas de repuestos genuinos · ISO 9001 · Tecnología japonesa en cada componente</p>
+    </div>
+    <div class="cat-tabs fi">
+      <button class="cat-tab active"  onclick="catTab(this,'cat-electrico')"><i class="fas fa-bolt"></i> Eléctrico</button>
+      <button class="cat-tab"         onclick="catTab(this,'cat-motor')"><i class="fas fa-gears"></i> Motor</button>
+      <button class="cat-tab"         onclick="catTab(this,'cat-frenos')"><i class="fas fa-circle-stop"></i> Frenos</button>
+      <button class="cat-tab"         onclick="catTab(this,'cat-transmision')"><i class="fas fa-link"></i> Transmisión</button>
+      <button class="cat-tab"         onclick="catTab(this,'cat-carroceria')"><i class="fas fa-motorcycle"></i> Carrocería</button>
+    </div>
+
+    <!-- Sistema Eléctrico -->
+    <div class="cat-pane active" id="cat-electrico">
+      <div class="prod-card"><div class="prod-ref">REF: CDI-HORSE</div><div class="prod-icon"><i class="fas fa-microchip"></i></div><div class="prod-name">CDI BRECOTO</div><p class="prod-desc">Módulo de encendido electrónico sellado anti-humedad. Resistencia a vibraciones extremas con tecnología japonesa de manufactura.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-Humedad</span><span class="prod-tag">Horse</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: RECT-UNIVERSAL</div><div class="prod-icon"><i class="fas fa-plug"></i></div><div class="prod-name">RECTIFICADOR</div><p class="prod-desc">Regulador de voltaje 12V. Conversión de corriente alterna a continua con protección integral del sistema eléctrico.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">12V</span><span class="prod-tag">Universal</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: CG150-BS</div><div class="prod-icon"><i class="fas fa-key"></i></div><div class="prod-name">SWITCH DE ENCENDIDO</div><p class="prod-desc">Switch completo con 2 llaves originales. Mecanismo de seguridad reforzado con cuerpo en aluminio fundido a presión.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">2 Llaves</span><span class="prod-tag">CG150</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: SPEEDO-HORSE</div><div class="prod-icon"><i class="fas fa-gauge-high"></i></div><div class="prod-name">CARCASA VELOCÍMETRO</div><p class="prod-desc">Tablero km/h y rpm con indicador de combustible integrado. Plástico de ingeniería resistente a ciclos UV y variaciones térmicas.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: BRE2070 · HORSE</div><div class="prod-icon"><i class="fas fa-hand-point-left"></i></div><div class="prod-name">COMANDO IZQUIERDO</div><p class="prod-desc">Control de luces alta/baja y direccionales. Cableado preinstalado con conector original y acabado anti-vibración certificado.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Cableado</span><span class="prod-tag">Horse</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: BRECOTO · HORSE</div><div class="prod-icon"><i class="fas fa-hand-point-right"></i></div><div class="prod-name">COMANDO DERECHO</div><p class="prod-desc">Botón claxon, arranque eléctrico y corte de motor. Acabado anti-vibración para uso continuo e intensivo en toda condición.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Multi-función</span><span class="prod-tag">Horse</span></div></div>
+    </div>
+
+    <!-- Motor -->
+    <div class="cat-pane" id="cat-motor">
+      <div class="prod-card"><div class="prod-ref">REF: CARB-CG150</div><div class="prod-icon"><i class="fas fa-fire-flame-curved"></i></div><div class="prod-name">CARBURADOR</div><p class="prod-desc">Cuerpo en aleación de zinc de alta presión. Dosificación precisa de combustible para rendimiento y potencia optimizados.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Zinc</span><span class="prod-tag">CG150</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: CLUTCH-CG150</div><div class="prod-icon"><i class="fas fa-circle-half-stroke"></i></div><div class="prod-name">DISCOS DE EMBRAGUE</div><p class="prod-desc">Set completo de discos de alta fricción. Material reforzado para mayor durabilidad y respuesta inmediata al accionamiento.</p><div class="prod-tags"><span class="prod-tag">Alta Durabilidad</span><span class="prod-tag">Set Completo</span><span class="prod-tag">CG150</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: 12N9-4B</div><div class="prod-icon"><i class="fas fa-battery-full"></i></div><div class="prod-name">BATERÍA 12V</div><p class="prod-desc">Sellada libre de mantenimiento con arranque de alta potencia. Rendimiento estable en condiciones extremas de temperatura y humedad.</p><div class="prod-tags"><span class="prod-tag">12V / 9Ah</span><span class="prod-tag">Sellada</span><span class="prod-tag">Sin Mantenimiento</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: VELB-BRECOTO</div><div class="prod-icon"><i class="fas fa-rotate"></i></div><div class="prod-name">VELBROQUÍN</div><p class="prod-desc">Cigüeñal con balanceo dinámico de precisión en acero forjado de alta resistencia. Estándares de manufactura japonesa certificados.</p><div class="prod-tags"><span class="prod-tag">Acero Forjado</span><span class="prod-tag">Balanceado</span><span class="prod-tag">Japón Tech</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: EJE-CG150</div><div class="prod-icon"><i class="fas fa-arrow-right-arrow-left"></i></div><div class="prod-name">EJE DE EMBRAGUE</div><p class="prod-desc">Acero endurecido con tratamiento térmico superficial. Resistencia máxima al desgaste bajo operación continua sin cachos.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">CG150</span><span class="prod-tag">Acero Duro</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: SEAT-BRECOTO</div><div class="prod-icon"><i class="fas fa-couch"></i></div><div class="prod-name">ASIENTO DE MOTO</div><p class="prod-desc">Doble plaza con tapizado en cuero sintético negro y ribete azul. Espuma de alta densidad ergonómica para máximo confort.</p><div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Cuero Sint.</span></div></div>
+    </div>
+
+    <!-- Frenos -->
+    <div class="cat-pane" id="cat-frenos">
+      <div class="prod-card"><div class="prod-ref">REF: GN125</div><div class="prod-icon"><i class="fas fa-circle-stop"></i></div><div class="prod-name">ZAPATAS DE FRENO</div><p class="prod-desc">Freno de tambor GN125 con material de alta fricción homologado ISO 9001. Par completo con resorte de retorno incluido.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Par x2</span><span class="prod-tag">GN125</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: PLAQUETTE FREIN</div><div class="prod-icon"><i class="fas fa-grip-lines"></i></div><div class="prod-name">PASTILLAS DE FRENO</div><p class="prod-desc">Compuesto semi-metálico de alto rendimiento con mínima generación de calor y polvo. Frenado progresivo y preciso en cualquier régimen.</p><div class="prod-tags"><span class="prod-tag">Semi-Metálica</span><span class="prod-tag">Kit x2</span><span class="prod-tag">Alto Rendimiento</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: BRAKE CYL + SPARK</div><div class="prod-icon"><i class="fas fa-droplet"></i></div><div class="prod-name">CILINDRO DE FRENO</div><p class="prod-desc">Cilindro hidráulico con bujías Brecoto incluidas. Sistema de frenado confiable con encendido de alto voltaje en kit completo.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">Hidráulico</span></div></div>
+    </div>
+
+    <!-- Transmisión -->
+    <div class="cat-pane" id="cat-transmision">
+      <div class="prod-card"><div class="prod-ref">REF: PIN-15T-HORSE</div><div class="prod-icon"><i class="fas fa-gear"></i></div><div class="prod-name">PIÑÓN 15T DORADO</div><p class="prod-desc">Piñón delantero 15 dientes con acabado dorado. Acero templado de alta tenacidad para máxima resistencia al desgaste en uso intensivo.</p><div class="prod-tags"><span class="prod-tag">Dorado</span><span class="prod-tag">15 Dientes</span><span class="prod-tag">Acero Templado</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: CORONA-42T</div><div class="prod-icon"><i class="fas fa-circle-dot"></i></div><div class="prod-name">CORONA 42T</div><p class="prod-desc">Corona trasera de 42 dientes en acero de alta resistencia. Disponible en embalaje mayorista de 40 unidades por caja para distribuidores.</p><div class="prod-tags"><span class="prod-tag">42 Dientes</span><span class="prod-tag">Acero</span><span class="prod-tag">40 PCS/Caja</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: 428H-132L</div><div class="prod-icon"><i class="fas fa-link"></i></div><div class="prod-name">CADENA 428H</div><p class="prod-desc">Cadena de transmisión 132 eslabones con tratamiento de cobre. Alta resistencia a tensión, fricción y elongación bajo carga sostenida.</p><div class="prod-tags"><span class="prod-tag">Cobre</span><span class="prod-tag">132 Eslabones</span><span class="prod-tag">428H</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: TORN-CORONA-GN</div><div class="prod-icon"><i class="fas fa-screwdriver-wrench"></i></div><div class="prod-name">TORNILLOS CORONA</div><p class="prod-desc">Kit reforzado con platinas, tuercas autoblocantes y arandelas de seguridad. Fijación permanente sin holgura bajo vibración continua.</p><div class="prod-tags"><span class="prod-tag">Reforzado</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">GN</span></div></div>
+    </div>
+
+    <!-- Carrocería -->
+    <div class="cat-pane" id="cat-carroceria">
+      <div class="prod-card"><div class="prod-ref">REF: FENDER-RED</div><div class="prod-icon"><i class="fas fa-shield-halved"></i></div><div class="prod-name">GUARDABARROS DELANTERO</div><p class="prod-desc">Acabado metalizado rojo premium. Estructura resistente a impactos y vibraciones con recubrimiento UV de larga duración.</p><div class="prod-tags"><span class="prod-tag">Metalizado</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Multi-Modelo</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: SEAT-BRECOTO</div><div class="prod-icon"><i class="fas fa-couch"></i></div><div class="prod-name">SILLA / ASIENTO</div><p class="prod-desc">Tapizado en cuero sintético negro con ribete azul. Espuma de alta densidad para confort prolongado en ruta bajo cualquier condición.</p><div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Multi-Modelo</span></div></div>
+      <div class="prod-card"><div class="prod-ref">REF: SPEEDO-HORSE</div><div class="prod-icon"><i class="fas fa-gauge"></i></div><div class="prod-name">TABLERO / VELOCÍMETRO</div><p class="prod-desc">Carcasa completa con km/h, rpm e indicador de combustible. Plástico de ingeniería resistente a ciclos térmicos y exposición UV.</p><div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div></div>
+    </div>
+
+    <div class="cat-cta-box fi">
+      <div class="cat-cta-txt">
+        <h3>Catálogo 2026 — Edición completa</h3>
+        <p>+500 referencias · Fichas técnicas · Precios mayoristas · Disponibilidad de stock</p>
+      </div>
+      <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20solicito%20el%20Cat%C3%A1logo%202026%20completo%20con%20precios%20mayoristas%20y%20disponibilidad." target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Solicitar Catálogo</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ LÍNEAS DE CALIDAD ═══════════ -->
 <section id="calidad" class="sec">
   <div class="wrap">
@@ -1323,7 +1447,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="proc-num">04</div>
         <div class="proc-icon"><i class="fas fa-truck"></i></div>
         <div class="proc-title">Entrega Final</div>
-        <p>Nacionalización con asesoría aduanal sin costo · entrega directa.</p>
+        <p>Nacionalización con asesoría aduanal especializada · entrega directa.</p>
       </div>
     </div>
     <div class="proc-pagos fi" style="margin-top:32px;">
@@ -1601,7 +1725,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="ft-lks">
           <a href="#hero">Inicio</a>
           <a href="#about">Nosotros</a>
-          <a href="#calidad">Calidad</a>
+          <a href="#catalogo">Catálogo</a>
+        <a href="#calidad">Calidad</a>
           <a href="#modalidades">Importación</a>
           <a href="#proceso">Proceso</a>
             <a href="#contact">Contacto</a>
@@ -1646,7 +1771,7 @@ window.addEventListener('scroll', function(){
   var y = window.scrollY;
   document.getElementById('nav').classList.toggle('scrolled', y > 40);
   document.getElementById('top-btn').classList.toggle('show', y > 400);
-  var ids = ['hero','about','bento','calidad','modalidades','proceso','faq','contact'];
+  var ids = ['hero','about','bento','catalogo','calidad','modalidades','proceso','faq','contact'];
   var cur = 'hero';
   ids.forEach(function(id){
     var el = document.getElementById(id);
@@ -1689,6 +1814,14 @@ var cio = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.4});
 document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+/* ── Catalog tabs ── */
+function catTab(btn,paneId){
+  document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.cat-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  document.getElementById(paneId).classList.add('active');
+}
 
 /* ── Form → WhatsApp ── */
 function sendForm(e){
