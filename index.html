@@ -785,10 +785,96 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .btn-send{width:100%;padding:17px;font-size:16px;font-weight:800;background:linear-gradient(135deg,#128c3b,#25D366);color:#fff;border-radius:12px;transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 28px rgba(37,211,102,.35);letter-spacing:.3px;margin-top:6px;font-family:'Syne',sans-serif;}
 .btn-send:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(37,211,102,.5);}
 .btn-send i{font-size:20px;}
-#ok-msg{display:none;text-align:center;padding:52px 36px;}
-.ok-ico{width:80px;height:80px;background:linear-gradient(135deg,#128c3b,#25D366);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;margin:0 auto 20px;box-shadow:0 8px 28px rgba(37,211,102,.4);}
-.ok-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--ink);margin-bottom:10px;letter-spacing:-1px;}
-.ok-sub{font-size:15px;color:var(--ink3);line-height:1.7;margin-bottom:28px;}
+/* ══ SUCCESS SCREEN ══ */
+#ok-msg{display:none;padding:0;}
+.ok-banner{
+  background:linear-gradient(135deg,#0f7535 0%,#16a34a 50%,#22c55e 100%);
+  padding:36px 32px 28px;text-align:center;position:relative;overflow:hidden;
+}
+.ok-banner::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.ok-ico-wrap{position:relative;display:inline-block;margin-bottom:16px;}
+.ok-ico{
+  position:relative;z-index:2;
+  width:72px;height:72px;background:rgba(255,255,255,.22);
+  border:3px solid rgba(255,255,255,.5);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:30px;color:#fff;margin:0 auto;
+  box-shadow:0 0 0 8px rgba(255,255,255,.12);
+}
+.ok-pulse{
+  position:absolute;inset:-8px;border-radius:50%;z-index:1;
+  border:2px solid rgba(255,255,255,.35);
+  animation:okPulse 1.8s ease-out infinite;
+}
+@keyframes okPulse{0%{transform:scale(1);opacity:.8;}100%{transform:scale(1.5);opacity:0;}}
+.ok-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:-.6px;margin-bottom:6px;position:relative;z-index:2;}
+.ok-sub{font-size:14px;color:rgba(255,255,255,.85);line-height:1.65;position:relative;z-index:2;}
+.ok-body{padding:24px 28px;}
+.ok-receipt{
+  background:var(--bg);border-radius:16px;border:1.5px solid var(--border);
+  overflow:hidden;margin-bottom:20px;
+}
+.ok-receipt-head{
+  background:var(--white);border-bottom:1.5px solid var(--border);
+  padding:12px 18px;display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);
+}
+.ok-receipt-head i{color:var(--green);font-size:13px;}
+.ok-row{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:11px 18px;border-bottom:1px solid var(--border);
+  font-size:13.5px;
+}
+.ok-row:last-child{border-bottom:none;}
+.ok-row-ic{width:30px;height:30px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.ok-row-lbl{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+.ok-row-val{color:var(--ink);font-weight:600;font-size:13.5px;line-height:1.45;}
+.ok-msg-preview{
+  background:var(--ink);border-radius:14px;padding:14px 16px;
+  font-size:13px;color:rgba(255,255,255,.82);line-height:1.6;
+  font-style:italic;position:relative;
+}
+.ok-msg-preview::before{
+  content:'❝';position:absolute;top:8px;left:12px;
+  font-size:22px;color:rgba(255,255,255,.15);font-style:normal;line-height:1;
+}
+.ok-steps{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin-bottom:22px;
+}
+.ok-step{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;max-width:80px;}
+.ok-step-ic{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:13px;
+  border:2px solid var(--border);background:var(--white);color:var(--gray);
+}
+.ok-step-done .ok-step-ic{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 12px rgba(22,163,74,.35);}
+.ok-step-active .ok-step-ic{background:var(--blue-s);border-color:var(--blue);color:var(--blue);animation:stepPulse 2s ease-in-out infinite;}
+@keyframes stepPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.3);}50%{box-shadow:0 0 0 6px rgba(37,99,235,0);}}
+.ok-step span{font-size:10px;font-weight:700;text-align:center;color:var(--ink3);letter-spacing:.2px;}
+.ok-step-done span{color:var(--green);}
+.ok-step-active span{color:var(--blue);}
+.ok-step-line{flex:1;height:2px;background:linear-gradient(90deg,var(--green),var(--blue-s));border-radius:2px;margin-bottom:18px;max-width:40px;}
+.ok-cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,#128c3b,#25D366);
+  color:#fff;border-radius:14px;padding:15px 28px;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:15px;
+  box-shadow:0 8px 28px rgba(37,211,102,.35);transition:all .25s;
+  text-decoration:none;
+}
+.ok-cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,.5);}
+.ok-cta i{font-size:20px;}
+@media(max-width:520px){
+  .ok-banner{padding:28px 20px 22px;}
+  .ok-body{padding:18px 16px;}
+  .ok-steps{gap:0;}
+  .ok-step-line{max-width:24px;}
+}
 
 /* ══ FOOTER ══ */
 footer{
@@ -1748,12 +1834,44 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           </div>
         </div>
         <div id="ok-msg">
-          <div class="ok-ico"><i class="fas fa-check"></i></div>
-          <div class="ok-title">¡Mensaje Enviado!</div>
-          <div class="ok-sub">Su solicitud fue enviada directamente a WhatsApp al número <strong>+58 412 680 1743</strong>.<br>Nuestro equipo le responderá a la brevedad.</div>
-          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn-send" style="width:auto;display:inline-flex;padding:14px 32px;">
-            <i class="fab fa-whatsapp"></i> Abrir WhatsApp
-          </a>
+          <!-- Banner verde de éxito -->
+          <div class="ok-banner">
+            <div class="ok-ico-wrap">
+              <div class="ok-pulse"></div>
+              <div class="ok-ico"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="ok-title">¡Solicitud enviada!</div>
+            <div class="ok-sub">Tu mensaje llegó directo a nuestro WhatsApp.<br>Te respondemos en menos de 24 horas.</div>
+          </div>
+          <!-- Cuerpo -->
+          <div class="ok-body">
+            <!-- Resumen de datos -->
+            <div class="ok-receipt">
+              <div class="ok-receipt-head"><i class="fas fa-receipt"></i> Resumen de tu solicitud</div>
+              <div id="ok-summary"></div>
+            </div>
+            <!-- Pasos -->
+            <div class="ok-steps">
+              <div class="ok-step ok-step-done">
+                <div class="ok-step-ic"><i class="fas fa-check"></i></div>
+                <span>Enviado</span>
+              </div>
+              <div class="ok-step-line"></div>
+              <div class="ok-step ok-step-active">
+                <div class="ok-step-ic"><i class="fas fa-clock"></i></div>
+                <span>En revisión</span>
+              </div>
+              <div class="ok-step-line"></div>
+              <div class="ok-step">
+                <div class="ok-step-ic"><i class="fab fa-whatsapp"></i></div>
+                <span>Respuesta WA</span>
+              </div>
+            </div>
+            <!-- CTA -->
+            <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ok-cta">
+              <i class="fab fa-whatsapp"></i> Abrir conversación en WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1892,45 +2010,70 @@ function sendForm(e){
   if(!tel){ alert('Por favor ingrese su WhatsApp o teléfono.'); return; }
   if(!msg){ alert('Por favor escriba su mensaje.'); return; }
 
-  var sep = '━━━━━━━━━━━━━━━━━━━━━━━';
-  var t = '🏍️ *NUEVA SOLICITUD — BRECOTO SG* 🏍️\n';
-  t += sep + '\n\n';
-  t += '📋 *DATOS DEL CLIENTE*\n';
-  t += '👤 *Nombre:*  ' + nom + '\n';
-  if(emp)  t += '🏢 *Empresa:*  ' + emp + '\n';
-  t += '📱 *WhatsApp:* ' + tel + '\n';
-  if(cor)  t += '📧 *Correo:*   ' + cor + '\n';
-  t += '\n' + sep + '\n\n';
-  t += '🎯 *TIPO DE CONSULTA*\n';
-  if(tip)  t += '👥 *Perfil:*   ' + tip + '\n';
-  if(cons) t += '📦 *Consulta:* ' + cons + '\n';
-  t += '\n' + sep + '\n\n';
-  t += '💬 *MENSAJE DEL CLIENTE*\n';
+  /* ── Mensaje WhatsApp ── */
+  var LINE = '▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬';
+  var t = '';
+  t += '🏍️ *BRECOTO SG — Nueva Solicitud*\n';
+  t += LINE + '\n\n';
+
+  t += '👤 *' + nom + '*\n';
+  if(emp)  t += '🏢 ' + emp + '\n';
+  t += '📱 ' + tel + '\n';
+  if(cor)  t += '📧 ' + cor + '\n';
+  t += '\n';
+
+  if(tip || cons){
+    t += '━ *Consulta*\n';
+    if(tip)  t += '› Perfil: *' + tip + '*\n';
+    if(cons) t += '› Interés: *' + cons + '*\n';
+    t += '\n';
+  }
+
+  t += '━ *Mensaje*\n';
   t += '_' + msg + '_\n\n';
-  t += sep + '\n';
-  t += '🏪 *Inversiones y Comercializadora SG C.A.*\n';
-  t += '🌐 Marca BRECOTO · Importación directa China\n';
-  t += '📍 San Cristóbal, Táchira, Venezuela';
 
-  var url = 'https://wa.me/584126801743?text=' + encodeURIComponent(t);
-  window.open(url, '_blank');
+  t += LINE + '\n';
+  t += '📍 San Cristóbal, Táchira · Venezuela\n';
+  t += '🌐 *brecotosg.com* — Importación directa';
 
+  window.open('https://wa.me/584126801743?text=' + encodeURIComponent(t), '_blank');
+
+  /* ── Armar resumen en pantalla ── */
+  var rows = [
+    {ic:'fas fa-user',    bg:'#dcfce7', cl:'#16a34a', lbl:'Nombre',   val: nom},
+    emp  ? {ic:'fas fa-building', bg:'#dbeafe', cl:'#1d4ed8', lbl:'Empresa',  val: emp}  : null,
+    {ic:'fas fa-mobile-screen-button', bg:'#f0fdf4', cl:'#16a34a', lbl:'WhatsApp', val: tel},
+    cor  ? {ic:'fas fa-envelope', bg:'#fef9c3', cl:'#d97706', lbl:'Correo',  val: cor}  : null,
+    tip  ? {ic:'fas fa-user-tie', bg:'#ede9fe', cl:'#7c3aed', lbl:'Perfil',  val: tip}  : null,
+    cons ? {ic:'fas fa-box',      bg:'#fff7ed', cl:'#ea580c', lbl:'Interés', val: cons} : null,
+    {ic:'fas fa-comment-dots', bg:'#f1f5f9', cl:'#334155', lbl:'Mensaje', val: null, isMsg: true, msgVal: msg}
+  ].filter(Boolean);
+
+  var html = '';
+  rows.forEach(function(r){
+    if(r.isMsg){
+      html += '<div class="ok-row"><div class="ok-row-ic" style="background:' + r.bg + ';color:' + r.cl + ';"><i class="' + r.ic + '"></i></div><div style="flex:1;min-width:0;"><div class="ok-row-lbl">' + r.lbl + '</div><div class="ok-msg-preview" style="margin-top:6px;">' + r.msgVal.replace(/</g,'&lt;') + '</div></div></div>';
+    } else {
+      html += '<div class="ok-row"><div class="ok-row-ic" style="background:' + r.bg + ';color:' + r.cl + ';"><i class="' + r.ic + '"></i></div><div><div class="ok-row-lbl">' + r.lbl + '</div><div class="ok-row-val">' + r.val.replace(/</g,'&lt;') + '</div></div></div>';
+    }
+  });
+  document.getElementById('ok-summary').innerHTML = html;
+
+  /* ── Transición ── */
   var f = document.getElementById('cot-form');
   var s = document.getElementById('ok-msg');
-  f.style.transition = 'opacity .35s, transform .35s';
+  f.style.transition = 'opacity .3s, transform .3s';
   f.style.opacity = '0';
-  f.style.transform = 'scale(.96)';
+  f.style.transform = 'scale(.97)';
   setTimeout(function(){
     f.style.display = 'none';
     s.style.display = 'block';
     s.style.opacity = '0';
-    s.style.transform = 'scale(.94)';
     requestAnimationFrame(function(){
-      s.style.transition = 'opacity .35s, transform .35s';
+      s.style.transition = 'opacity .4s, transform .4s';
       s.style.opacity = '1';
-      s.style.transform = 'scale(1)';
     });
-  }, 360);
+  }, 320);
 }
 </script>
 
