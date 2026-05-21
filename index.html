@@ -182,6 +182,25 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .btn-email:hover{background:#3b82f6;color:#fff;transform:translateY(-2px);}
 .form-or{display:flex;align-items:center;gap:10px;margin-top:14px;color:#94a3b8;font-size:12px;font-weight:600;letter-spacing:.5px;}
 .form-or::before,.form-or::after{content:'';flex:1;height:1px;background:#e2e8f0;}
+/* ── Email modal ── */
+.eml-ov{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.eml-ov.open{opacity:1;pointer-events:all;}
+.eml-box{background:#fff;border-radius:20px;padding:32px 28px 24px;max-width:460px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.18);transform:translateY(16px);transition:transform .3s;}
+.eml-ov.open .eml-box{transform:translateY(0);}
+.eml-ico{width:52px;height:52px;background:#dbeafe;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#1d4ed8;margin:0 auto 14px;}
+.eml-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-align:center;color:var(--ink);margin-bottom:4px;}
+.eml-sub{font-size:13px;color:#64748b;text-align:center;margin-bottom:20px;}
+.eml-addr{background:#f1f5f9;border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px;}
+.eml-addr span{font-size:14px;font-weight:700;color:#1d4ed8;}
+.eml-copy{background:none;border:none;cursor:pointer;color:#64748b;font-size:15px;padding:4px;transition:color .2s;}
+.eml-copy:hover{color:#1d4ed8;}
+.eml-btns{display:flex;flex-direction:column;gap:10px;}
+.eml-btn-gmail{width:100%;padding:14px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:var(--tr);font-family:'DM Sans',sans-serif;}
+.eml-btn-gmail:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.4);}
+.eml-btn-mailto{width:100%;padding:12px;font-size:13px;font-weight:600;background:#fff;color:#475569;border:1.5px solid #cbd5e1;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:var(--tr);font-family:'DM Sans',sans-serif;}
+.eml-btn-mailto:hover{border-color:#94a3b8;color:#1e293b;}
+.eml-close{display:block;text-align:center;margin-top:14px;font-size:12px;color:#94a3b8;cursor:pointer;font-weight:600;}
+.eml-close:hover{color:#475569;}
 
 
 /* CARD BASE */
@@ -2409,6 +2428,10 @@ function sendForm(e){
   }, 320);
 }
 
+var _emlSubject = '';
+var _emlBody    = '';
+var _emlMailto  = '';
+
 function sendEmail(){
   var nom  = document.getElementById('f-nom').value.trim();
   var emp  = document.getElementById('f-emp').value.trim();
@@ -2424,55 +2447,69 @@ function sendEmail(){
   if(!nom){ showErr('fg-nom'); ok = false; }
   if(!ok) return;
 
-  var subject = 'Solicitud BRECOTO — ' + nom;
-  var body = '';
-  body += 'BRECOTO SG — Nueva Solicitud\n';
-  body += '─────────────────────────────\n\n';
-  body += 'Nombre: ' + nom + '\n';
-  if(emp)  body += 'Empresa: ' + emp + '\n';
-  body += 'Teléfono / WhatsApp: ' + tel + '\n';
-  if(cor)  body += 'Correo: ' + cor + '\n';
-  if(tip)  body += 'Tipo de cliente: ' + tip + '\n';
-  if(cons) body += 'Tipo de consulta: ' + cons + '\n';
-  body += '\nMensaje:\n' + msg + '\n\n';
-  body += '─────────────────────────────\n';
-  body += 'San Cristóbal, Táchira · Venezuela';
+  _emlSubject = 'Solicitud BRECOTO — ' + nom;
+  _emlBody  = 'BRECOTO SG — Nueva Solicitud\n';
+  _emlBody += '─────────────────────────────\n\n';
+  _emlBody += 'Nombre: ' + nom + '\n';
+  if(emp)  _emlBody += 'Empresa: ' + emp + '\n';
+  _emlBody += 'Teléfono / WhatsApp: ' + tel + '\n';
+  if(cor)  _emlBody += 'Correo: ' + cor + '\n';
+  if(tip)  _emlBody += 'Tipo de cliente: ' + tip + '\n';
+  if(cons) _emlBody += 'Tipo de consulta: ' + cons + '\n';
+  _emlBody += '\nMensaje:\n' + msg + '\n\n';
+  _emlBody += '─────────────────────────────\n';
+  _emlBody += 'San Cristóbal, Táchira · Venezuela';
 
-  var mailto = 'mailto:brecotosg@gmail.com'
-    + '?subject=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(body);
-  window.location.href = mailto;
+  _emlMailto = 'mailto:brecotosg@gmail.com'
+    + '?subject=' + encodeURIComponent(_emlSubject)
+    + '&body='    + encodeURIComponent(_emlBody);
 
-  /* Mostrar pantalla de éxito */
-  var rows = [
-    {ic:'fas fa-user',    bg:'#dbeafe', cl:'#1d4ed8', lbl:'Nombre',   val: nom},
-    emp  ? {ic:'fas fa-building', bg:'#ede9fe', cl:'#7c3aed', lbl:'Empresa',  val: emp}  : null,
-    {ic:'fas fa-phone',   bg:'#dcfce7', cl:'#16a34a', lbl:'Teléfono', val: tel},
-    {ic:'fas fa-comment-dots', bg:'#f1f5f9', cl:'#334155', lbl:'Mensaje', val: null, isMsg: true, msgVal: msg}
-  ].filter(Boolean);
+  /* Mostrar modal de opciones */
+  var ov = document.getElementById('eml-ov');
+  ov.classList.add('open');
+}
 
-  var html = '';
-  rows.forEach(function(r){
-    if(r.isMsg){
-      html += '<div class="ok-row"><div class="ok-row-ic" style="background:'+r.bg+';color:'+r.cl+';"><i class="'+r.ic+'"></i></div><div style="flex:1;min-width:0;"><div class="ok-row-lbl">'+r.lbl+'</div><div class="ok-msg-preview" style="margin-top:6px;">'+r.msgVal.replace(/</g,'&lt;')+'</div></div></div>';
-    } else {
-      html += '<div class="ok-row"><div class="ok-row-ic" style="background:'+r.bg+';color:'+r.cl+';"><i class="'+r.ic+'"></i></div><div><div class="ok-row-lbl">'+r.lbl+'</div><div class="ok-row-val">'+r.val.replace(/</g,'&lt;')+'</div></div></div>';
-    }
+function openGmail(){
+  var url = 'https://mail.google.com/mail/?view=cm&fs=1'
+    + '&to=brecotosg%40gmail.com'
+    + '&su=' + encodeURIComponent(_emlSubject)
+    + '&body=' + encodeURIComponent(_emlBody);
+  window.open(url, '_blank');
+  closeEmailModal();
+  showEmailSuccess();
+}
+
+function openMailto(){
+  window.location.href = _emlMailto;
+  closeEmailModal();
+  showEmailSuccess();
+}
+
+function copyEmail(){
+  navigator.clipboard.writeText('brecotosg@gmail.com').then(function(){
+    var btn = document.querySelector('.eml-copy');
+    btn.innerHTML = '<i class="fas fa-check"></i>';
+    setTimeout(function(){ btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
   });
-  document.getElementById('ok-summary').innerHTML = html;
+}
 
+function closeEmailModal(){
+  document.getElementById('eml-ov').classList.remove('open');
+}
+
+function showEmailSuccess(){
   var f = document.getElementById('cot-form');
   var s = document.getElementById('ok-msg');
   f.style.transition = 'opacity .3s, transform .3s';
-  f.style.opacity = '0';
-  f.style.transform = 'scale(.97)';
+  f.style.opacity    = '0';
+  f.style.transform  = 'scale(.97)';
   setTimeout(function(){
     f.style.display = 'none';
     s.style.display = 'block';
     s.style.opacity = '0';
     requestAnimationFrame(function(){
       s.style.transition = 'opacity .4s, transform .4s';
-      s.style.opacity = '1';
+      s.style.opacity    = '1';
     });
   }, 320);
 }
@@ -2537,6 +2574,7 @@ var T = {
     'ok.receipt.h':'<i class="fas fa-receipt"></i> Resumen de tu solicitud',
     'ok.step1':'Enviado','ok.step2':'En revisión','ok.step3':'Respuesta WA',
     'ok.cta':'<i class="fab fa-whatsapp"></i> Abrir conversación en WhatsApp',
+    'eml.title':'Enviar por Correo','eml.sub':'Elige cómo abrir tu correo para enviar el mensaje a BRECOTO','eml.gmail':'Abrir en Gmail','eml.other':'Otra aplicación de correo','eml.close':'Cancelar',
     'ft.nav':'Navegación','ft.empresa':'Empresa','ft.contacto':'Contacto',
     'ft.lk.inicio':'Inicio','ft.lk.nosotros':'Nosotros','ft.lk.catalogo':'Catálogo','ft.lk.calidad':'Calidad','ft.lk.import':'Importación','ft.lk.proc':'Proceso','ft.lk.contact':'Contacto',
     'ft.lk.razon':'Razón social','ft.lk.lineas':'Líneas de calidad','ft.lk.modal':'Modalidades',
@@ -2703,6 +2741,7 @@ var T = {
     'ok.receipt.h':'<i class="fas fa-receipt"></i> Your request summary',
     'ok.step1':'Sent','ok.step2':'Under review','ok.step3':'WA Reply',
     'ok.cta':'<i class="fab fa-whatsapp"></i> Open WhatsApp conversation',
+    'eml.title':'Send by Email','eml.sub':'Choose how to open your email to send the message to BRECOTO','eml.gmail':'Open in Gmail','eml.other':'Other email app','eml.close':'Cancel',
     'ft.nav':'Navigation','ft.empresa':'Company','ft.contacto':'Contact',
     'ft.lk.inicio':'Home','ft.lk.nosotros':'About','ft.lk.catalogo':'Catalog','ft.lk.calidad':'Quality','ft.lk.import':'Import','ft.lk.proc':'Process','ft.lk.contact':'Contact',
     'ft.lk.razon':'Legal name','ft.lk.lineas':'Quality lines','ft.lk.modal':'Modalities',
@@ -2869,6 +2908,7 @@ var T = {
     'ok.receipt.h':'<i class="fas fa-receipt"></i> 您的请求摘要',
     'ok.step1':'已发送','ok.step2':'审核中','ok.step3':'WA回复',
     'ok.cta':'<i class="fab fa-whatsapp"></i> 打开 WhatsApp 对话',
+    'eml.title':'通过邮件发送','eml.sub':'选择如何打开您的邮箱向BRECOTO发送消息','eml.gmail':'在Gmail中打开','eml.other':'其他邮件应用','eml.close':'取消',
     'ft.nav':'导航','ft.empresa':'公司','ft.contacto':'联系方式',
     'ft.lk.inicio':'首页','ft.lk.nosotros':'关于我们','ft.lk.catalogo':'目录','ft.lk.calidad':'品质','ft.lk.import':'进口','ft.lk.proc':'流程','ft.lk.contact':'联系我们',
     'ft.lk.razon':'法定名称','ft.lk.lineas':'品质系列','ft.lk.modal':'进口方式',
@@ -3020,6 +3060,29 @@ function setLang(lang){
 setLang(_lang);
 </script>
 
+<!-- ── Modal Envío por Correo ── -->
+<div class="eml-ov" id="eml-ov" onclick="if(event.target===this)closeEmailModal()">
+  <div class="eml-box">
+    <div class="eml-ico"><i class="fas fa-envelope"></i></div>
+    <div class="eml-title" data-i18n="eml.title">Enviar por Correo</div>
+    <div class="eml-sub" data-i18n="eml.sub">Elige cómo abrir tu correo para enviar el mensaje a BRECOTO</div>
+    <div class="eml-addr">
+      <span>brecotosg@gmail.com</span>
+      <button class="eml-copy" onclick="copyEmail()" title="Copiar correo"><i class="fas fa-copy"></i></button>
+    </div>
+    <div class="eml-btns">
+      <button class="eml-btn-gmail" id="eml-btn-gmail" onclick="openGmail()">
+        <svg width="18" height="18" viewBox="0 0 48 48" fill="none"><path d="M6 8h36a2 2 0 012 2v28a2 2 0 01-2 2H6a2 2 0 01-2-2V10a2 2 0 012-2z" fill="#fff" fill-opacity=".15"/><path d="M4 10l20 14L44 10" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+        <span data-i18n="eml.gmail">Abrir en Gmail</span>
+      </button>
+      <button class="eml-btn-mailto" id="eml-btn-mailto" onclick="openMailto()">
+        <i class="fas fa-envelope-open"></i>
+        <span data-i18n="eml.other">Otra aplicación de correo</span>
+      </button>
+    </div>
+    <span class="eml-close" onclick="closeEmailModal()" data-i18n="eml.close">Cancelar</span>
+  </div>
+</div>
 
 </body>
 </html>
