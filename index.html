@@ -178,6 +178,11 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .btn-out:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px);box-shadow:var(--sh2);}
 .btn-wa-alt{width:100%;padding:13px;font-size:13.5px;font-weight:700;background:#fff;color:#128c3b;border:1.5px solid #25D366;border-radius:12px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;transition:var(--tr);}
 .btn-wa-alt:hover{background:#25D366;color:#fff;transform:translateY(-2px);}
+.btn-email{width:100%;padding:13px;font-size:13.5px;font-weight:700;background:#fff;color:#1d4ed8;border:1.5px solid #3b82f6;border-radius:12px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;transition:var(--tr);cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-email:hover{background:#3b82f6;color:#fff;transform:translateY(-2px);}
+.form-or{display:flex;align-items:center;gap:10px;margin-top:14px;color:#94a3b8;font-size:12px;font-weight:600;letter-spacing:.5px;}
+.form-or::before,.form-or::after{content:'';flex:1;height:1px;background:#e2e8f0;}
+
 
 /* CARD BASE */
 .card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px;transition:var(--tr);box-shadow:var(--sh1);}
@@ -2104,6 +2109,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
               <div class="fg-err-msg"><i class="fas fa-circle-exclamation"></i> Escriba su mensaje o consulta</div>
             </div>
             <button type="submit" class="btn-send" data-i18n="form.send"><i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp</button>
+            <div class="form-or" data-i18n="form.or">O</div>
+            <button type="button" class="btn-email" onclick="sendEmail()" data-i18n="form.email.btn"><i class="fas fa-envelope"></i> Enviar por Correo Electrónico</button>
             <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20deseo%20información%20sobre%20repuestos%20e%20importación." target="_blank" rel="noopener" class="btn-wa-alt" data-i18n="form.wa.direct">
               <i class="fab fa-whatsapp"></i> Contacto directo sin formulario
             </a>
@@ -2385,6 +2392,74 @@ function sendForm(e){
   }, 320);
 }
 
+function sendEmail(){
+  var nom  = document.getElementById('f-nom').value.trim();
+  var emp  = document.getElementById('f-emp').value.trim();
+  var cor  = document.getElementById('f-cor').value.trim();
+  var tel  = document.getElementById('f-tel').value.trim();
+  var tip  = document.getElementById('f-tip').value.trim();
+  var cons = document.getElementById('f-cons').value.trim();
+  var msg  = document.getElementById('f-msg').value.trim();
+
+  var ok = true;
+  if(!msg){ showErr('fg-msg'); ok = false; }
+  if(!tel){ showErr('fg-tel'); ok = false; }
+  if(!nom){ showErr('fg-nom'); ok = false; }
+  if(!ok) return;
+
+  var subject = 'Solicitud BRECOTO — ' + nom;
+  var body = '';
+  body += 'BRECOTO SG — Nueva Solicitud\n';
+  body += '─────────────────────────────\n\n';
+  body += 'Nombre: ' + nom + '\n';
+  if(emp)  body += 'Empresa: ' + emp + '\n';
+  body += 'Teléfono / WhatsApp: ' + tel + '\n';
+  if(cor)  body += 'Correo: ' + cor + '\n';
+  if(tip)  body += 'Tipo de cliente: ' + tip + '\n';
+  if(cons) body += 'Tipo de consulta: ' + cons + '\n';
+  body += '\nMensaje:\n' + msg + '\n\n';
+  body += '─────────────────────────────\n';
+  body += 'San Cristóbal, Táchira · Venezuela';
+
+  var mailto = 'mailto:brecotosg@gmail.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+  window.location.href = mailto;
+
+  /* Mostrar pantalla de éxito */
+  var rows = [
+    {ic:'fas fa-user',    bg:'#dbeafe', cl:'#1d4ed8', lbl:'Nombre',   val: nom},
+    emp  ? {ic:'fas fa-building', bg:'#ede9fe', cl:'#7c3aed', lbl:'Empresa',  val: emp}  : null,
+    {ic:'fas fa-phone',   bg:'#dcfce7', cl:'#16a34a', lbl:'Teléfono', val: tel},
+    {ic:'fas fa-comment-dots', bg:'#f1f5f9', cl:'#334155', lbl:'Mensaje', val: null, isMsg: true, msgVal: msg}
+  ].filter(Boolean);
+
+  var html = '';
+  rows.forEach(function(r){
+    if(r.isMsg){
+      html += '<div class="ok-row"><div class="ok-row-ic" style="background:'+r.bg+';color:'+r.cl+';"><i class="'+r.ic+'"></i></div><div style="flex:1;min-width:0;"><div class="ok-row-lbl">'+r.lbl+'</div><div class="ok-msg-preview" style="margin-top:6px;">'+r.msgVal.replace(/</g,'&lt;')+'</div></div></div>';
+    } else {
+      html += '<div class="ok-row"><div class="ok-row-ic" style="background:'+r.bg+';color:'+r.cl+';"><i class="'+r.ic+'"></i></div><div><div class="ok-row-lbl">'+r.lbl+'</div><div class="ok-row-val">'+r.val.replace(/</g,'&lt;')+'</div></div></div>';
+    }
+  });
+  document.getElementById('ok-summary').innerHTML = html;
+
+  var f = document.getElementById('cot-form');
+  var s = document.getElementById('ok-msg');
+  f.style.transition = 'opacity .3s, transform .3s';
+  f.style.opacity = '0';
+  f.style.transform = 'scale(.97)';
+  setTimeout(function(){
+    f.style.display = 'none';
+    s.style.display = 'block';
+    s.style.opacity = '0';
+    requestAnimationFrame(function(){
+      s.style.transition = 'opacity .4s, transform .4s';
+      s.style.opacity = '1';
+    });
+  }, 320);
+}
+
 /* ── i18n / Language Switcher ── */
 var T = {
   es: {
@@ -2438,6 +2513,8 @@ var T = {
     'form.cf.s':'Complete el formulario — su mensaje llegará directo a WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
     'form.nom':'Nombre Completo *','form.emp':'Empresa / Negocio','form.tel':'WhatsApp / Teléfono *','form.cor':'Correo Electrónico','form.tip':'Tipo de Cliente','form.cons':'Tipo de Consulta','form.msg':'Mensaje *',
     'form.send':'<i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp',
+    'form.or':'O',
+    'form.email.btn':'<i class="fas fa-envelope"></i> Enviar por Correo Electrónico',
     'form.wa.direct':'<i class="fab fa-whatsapp"></i> Contacto directo sin formulario',
     'ok.title':'¡Solicitud enviada!','ok.sub':'Tu mensaje llegó directo a nuestro WhatsApp.<br>Te respondemos en menos de 24 horas.',
     'ok.receipt.h':'<i class="fas fa-receipt"></i> Resumen de tu solicitud',
@@ -2593,6 +2670,8 @@ var T = {
     'form.cf.s':'Fill out the form — your message will go directly to WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
     'form.nom':'Full Name *','form.emp':'Company / Business','form.tel':'WhatsApp / Phone *','form.cor':'Email','form.tip':'Client Type','form.cons':'Query Type','form.msg':'Message *',
     'form.send':'<i class="fab fa-whatsapp"></i> Send Message via WhatsApp',
+    'form.or':'OR',
+    'form.email.btn':'<i class="fas fa-envelope"></i> Send via Email',
     'form.wa.direct':'<i class="fab fa-whatsapp"></i> Direct contact without form',
     'ok.title':'Request Sent!','ok.sub':'Your message went directly to our WhatsApp.<br>We\'ll reply in less than 24 hours.',
     'ok.receipt.h':'<i class="fas fa-receipt"></i> Your request summary',
@@ -2748,6 +2827,8 @@ var T = {
     'form.cf.s':'填写表格 — 您的消息将直接发送至 WhatsApp <strong style="color:#fff;">+58 412 680 1743</strong>',
     'form.nom':'全名 *','form.emp':'企业 / 商号','form.tel':'WhatsApp / 电话 *','form.cor':'电子邮箱','form.tip':'客户类型','form.cons':'查询类型','form.msg':'留言 *',
     'form.send':'<i class="fab fa-whatsapp"></i> 通过 WhatsApp 发送消息',
+    'form.or':'或',
+    'form.email.btn':'<i class="fas fa-envelope"></i> 发送电子邮件',
     'form.wa.direct':'<i class="fab fa-whatsapp"></i> 不需要表格直接联系',
     'ok.title':'请求已发送！','ok.sub':'您的消息已直接发送到我们的WhatsApp。<br>我们将在24小时内回复您。',
     'ok.receipt.h':'<i class="fas fa-receipt"></i> 您的请求摘要',
