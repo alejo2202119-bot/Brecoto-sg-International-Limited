@@ -121,12 +121,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
 /* ── PRODUCT GRID ── */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .prod-card{
-  border:1.5px solid var(--border);border-radius:16px;padding:18px 16px;
+  border:1.5px solid var(--border);border-radius:16px;padding:0;
   position:relative;overflow:hidden;background:var(--bg);
+  display:flex;flex-direction:column;
 }
 .prod-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;z-index:2;
 }
+.prod-img{width:100%;height:120px;object-fit:cover;display:block;}
+.prod-body{padding:14px 14px 14px;}
 .prod-ref{font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;}
 .prod-icon-sm{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:8px;}
 .prod-name{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.2;}
@@ -325,46 +328,64 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="prod-ref">REF: CDI-HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-microchip"></i></div>
-        <div class="prod-name">CDI BRECOTO</div>
-        <p class="prod-desc">Módulo de encendido electrónico sellado anti-humedad. Resistencia a vibraciones extremas con tecnología japonesa.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-Humedad</span><span class="prod-tag">Horse</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="CDI BRECOTO">
+        <div class="prod-body">
+          <div class="prod-ref">REF: CDI-HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-microchip"></i></div>
+          <div class="prod-name">CDI BRECOTO</div>
+          <p class="prod-desc">Módulo de encendido electrónico sellado anti-humedad. Resistencia a vibraciones extremas con tecnología japonesa.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-Humedad</span><span class="prod-tag">Horse</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: RECT-UNIVERSAL</div>
-        <div class="prod-icon-sm"><i class="fas fa-plug"></i></div>
-        <div class="prod-name">RECTIFICADOR</div>
-        <p class="prod-desc">Regulador de voltaje 12V. Conversión de corriente alterna a continua con protección integral del sistema eléctrico.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">12V</span><span class="prod-tag">Universal</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Rectificador">
+        <div class="prod-body">
+          <div class="prod-ref">REF: RECT-UNIVERSAL</div>
+          <div class="prod-icon-sm"><i class="fas fa-plug"></i></div>
+          <div class="prod-name">RECTIFICADOR</div>
+          <p class="prod-desc">Regulador de voltaje 12V. Conversión de corriente alterna a continua con protección integral del sistema eléctrico.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">12V</span><span class="prod-tag">Universal</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: CG150-BS</div>
-        <div class="prod-icon-sm"><i class="fas fa-key"></i></div>
-        <div class="prod-name">SWITCH DE ENCENDIDO</div>
-        <p class="prod-desc">Switch completo con 2 llaves originales. Mecanismo de seguridad reforzado con cuerpo en aluminio fundido a presión.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">2 Llaves</span><span class="prod-tag">CG150</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Switch de Encendido">
+        <div class="prod-body">
+          <div class="prod-ref">REF: CG150-BS</div>
+          <div class="prod-icon-sm"><i class="fas fa-key"></i></div>
+          <div class="prod-name">SWITCH DE ENCENDIDO</div>
+          <p class="prod-desc">Switch completo con 2 llaves originales. Mecanismo de seguridad reforzado con cuerpo en aluminio fundido a presión.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">2 Llaves</span><span class="prod-tag">CG150</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: SPEEDO-HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-gauge-high"></i></div>
-        <div class="prod-name">CARCASA VELOCÍMETRO</div>
-        <p class="prod-desc">Tablero km/h y rpm con indicador de combustible integrado. Plástico de ingeniería resistente a ciclos UV.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Carcasa Velocímetro">
+        <div class="prod-body">
+          <div class="prod-ref">REF: SPEEDO-HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-gauge-high"></i></div>
+          <div class="prod-name">CARCASA VELOCÍMETRO</div>
+          <p class="prod-desc">Tablero km/h y rpm con indicador de combustible integrado. Plástico de ingeniería resistente a ciclos UV.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: BRE2070 · HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-hand-point-left"></i></div>
-        <div class="prod-name">COMANDO IZQUIERDO</div>
-        <p class="prod-desc">Control de luces alta/baja y direccionales. Cableado preinstalado con conector original y acabado anti-vibración.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Cableado</span><span class="prod-tag">Horse</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Comando Izquierdo">
+        <div class="prod-body">
+          <div class="prod-ref">REF: BRE2070 · HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-hand-point-left"></i></div>
+          <div class="prod-name">COMANDO IZQUIERDO</div>
+          <p class="prod-desc">Control de luces alta/baja y direccionales. Cableado preinstalado con conector original y acabado anti-vibración.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Cableado</span><span class="prod-tag">Horse</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: BRECOTO · HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-hand-point-right"></i></div>
-        <div class="prod-name">COMANDO DERECHO</div>
-        <p class="prod-desc">Botón claxon, arranque eléctrico y corte de motor. Acabado anti-vibración para uso continuo e intensivo.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Multi-función</span><span class="prod-tag">Horse</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Comando Derecho">
+        <div class="prod-body">
+          <div class="prod-ref">REF: BRECOTO · HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-hand-point-right"></i></div>
+          <div class="prod-name">COMANDO DERECHO</div>
+          <p class="prod-desc">Botón claxon, arranque eléctrico y corte de motor. Acabado anti-vibración para uso continuo e intensivo.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Multi-función</span><span class="prod-tag">Horse</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -380,46 +401,64 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="prod-ref">REF: CARB-CG150</div>
-        <div class="prod-icon-sm"><i class="fas fa-fire-flame-curved"></i></div>
-        <div class="prod-name">CARBURADOR</div>
-        <p class="prod-desc">Cuerpo en aleación de zinc de alta presión. Dosificación precisa de combustible para rendimiento y potencia optimizados.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Zinc</span><span class="prod-tag">CG150</span></div>
+        <img class="prod-img" src="images/banner.jpg" alt="Carburador">
+        <div class="prod-body">
+          <div class="prod-ref">REF: CARB-CG150</div>
+          <div class="prod-icon-sm"><i class="fas fa-fire-flame-curved"></i></div>
+          <div class="prod-name">CARBURADOR</div>
+          <p class="prod-desc">Cuerpo en aleación de zinc de alta presión. Dosificación precisa de combustible para rendimiento y potencia optimizados.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Zinc</span><span class="prod-tag">CG150</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: CLUTCH-CG150</div>
-        <div class="prod-icon-sm"><i class="fas fa-circle-half-stroke"></i></div>
-        <div class="prod-name">DISCOS DE EMBRAGUE</div>
-        <p class="prod-desc">Set completo de discos de alta fricción. Material reforzado para mayor durabilidad y respuesta inmediata al accionamiento.</p>
-        <div class="prod-tags"><span class="prod-tag">Alta Durabilidad</span><span class="prod-tag">Set Completo</span><span class="prod-tag">CG150</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Discos de Embrague">
+        <div class="prod-body">
+          <div class="prod-ref">REF: CLUTCH-CG150</div>
+          <div class="prod-icon-sm"><i class="fas fa-circle-half-stroke"></i></div>
+          <div class="prod-name">DISCOS DE EMBRAGUE</div>
+          <p class="prod-desc">Set completo de discos de alta fricción. Material reforzado para mayor durabilidad y respuesta inmediata al accionamiento.</p>
+          <div class="prod-tags"><span class="prod-tag">Alta Durabilidad</span><span class="prod-tag">Set Completo</span><span class="prod-tag">CG150</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: 12N9-4B</div>
-        <div class="prod-icon-sm"><i class="fas fa-battery-full"></i></div>
-        <div class="prod-name">BATERÍA 12V</div>
-        <p class="prod-desc">Sellada libre de mantenimiento con arranque de alta potencia. Rendimiento estable en condiciones extremas de temperatura.</p>
-        <div class="prod-tags"><span class="prod-tag">12V / 9Ah</span><span class="prod-tag">Sellada</span><span class="prod-tag">Sin Mantenimiento</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Batería 12V">
+        <div class="prod-body">
+          <div class="prod-ref">REF: 12N9-4B</div>
+          <div class="prod-icon-sm"><i class="fas fa-battery-full"></i></div>
+          <div class="prod-name">BATERÍA 12V</div>
+          <p class="prod-desc">Sellada libre de mantenimiento con arranque de alta potencia. Rendimiento estable en condiciones extremas de temperatura.</p>
+          <div class="prod-tags"><span class="prod-tag">12V / 9Ah</span><span class="prod-tag">Sellada</span><span class="prod-tag">Sin Mantenimiento</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: VELB-BRECOTO</div>
-        <div class="prod-icon-sm"><i class="fas fa-rotate"></i></div>
-        <div class="prod-name">VELBROQUÍN</div>
-        <p class="prod-desc">Cigüeñal con balanceo dinámico de precisión en acero forjado de alta resistencia. Manufactura japonesa certificada.</p>
-        <div class="prod-tags"><span class="prod-tag">Acero Forjado</span><span class="prod-tag">Balanceado</span><span class="prod-tag">Japón Tech</span></div>
+        <img class="prod-img" src="images/banner.jpg" alt="Velbroquín">
+        <div class="prod-body">
+          <div class="prod-ref">REF: VELB-BRECOTO</div>
+          <div class="prod-icon-sm"><i class="fas fa-rotate"></i></div>
+          <div class="prod-name">VELBROQUÍN</div>
+          <p class="prod-desc">Cigüeñal con balanceo dinámico de precisión en acero forjado de alta resistencia. Manufactura japonesa certificada.</p>
+          <div class="prod-tags"><span class="prod-tag">Acero Forjado</span><span class="prod-tag">Balanceado</span><span class="prod-tag">Japón Tech</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: EJE-CG150</div>
-        <div class="prod-icon-sm"><i class="fas fa-arrow-right-arrow-left"></i></div>
-        <div class="prod-name">EJE DE EMBRAGUE</div>
-        <p class="prod-desc">Acero endurecido con tratamiento térmico superficial. Resistencia máxima al desgaste bajo operación continua.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">CG150</span><span class="prod-tag">Acero Duro</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Eje de Embrague">
+        <div class="prod-body">
+          <div class="prod-ref">REF: EJE-CG150</div>
+          <div class="prod-icon-sm"><i class="fas fa-arrow-right-arrow-left"></i></div>
+          <div class="prod-name">EJE DE EMBRAGUE</div>
+          <p class="prod-desc">Acero endurecido con tratamiento térmico superficial. Resistencia máxima al desgaste bajo operación continua.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">CG150</span><span class="prod-tag">Acero Duro</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: SEAT-BRECOTO</div>
-        <div class="prod-icon-sm"><i class="fas fa-couch"></i></div>
-        <div class="prod-name">ASIENTO DE MOTO</div>
-        <p class="prod-desc">Doble plaza con tapizado en cuero sintético negro y ribete azul. Espuma de alta densidad ergonómica para máximo confort.</p>
-        <div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Cuero Sint.</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Asiento de Moto">
+        <div class="prod-body">
+          <div class="prod-ref">REF: SEAT-BRECOTO</div>
+          <div class="prod-icon-sm"><i class="fas fa-couch"></i></div>
+          <div class="prod-name">ASIENTO DE MOTO</div>
+          <p class="prod-desc">Doble plaza con tapizado en cuero sintético negro y ribete azul. Espuma de alta densidad ergonómica para máximo confort.</p>
+          <div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Cuero Sint.</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -447,25 +486,34 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="prod-ref">REF: GN125</div>
-        <div class="prod-icon-sm"><i class="fas fa-circle-stop"></i></div>
-        <div class="prod-name">ZAPATAS DE FRENO</div>
-        <p class="prod-desc">Freno de tambor GN125 con material de alta fricción homologado ISO 9001. Par completo con resorte de retorno incluido.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Par x2</span><span class="prod-tag">GN125</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Zapatas de Freno">
+        <div class="prod-body">
+          <div class="prod-ref">REF: GN125</div>
+          <div class="prod-icon-sm"><i class="fas fa-circle-stop"></i></div>
+          <div class="prod-name">ZAPATAS DE FRENO</div>
+          <p class="prod-desc">Freno de tambor GN125 con material de alta fricción homologado ISO 9001. Par completo con resorte de retorno incluido.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Par x2</span><span class="prod-tag">GN125</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: PLAQUETTE FREIN</div>
-        <div class="prod-icon-sm"><i class="fas fa-grip-lines"></i></div>
-        <div class="prod-name">PASTILLAS DE FRENO</div>
-        <p class="prod-desc">Compuesto semi-metálico de alto rendimiento con mínima generación de calor y polvo. Frenado progresivo y preciso.</p>
-        <div class="prod-tags"><span class="prod-tag">Semi-Metálica</span><span class="prod-tag">Kit x2</span><span class="prod-tag">Alto Rendimiento</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Pastillas de Freno">
+        <div class="prod-body">
+          <div class="prod-ref">REF: PLAQUETTE FREIN</div>
+          <div class="prod-icon-sm"><i class="fas fa-grip-lines"></i></div>
+          <div class="prod-name">PASTILLAS DE FRENO</div>
+          <p class="prod-desc">Compuesto semi-metálico de alto rendimiento con mínima generación de calor y polvo. Frenado progresivo y preciso.</p>
+          <div class="prod-tags"><span class="prod-tag">Semi-Metálica</span><span class="prod-tag">Kit x2</span><span class="prod-tag">Alto Rendimiento</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: BRAKE CYL + SPARK</div>
-        <div class="prod-icon-sm"><i class="fas fa-droplet"></i></div>
-        <div class="prod-name">CILINDRO DE FRENO</div>
-        <p class="prod-desc">Cilindro hidráulico con bujías Brecoto incluidas. Sistema de frenado confiable con encendido de alto voltaje en kit completo.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">Hidráulico</span></div>
+        <img class="prod-img" src="images/banner.jpg" alt="Cilindro de Freno">
+        <div class="prod-body">
+          <div class="prod-ref">REF: BRAKE CYL + SPARK</div>
+          <div class="prod-icon-sm"><i class="fas fa-droplet"></i></div>
+          <div class="prod-name">CILINDRO DE FRENO</div>
+          <p class="prod-desc">Cilindro hidráulico con bujías Brecoto incluidas. Sistema de frenado confiable con encendido de alto voltaje en kit completo.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">Hidráulico</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -481,32 +529,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="prod-ref">REF: PIN-15T-HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-gear"></i></div>
-        <div class="prod-name">PIÑÓN 15T DORADO</div>
-        <p class="prod-desc">Piñón delantero 15 dientes con acabado dorado. Acero templado de alta tenacidad para máxima resistencia al desgaste.</p>
-        <div class="prod-tags"><span class="prod-tag">Dorado</span><span class="prod-tag">15 Dientes</span><span class="prod-tag">Acero Templado</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Piñón 15T Dorado">
+        <div class="prod-body">
+          <div class="prod-ref">REF: PIN-15T-HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-gear"></i></div>
+          <div class="prod-name">PIÑÓN 15T DORADO</div>
+          <p class="prod-desc">Piñón delantero 15 dientes con acabado dorado. Acero templado de alta tenacidad para máxima resistencia al desgaste.</p>
+          <div class="prod-tags"><span class="prod-tag">Dorado</span><span class="prod-tag">15 Dientes</span><span class="prod-tag">Acero Templado</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: CORONA-42T</div>
-        <div class="prod-icon-sm"><i class="fas fa-circle-dot"></i></div>
-        <div class="prod-name">CORONA 42T</div>
-        <p class="prod-desc">Corona trasera de 42 dientes en acero de alta resistencia. Disponible en embalaje mayorista de 40 unidades por caja.</p>
-        <div class="prod-tags"><span class="prod-tag">42 Dientes</span><span class="prod-tag">Acero</span><span class="prod-tag">40 PCS/Caja</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Corona 42T">
+        <div class="prod-body">
+          <div class="prod-ref">REF: CORONA-42T</div>
+          <div class="prod-icon-sm"><i class="fas fa-circle-dot"></i></div>
+          <div class="prod-name">CORONA 42T</div>
+          <p class="prod-desc">Corona trasera de 42 dientes en acero de alta resistencia. Disponible en embalaje mayorista de 40 unidades por caja.</p>
+          <div class="prod-tags"><span class="prod-tag">42 Dientes</span><span class="prod-tag">Acero</span><span class="prod-tag">40 PCS/Caja</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: 428H-132L</div>
-        <div class="prod-icon-sm"><i class="fas fa-link"></i></div>
-        <div class="prod-name">CADENA 428H</div>
-        <p class="prod-desc">Cadena de transmisión 132 eslabones con tratamiento de cobre. Alta resistencia a tensión, fricción y elongación bajo carga.</p>
-        <div class="prod-tags"><span class="prod-tag">Cobre</span><span class="prod-tag">132 Eslabones</span><span class="prod-tag">428H</span></div>
+        <img class="prod-img" src="images/banner.jpg" alt="Cadena 428H">
+        <div class="prod-body">
+          <div class="prod-ref">REF: 428H-132L</div>
+          <div class="prod-icon-sm"><i class="fas fa-link"></i></div>
+          <div class="prod-name">CADENA 428H</div>
+          <p class="prod-desc">Cadena de transmisión 132 eslabones con tratamiento de cobre. Alta resistencia a tensión, fricción y elongación bajo carga.</p>
+          <div class="prod-tags"><span class="prod-tag">Cobre</span><span class="prod-tag">132 Eslabones</span><span class="prod-tag">428H</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: TORN-CORONA-GN</div>
-        <div class="prod-icon-sm"><i class="fas fa-screwdriver-wrench"></i></div>
-        <div class="prod-name">TORNILLOS CORONA</div>
-        <p class="prod-desc">Kit reforzado con platinas, tuercas autoblocantes y arandelas de seguridad. Fijación permanente bajo vibración continua.</p>
-        <div class="prod-tags"><span class="prod-tag">Reforzado</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">GN</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Tornillos Corona">
+        <div class="prod-body">
+          <div class="prod-ref">REF: TORN-CORONA-GN</div>
+          <div class="prod-icon-sm"><i class="fas fa-screwdriver-wrench"></i></div>
+          <div class="prod-name">TORNILLOS CORONA</div>
+          <p class="prod-desc">Kit reforzado con platinas, tuercas autoblocantes y arandelas de seguridad. Fijación permanente bajo vibración continua.</p>
+          <div class="prod-tags"><span class="prod-tag">Reforzado</span><span class="prod-tag">Kit Completo</span><span class="prod-tag">GN</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -522,25 +582,34 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="prod-ref">REF: FENDER-RED</div>
-        <div class="prod-icon-sm"><i class="fas fa-shield-halved"></i></div>
-        <div class="prod-name">GUARDABARROS DELANTERO</div>
-        <p class="prod-desc">Acabado metalizado rojo premium. Estructura resistente a impactos y vibraciones con recubrimiento UV de larga duración.</p>
-        <div class="prod-tags"><span class="prod-tag">Metalizado</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Multi-Modelo</span></div>
+        <img class="prod-img" src="images/banner.jpg" alt="Guardabarros Delantero">
+        <div class="prod-body">
+          <div class="prod-ref">REF: FENDER-RED</div>
+          <div class="prod-icon-sm"><i class="fas fa-shield-halved"></i></div>
+          <div class="prod-name">GUARDABARROS DELANTERO</div>
+          <p class="prod-desc">Acabado metalizado rojo premium. Estructura resistente a impactos y vibraciones con recubrimiento UV de larga duración.</p>
+          <div class="prod-tags"><span class="prod-tag">Metalizado</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Multi-Modelo</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: SEAT-BRECOTO</div>
-        <div class="prod-icon-sm"><i class="fas fa-couch"></i></div>
-        <div class="prod-name">SILLA / ASIENTO</div>
-        <p class="prod-desc">Tapizado en cuero sintético negro con ribete azul. Espuma de alta densidad para confort prolongado en ruta.</p>
-        <div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Multi-Modelo</span></div>
+        <img class="prod-img" src="images/galeria.jpg" alt="Silla / Asiento">
+        <div class="prod-body">
+          <div class="prod-ref">REF: SEAT-BRECOTO</div>
+          <div class="prod-icon-sm"><i class="fas fa-couch"></i></div>
+          <div class="prod-name">SILLA / ASIENTO</div>
+          <p class="prod-desc">Tapizado en cuero sintético negro con ribete azul. Espuma de alta densidad para confort prolongado en ruta.</p>
+          <div class="prod-tags"><span class="prod-tag">Premium</span><span class="prod-tag">2 Plazas</span><span class="prod-tag">Multi-Modelo</span></div>
+        </div>
       </div>
       <div class="prod-card">
-        <div class="prod-ref">REF: SPEEDO-HORSE</div>
-        <div class="prod-icon-sm"><i class="fas fa-gauge"></i></div>
-        <div class="prod-name">TABLERO / VELOCÍMETRO</div>
-        <p class="prod-desc">Carcasa completa con km/h, rpm e indicador de combustible. Plástico de ingeniería resistente a ciclos térmicos y UV.</p>
-        <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div>
+        <img class="prod-img" src="images/importacion.jpg" alt="Tablero / Velocímetro">
+        <div class="prod-body">
+          <div class="prod-ref">REF: SPEEDO-HORSE</div>
+          <div class="prod-icon-sm"><i class="fas fa-gauge"></i></div>
+          <div class="prod-name">TABLERO / VELOCÍMETRO</div>
+          <p class="prod-desc">Carcasa completa con km/h, rpm e indicador de combustible. Plástico de ingeniería resistente a ciclos térmicos y UV.</p>
+          <div class="prod-tags"><span class="prod-tag">Original</span><span class="prod-tag">Anti-UV</span><span class="prod-tag">Horse</span></div>
+        </div>
       </div>
     </div>
   </div>
