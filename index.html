@@ -1894,7 +1894,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="rut-card rut-col">
         <div class="rut-flag"><i class="fas fa-anchor"></i></div>
         <div class="rut-pais" data-i18n="proc.rut1.pais">VÍA COLOMBIA</div>
-        <div class="rut-puerto" data-i18n="proc.rut1.puerto">Puerto de Buenaventura</div>
+        <div class="rut-puerto" data-i18n="proc.rut1.puerto">Buenaventura · Cartagena · Barranquilla</div>
         <div class="rut-tiempo" data-i18n="proc.rut1.tiempo">hasta 35 días</div>
         <div class="rut-desc" data-i18n="proc.rut1.desc">tránsito marítimo</div>
         <p data-i18n="proc.rut1.p">Posterior nacionalización e ingreso a Venezuela por frontera. Opción más rápida.</p>
@@ -1971,7 +1971,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           </div>
           <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Dos rutas a elección del cliente: <strong>Vía Colombia</strong> (puerto de Buenaventura) con tránsito de hasta 35 días + cruce fronterizo, o <strong>directa a Venezuela</strong> con tránsito de 60–70 días sin cruce de frontera. La elección depende de su prioridad de tiempo y operación.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Dos rutas a elección del cliente: <strong>Vía Colombia</strong> (puertos de Buenaventura, Cartagena o Barranquilla) con tránsito de hasta 35 días + cruce fronterizo, o <strong>directa a Venezuela</strong> con tránsito de 60–70 días sin cruce de frontera. La elección depende de su prioridad de tiempo y operación.</div></div>
       </div>
     </div>
   </div>
@@ -2343,8 +2343,7 @@ function sendForm(e){
   t += '_' + msg + '_\n\n';
 
   t += LINE + '\n';
-  t += '📍 San Cristóbal, Táchira · Venezuela\n';
-  t += '🌐 *brecotosg.com* — Importación directa';
+  t += '📍 San Cristóbal, Táchira · Venezuela';
 
   window.open('https://wa.me/584126801743?text=' + encodeURIComponent(t), '_blank');
 
@@ -2431,7 +2430,7 @@ var T = {
     'faq.q3':'¿Cómo es la estructura de pagos?',
     'faq.a3':'Trabajamos con un esquema de <strong>30% anticipo</strong> al inicio (activa la fabricación en China) y <strong>70% restante</strong> al cierre de producción, antes del despacho del contenedor desde China.',
     'faq.q4':'¿Qué rutas marítimas manejan?',
-    'faq.a4':'Dos rutas a elección del cliente: <strong>Vía Colombia</strong> (puerto de Buenaventura) con tránsito de hasta 35 días + cruce fronterizo, o <strong>directa a Venezuela</strong> con tránsito de 60–70 días sin cruce de frontera. La elección depende de su prioridad de tiempo y operación.',
+    'faq.a4':'Dos rutas a elección del cliente: <strong>Vía Colombia</strong> (puertos de Buenaventura, Cartagena o Barranquilla) con tránsito de hasta 35 días + cruce fronterizo, o <strong>directa a Venezuela</strong> con tránsito de 60–70 días sin cruce de frontera. La elección depende de su prioridad de tiempo y operación.',
     'ct.chip':'<i class="fas fa-envelope"></i> Contacto',
     'ct.h2':'Hablemos de <span class="gtxt-g">negocios</span>',
     'ct.lead':'Complete el formulario y reciba respuesta directa por WhatsApp en menos de 24 horas.',
@@ -2522,7 +2521,7 @@ var T = {
     'proc.pago2.lbl':'Al cierre de producción — antes del despacho',
     'proc.rut.chip':'Rutas Marítimas',
     'proc.rut.h3':'Seleccione su ruta a <span class="gtxt-b">Venezuela</span>',
-    'proc.rut1.pais':'VÍA COLOMBIA','proc.rut1.puerto':'Puerto de Buenaventura',
+    'proc.rut1.pais':'VÍA COLOMBIA','proc.rut1.puerto':'Buenaventura · Cartagena · Barranquilla',
     'proc.rut1.tiempo':'hasta 35 días','proc.rut1.desc':'tránsito marítimo',
     'proc.rut1.p':'Posterior nacionalización e ingreso a Venezuela por frontera. Opción más rápida.',
     'proc.rut1.e1.lbl':'Fabricación en China','proc.rut1.e1.val':'30–35 días',
@@ -2586,7 +2585,7 @@ var T = {
     'faq.q3':'What is the payment structure?',
     'faq.a3':'We work with a <strong>30% advance</strong> at the start (activates manufacturing in China) and <strong>70% remaining</strong> at production close, before the container is dispatched from China.',
     'faq.q4':'What maritime routes do you operate?',
-    'faq.a4':'Two routes to choose from: <strong>Via Colombia</strong> (Port of Buenaventura) with transit up to 35 days + border crossing, or <strong>direct to Venezuela</strong> with 60–70 days transit and no border crossing. The choice depends on your time priority and operations.',
+    'faq.a4':'Two routes to choose from: <strong>Via Colombia</strong> (ports of Buenaventura, Cartagena or Barranquilla) with transit up to 35 days + border crossing, or <strong>direct to Venezuela</strong> with 60–70 days transit and no border crossing. The choice depends on your time priority and operations.',
     'ct.chip':'<i class="fas fa-envelope"></i> Contact',
     'ct.h2':'Let\'s talk <span class="gtxt-g">business</span>',
     'ct.lead':'Fill out the form and receive a direct reply via WhatsApp in less than 24 hours.',
@@ -2677,7 +2676,7 @@ var T = {
     'proc.pago2.lbl':'At production close — before dispatch',
     'proc.rut.chip':'Maritime Routes',
     'proc.rut.h3':'Select your route to <span class="gtxt-b">Venezuela</span>',
-    'proc.rut1.pais':'VIA COLOMBIA','proc.rut1.puerto':'Port of Buenaventura',
+    'proc.rut1.pais':'VIA COLOMBIA','proc.rut1.puerto':'Buenaventura · Cartagena · Barranquilla',
     'proc.rut1.tiempo':'up to 35 days','proc.rut1.desc':'maritime transit',
     'proc.rut1.p':'Subsequent customs clearance and entry to Venezuela via border. Fastest option.',
     'proc.rut1.e1.lbl':'Manufacturing in China','proc.rut1.e1.val':'30–35 days',
@@ -2741,7 +2740,7 @@ var T = {
     'faq.q3':'付款结构是怎样的？',
     'faq.a3':'我们采用<strong>30%预付款</strong>（启动中国生产）和生产结束时、集装箱从中国发货前支付<strong>剩余70%</strong>的方案。',
     'faq.q4':'你们经营哪些海运路线？',
-    'faq.a4':'两条路线供客户选择：<strong>经哥伦比亚</strong>（布埃纳文图拉港），最长35天运输时间 + 边境过关；或<strong>直达委内瑞拉</strong>，60-70天运输时间，无需过境。选择取决于您的时间优先级和运营情况。',
+    'faq.a4':'两条路线供客户选择：<strong>经哥伦比亚</strong>（布埃纳文图拉、卡塔赫纳或巴兰基亚港），最长35天运输时间 + 边境过关；或<strong>直达委内瑞拉</strong>，60-70天运输时间，无需过境。选择取决于您的时间优先级和运营情况。',
     'ct.chip':'<i class="fas fa-envelope"></i> 联系我们',
     'ct.h2':'与我们 <span class="gtxt-g">洽谈</span>',
     'ct.lead':'填写表格，在24小时内通过WhatsApp直接收到回复。',
@@ -2832,7 +2831,7 @@ var T = {
     'proc.pago2.lbl':'生产结束时 — 发货前',
     'proc.rut.chip':'海运路线',
     'proc.rut.h3':'选择您前往 <span class="gtxt-b">委内瑞拉</span> 的路线',
-    'proc.rut1.pais':'经哥伦比亚','proc.rut1.puerto':'布埃纳文图拉港',
+    'proc.rut1.pais':'经哥伦比亚','proc.rut1.puerto':'布埃纳文图拉 · 卡塔赫纳 · 巴兰基亚',
     'proc.rut1.tiempo':'最长35天','proc.rut1.desc':'海上运输',
     'proc.rut1.p':'随后在委内瑞拉进行清关并经边境入境。最快选择。',
     'proc.rut1.e1.lbl':'中国生产制造','proc.rut1.e1.val':'30–35天',
