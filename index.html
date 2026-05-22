@@ -203,6 +203,28 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .eml-close:hover{color:#475569;}
 
 
+/* ── Feria 2 Ruedas Carousel ── */
+#feria{background:linear-gradient(180deg,var(--bg) 0%,#f0fdf4 100%);}
+.frc-wrap{max-width:860px;margin:0 auto;}
+.frc-carousel{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.13);background:#0a0a0a;}
+.frc-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.frc-slide{min-width:100%;position:relative;flex-shrink:0;}
+.frc-slide img{width:100%;height:460px;object-fit:cover;object-position:center top;display:block;}
+.frc-slide:first-child img{object-fit:contain;background:#0a0a0a;height:300px;}
+.frc-caption{position:absolute;bottom:0;left:0;right:0;padding:18px 22px 20px;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 100%);color:#fff;pointer-events:none;}
+.frc-cap-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;letter-spacing:.3px;text-shadow:0 1px 4px rgba(0,0,0,.5);}
+.frc-cap-sub{font-size:12.5px;opacity:.85;margin-top:2px;}
+.frc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);backdrop-filter:blur(4px);border:none;border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;color:#1e293b;transition:var(--tr);box-shadow:0 4px 14px rgba(0,0,0,.2);z-index:2;}
+.frc-btn:hover{background:#fff;transform:translateY(-50%) scale(1.08);box-shadow:0 8px 24px rgba(0,0,0,.25);}
+.frc-prev{left:14px;} .frc-next{right:14px;}
+.frc-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:2;}
+.frc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);border:none;cursor:pointer;padding:0;transition:all .3s;}
+.frc-dot.frc-act{background:#fff;width:22px;border-radius:4px;}
+.frc-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;}
+.frc-badge{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 16px;font-size:13px;font-weight:600;color:#334155;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.frc-badge i{color:var(--green);font-size:15px;}
+@media(max-width:600px){.frc-slide img{height:280px;}.frc-slide:first-child img{height:200px;}}
+
 /* CARD BASE */
 .card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px;transition:var(--tr);box-shadow:var(--sh1);}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
@@ -2001,6 +2023,69 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
+<!-- ═══════════ FERIA 2 RUEDAS COLOMBIA ═══════════ -->
+<section id="feria" class="sec">
+  <div class="wrap">
+    <div class="sec-head fi">
+      <span class="chip chip-b"><i class="fas fa-flag"></i> <span data-i18n="feria.chip">Presencia Internacional</span></span>
+      <h2 class="h2" data-i18n="feria.h2">Invitados especiales en la <span class="gtxt-b">Feria 2 Ruedas Colombia</span></h2>
+      <p class="sub" data-i18n="feria.sub">El evento más grande de las 2 ruedas en América Latina · Medellín, Colombia · Alianzas estratégicas con fabricantes de primer nivel</p>
+    </div>
+    <div class="frc-wrap">
+      <div class="frc-carousel">
+        <div class="frc-track" id="frc-track">
+          <div class="frc-slide">
+            <img src="images/feria/feria-logo.webp" alt="Feria 2 Ruedas Colombia" loading="lazy">
+          </div>
+          <div class="frc-slide">
+            <img src="images/feria/feria-puregain.jpg" alt="BRECOTO con Puregain Tyre en Feria 2 Ruedas" loading="lazy">
+            <div class="frc-caption">
+              <div class="frc-cap-title" data-i18n="feria.cap1.title">Alianza con Puregain Tyre Co., Ltd.</div>
+              <div class="frc-cap-sub" data-i18n="feria.cap1.sub">Fabricante de neumáticos premium · Qingdao, China</div>
+            </div>
+          </div>
+          <div class="frc-slide">
+            <img src="images/feria/feria-zhengtai.jpg" alt="BRECOTO con Zhengtai Sprocket en Feria 2 Ruedas" loading="lazy">
+            <div class="frc-caption">
+              <div class="frc-cap-title" data-i18n="feria.cap2.title">Alianza con Zhengtai Sprocket</div>
+              <div class="frc-cap-sub" data-i18n="feria.cap2.sub">Fabricante de piñones, coronas y cadenas · China</div>
+            </div>
+          </div>
+          <div class="frc-slide">
+            <img src="images/feria/feria-jinruifeng.jpg" alt="BRECOTO negociando con Jinruifeng" loading="lazy">
+            <div class="frc-caption">
+              <div class="frc-cap-title" data-i18n="feria.cap3.title">Negociación con Qingdao Jinruifeng Tools</div>
+              <div class="frc-cap-sub" data-i18n="feria.cap3.sub">Fabricante de llantas y herramientas para moto · China</div>
+            </div>
+          </div>
+          <div class="frc-slide">
+            <img src="images/feria/feria-suntire.jpg" alt="BRECOTO en reunión con Suntire" loading="lazy">
+            <div class="frc-caption">
+              <div class="frc-cap-title" data-i18n="feria.cap4.title">Reunión estratégica con Suntire</div>
+              <div class="frc-cap-sub" data-i18n="feria.cap4.sub">Fabricante de neumáticos high-end · China</div>
+            </div>
+          </div>
+        </div>
+        <button class="frc-btn frc-prev" onclick="frcMove(-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="frc-btn frc-next" onclick="frcMove(1)" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        <div class="frc-dots" id="frc-dots">
+          <button class="frc-dot frc-act" onclick="frcGoTo(0)"></button>
+          <button class="frc-dot" onclick="frcGoTo(1)"></button>
+          <button class="frc-dot" onclick="frcGoTo(2)"></button>
+          <button class="frc-dot" onclick="frcGoTo(3)"></button>
+          <button class="frc-dot" onclick="frcGoTo(4)"></button>
+        </div>
+      </div>
+      <div class="frc-badges">
+        <div class="frc-badge"><i class="fas fa-handshake"></i> <span data-i18n="feria.b1">Alianzas estratégicas confirmadas</span></div>
+        <div class="frc-badge"><i class="fas fa-globe"></i> <span data-i18n="feria.b2">Medellín, Colombia</span></div>
+        <div class="frc-badge"><i class="fas fa-industry"></i> <span data-i18n="feria.b3">Fabricantes de primer nivel</span></div>
+        <div class="frc-badge"><i class="fas fa-star"></i> <span data-i18n="feria.b4">Invitados especiales F2R</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ CONTACTO ═══════════ -->
 <section id="contact" class="sec">
   <div class="wrap">
@@ -2316,6 +2401,35 @@ var cio = new IntersectionObserver(function(entries){
 }, {threshold: 0.4});
 document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
 
+/* ── Carrusel Feria 2 Ruedas ── */
+var _frcIdx   = 0;
+var _frcTotal = 5;
+var _frcTimer;
+function frcGoTo(n){
+  _frcIdx = ((n % _frcTotal) + _frcTotal) % _frcTotal;
+  document.getElementById('frc-track').style.transform = 'translateX(-' + (_frcIdx * 100) + '%)';
+  document.querySelectorAll('.frc-dot').forEach(function(d, i){
+    d.classList.toggle('frc-act', i === _frcIdx);
+  });
+}
+function frcMove(dir){
+  clearInterval(_frcTimer);
+  frcGoTo(_frcIdx + dir);
+  _frcTimer = setInterval(function(){ frcGoTo(_frcIdx + 1); }, 5000);
+}
+_frcTimer = setInterval(function(){ frcGoTo(_frcIdx + 1); }, 5000);
+/* touch/swipe */
+(function(){
+  var el = document.getElementById('frc-track');
+  if(!el) return;
+  var sx = 0;
+  el.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+  el.addEventListener('touchend',   function(e){
+    var dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 40) frcMove(dx < 0 ? 1 : -1);
+  });
+})();
+
 /* ── Consulta dinámica según perfil de cliente ── */
 function updateConsOptions(){
   var tipEl  = document.getElementById('f-tip');
@@ -2549,6 +2663,12 @@ var T = {
     'proc.chip':'<i class="fas fa-list-check"></i> Proceso y Rutas',
     'proc.h2':'De la cotización a la <span class="gtxt-g">entrega</span>',
     'proc.sub':'4 etapas · estructura de pagos · 2 rutas marítimas a su elección',
+    'feria.chip':'Presencia Internacional','feria.h2':'Invitados especiales en la <span class="gtxt-b">Feria 2 Ruedas Colombia</span>','feria.sub':'El evento más grande de las 2 ruedas en América Latina · Medellín, Colombia · Alianzas estratégicas con fabricantes de primer nivel',
+    'feria.cap1.title':'Alianza con Puregain Tyre Co., Ltd.','feria.cap1.sub':'Fabricante de neumáticos premium · Qingdao, China',
+    'feria.cap2.title':'Alianza con Zhengtai Sprocket','feria.cap2.sub':'Fabricante de piñones, coronas y cadenas · China',
+    'feria.cap3.title':'Negociación con Qingdao Jinruifeng Tools','feria.cap3.sub':'Fabricante de llantas y herramientas para moto · China',
+    'feria.cap4.title':'Reunión estratégica con Suntire','feria.cap4.sub':'Fabricante de neumáticos high-end · China',
+    'feria.b1':'Alianzas estratégicas confirmadas','feria.b2':'Medellín, Colombia','feria.b3':'Fabricantes de primer nivel','feria.b4':'Invitados especiales F2R',
     'faq.chip':'<i class="fas fa-circle-question"></i> Preguntas Frecuentes',
     'faq.h2':'Todo lo que necesitas <span class="gtxt-cool">saber</span>',
     'faq.sub':'Las dudas más comunes sobre nuestro proceso de importación y distribución',
@@ -2716,6 +2836,12 @@ var T = {
     'proc.chip':'<i class="fas fa-list-check"></i> Process & Routes',
     'proc.h2':'From quote to <span class="gtxt-g">delivery</span>',
     'proc.sub':'4 stages · payment structure · 2 maritime routes of your choice',
+    'feria.chip':'International Presence','feria.h2':'Special guests at <span class="gtxt-b">Feria 2 Ruedas Colombia</span>','feria.sub':'The largest 2-wheel event in Latin America · Medellín, Colombia · Strategic alliances with top-tier manufacturers',
+    'feria.cap1.title':'Alliance with Puregain Tyre Co., Ltd.','feria.cap1.sub':'Premium tire manufacturer · Qingdao, China',
+    'feria.cap2.title':'Alliance with Zhengtai Sprocket','feria.cap2.sub':'Sprocket, crown and chain manufacturer · China',
+    'feria.cap3.title':'Negotiation with Qingdao Jinruifeng Tools','feria.cap3.sub':'Motorcycle tire & tools manufacturer · China',
+    'feria.cap4.title':'Strategic meeting with Suntire','feria.cap4.sub':'High-end tire manufacturer · China',
+    'feria.b1':'Strategic alliances confirmed','feria.b2':'Medellín, Colombia','feria.b3':'Top-tier manufacturers','feria.b4':'Special guests F2R',
     'faq.chip':'<i class="fas fa-circle-question"></i> Frequently Asked Questions',
     'faq.h2':'Everything you need to <span class="gtxt-cool">know</span>',
     'faq.sub':'The most common questions about our import and distribution process',
@@ -2883,6 +3009,12 @@ var T = {
     'proc.chip':'<i class="fas fa-list-check"></i> 流程与路线',
     'proc.h2':'从报价到 <span class="gtxt-g">交货</span>',
     'proc.sub':'4个阶段 · 付款结构 · 2条海运路线供您选择',
+    'feria.chip':'国际参展','feria.h2':'作为特邀嘉宾参加 <span class="gtxt-b">哥伦比亚两轮车展</span>','feria.sub':'拉丁美洲最大的两轮车盛会 · 哥伦比亚麦德林 · 与顶级制造商建立战略联盟',
+    'feria.cap1.title':'与Puregain轮胎有限公司建立联盟','feria.cap1.sub':'优质轮胎制造商 · 中国青岛',
+    'feria.cap2.title':'与正泰链轮建立联盟','feria.cap2.sub':'链轮、齿冠及链条制造商 · 中国',
+    'feria.cap3.title':'与青岛金瑞丰工具洽谈','feria.cap3.sub':'摩托车轮胎及工具制造商 · 中国',
+    'feria.cap4.title':'与Suntire战略会议','feria.cap4.sub':'高端轮胎制造商 · 中国',
+    'feria.b1':'战略联盟已确认','feria.b2':'哥伦比亚麦德林','feria.b3':'顶级制造商','feria.b4':'F2R特邀嘉宾',
     'faq.chip':'<i class="fas fa-circle-question"></i> 常见问题',
     'faq.h2':'您需要了解的 <span class="gtxt-cool">一切</span>',
     'faq.sub':'关于我们进口和分销流程的最常见问题',
