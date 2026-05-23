@@ -1751,15 +1751,19 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <!-- PREVIEW CARD -->
     <div class="fi" style="max-width:780px;margin:0 auto;">
       <div style="background:var(--white);border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);border:1.5px solid var(--border);">
-        <!-- cover preview -->
-        <div style="position:relative;height:260px;overflow:hidden;">
-          <img src="images/banner.jpg" alt="Catálogo BRECOTO" style="width:100%;height:100%;object-fit:cover;">
+        <!-- cover preview — clickable → abre catálogo -->
+        <a href="catalogo.html" target="_blank" rel="noopener" style="position:relative;height:260px;overflow:hidden;display:block;cursor:pointer;" title="Ver catálogo completo">
+          <img src="images/banner.jpg" alt="Catálogo BRECOTO" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
           <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,20,10,.78),rgba(15,23,42,.5));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
             <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 16px;font-size:10px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;" data-i18n="cat.inner.badge"><i class="fas fa-certificate" style="color:#4ade80;"></i> ISO 9001 · Tecnología Japonesa</div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:8px;">Catálogo</div>
             <div style="font-size:13px;color:rgba(255,255,255,.85);font-weight:500;" data-i18n="cat.inner.sub">Repuestos genuinos · Importación directa desde Asia</div>
           </div>
-        </div>
+          <!-- Hover overlay -->
+          <div style="position:absolute;inset:0;background:rgba(22,163,74,.18);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="background:#fff;color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;padding:12px 28px;border-radius:999px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);"><i class="fas fa-book-open"></i> Ver catálogo completo</div>
+          </div>
+        </a>
         <!-- info row -->
         <div class="cat-info-row">
           <div class="cat-info-cell cat-info-cell-br">
@@ -1887,7 +1891,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <li><i class="fas fa-check"></i> <span data-i18n="mod.3.li1">Sin mínimo de contenedor</span></li>
           <li><i class="fas fa-check"></i> <span data-i18n="mod.3.li2">Pago por volumen real</span></li>
           <li><i class="fas fa-check"></i> <span data-i18n="mod.3.li3">Acceso desde cualquier capital</span></li>
-          <li><i class="fas fa-check"></i> <span data-i18n="mod.3.li4">Recepción en bodega Sn. Cristóbal</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="mod.3.li4">Recepción en bodega San Cristóbal</span></li>
         </ul>
       </div>
     </div>
@@ -2801,7 +2805,7 @@ var T = {
     'mod.3.cap':'CUALQUIER PRESUPUESTO','mod.3.title':'CONSOLIDADO','mod.3.sub':'LCL · Carga Compartida',
     'mod.3.p':'Espacio compartido en un mismo contenedor. Pago proporcional al volumen ocupado.',
     'mod.3.li1':'Sin mínimo de contenedor','mod.3.li2':'Pago por volumen real',
-    'mod.3.li3':'Acceso desde cualquier capital','mod.3.li4':'Recepción en bodega Sn. Cristóbal',
+    'mod.3.li3':'Acceso desde cualquier capital','mod.3.li4':'Recepción en bodega San Cristóbal',
     'proc.1.title':'Cotización','proc.1.p':'Precios, modalidades y plazos según su requerimiento.',
     'proc.2.title':'Fabricación','proc.2.p':'Anticipo 30% · supervisión en fábrica China · 30–35 días.',
     'proc.3.title':'Tránsito Marítimo','proc.3.p':'Saldo 70% antes del despacho. Vía Colombia o directo a Venezuela.',
@@ -2974,7 +2978,7 @@ var T = {
     'mod.3.cap':'ANY BUDGET','mod.3.title':'CONSOLIDATED','mod.3.sub':'LCL · Shared Cargo',
     'mod.3.p':'Shared space in the same container. Payment proportional to volume used.',
     'mod.3.li1':'No container minimum','mod.3.li2':'Payment per actual volume',
-    'mod.3.li3':'Access from any city','mod.3.li4':'Reception at Sn. Cristóbal warehouse',
+    'mod.3.li3':'Access from any city','mod.3.li4':'Reception at San Cristóbal warehouse',
     'proc.1.title':'Quote','proc.1.p':'Prices, modes and timelines according to your requirements.',
     'proc.2.title':'Manufacturing','proc.2.p':'30% advance · factory supervision in China · 30–35 days.',
     'proc.3.title':'Maritime Transit','proc.3.p':'70% balance before dispatch. Via Colombia or direct to Venezuela.',
