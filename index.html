@@ -3220,6 +3220,11 @@ function setLang(lang){
   }
   /* Select — Tipo de consulta (dinámico según perfil) */
   updateConsOptions();
+  /* Versículo */
+  var vsRef = document.querySelector('#versiculo .vs-ref span');
+  var vsQuote = document.querySelector('#versiculo .vs-quote');
+  if(vsRef && T[lang]['vs.ref']) vsRef.innerHTML = T[lang]['vs.ref'];
+  if(vsQuote && T[lang]['vs.quote']) vsQuote.innerHTML = T[lang]['vs.quote'];
   document.querySelectorAll('.tl-btn').forEach(function(btn){
     btn.classList.toggle('lang-act', btn.getAttribute('data-lang') === lang);
   });
