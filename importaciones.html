@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Importaciones · BRECOTO SG — FCL, LCL, Importación desde China</title>
+  <meta name="description" content="Modalidades de importación directa desde China para Venezuela: FCL 40ft, FCL 20ft y LCL. Proceso, rutas y preguntas frecuentes.">
+  <meta name="author" content="Inversiones y Comercializadora SG C.A.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Importaciones · BRECOTO SG — FCL, LCL, Importación desde China">
+  <meta property="og:description" content="Modalidades de importación directa desde China para Venezuela: FCL 40ft, FCL 20ft y LCL. Proceso, rutas y preguntas frecuentes.">
+  <meta property="og:locale" content="es_VE">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2316a34a'/%3E%3Ctext x='20' y='29' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23fff'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+  /* ── Modality Cards ─────────────────────────────────────── */
+  .modal-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .modal-card{
+    background:#fff;
+    border:1.5px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--sh1);
+    transition:var(--tr);
+    display:flex;
+    flex-direction:column;
+  }
+  .modal-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--sh3);
+  }
+  .modal-card-top{
+    height:6px;
+    flex-shrink:0;
+  }
+  .modal-card-top.blue{background:linear-gradient(90deg,var(--blue),var(--blue-l));}
+  .modal-card-top.green{background:linear-gradient(90deg,var(--green),var(--green-l));}
+  .modal-card-top.gold{background:linear-gradient(90deg,var(--gold),#fbbf24);}
+  .modal-card-body{padding:28px;flex:1;display:flex;flex-direction:column;}
+  .modal-icon{
+    width:52px;height:52px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;margin-bottom:16px;flex-shrink:0;
+  }
+  .modal-icon.blue{background:rgba(29,78,216,.1);color:var(--blue);}
+  .modal-icon.green{background:rgba(22,163,74,.1);color:var(--green);}
+  .modal-icon.gold{background:rgba(217,119,6,.1);color:var(--gold);}
+  .modal-badge{
+    display:inline-flex;align-items:center;
+    padding:4px 12px;border-radius:100px;
+    font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .modal-badge.blue{background:rgba(29,78,216,.08);color:var(--blue-d);border:1px solid rgba(29,78,216,.15);}
+  .modal-badge.green{background:rgba(22,163,74,.1);color:var(--green-d);border:1px solid rgba(22,163,74,.2);}
+  .modal-badge.gold{background:rgba(217,119,6,.1);color:#92400e;border:1px solid rgba(217,119,6,.2);}
+  .modal-title{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:28px;font-weight:800;letter-spacing:-.5px;
+    color:var(--ink);margin-bottom:4px;
+  }
+  .modal-subtitle{font-size:13px;color:var(--gray);font-weight:600;margin-bottom:14px;}
+  .modal-desc{font-size:15px;color:var(--ink3);line-height:1.7;margin-bottom:18px;}
+  .modal-features{margin-bottom:24px;flex:1;}
+  .modal-features li{
+    display:flex;align-items:center;gap:9px;
+    font-size:14px;color:var(--ink3);padding:6px 0;
+    border-bottom:1px solid var(--bg2);
+  }
+  .modal-features li:last-child{border-bottom:none;}
+  .modal-features li i{font-size:13px;flex-shrink:0;}
+  .modal-features li i.blue{color:var(--blue);}
+  .modal-features li i.green{color:var(--green);}
+  .modal-features li i.gold{color:var(--gold);}
+  .popular-badge{
+    display:inline-flex;align-items:center;gap:5px;
+    background:linear-gradient(135deg,var(--green),var(--green-l));
+    color:#fff;padding:3px 10px;border-radius:100px;
+    font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    margin-left:8px;vertical-align:middle;
+  }
+
+  /* ── Process Timeline ───────────────────────────────────── */
+  .timeline{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    position:relative;
+    margin-bottom:48px;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    top:42px;
+    left:calc(12.5% + 8px);
+    right:calc(12.5% + 8px);
+    height:2px;
+    background:linear-gradient(90deg,var(--green),var(--blue));
+    z-index:0;
+  }
+  .tl-step{
+    display:flex;flex-direction:column;align-items:center;
+    text-align:center;padding:0 16px;position:relative;
+  }
+  .tl-num{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green),var(--blue));
+    color:#fff;font-family:'Barlow Condensed',sans-serif;
+    font-size:22px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;z-index:1;
+    box-shadow:0 4px 20px rgba(22,163,74,.3);
+    flex-shrink:0;margin-bottom:18px;
+  }
+  .tl-icon{
+    width:36px;height:36px;border-radius:10px;
+    background:rgba(22,163,74,.1);color:var(--green);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;margin:0 auto 12px;
+  }
+  .tl-title{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:17px;font-weight:800;letter-spacing:-.3px;
+    color:var(--ink);margin-bottom:8px;
+  }
+  .tl-desc{font-size:13.5px;color:var(--ink3);line-height:1.65;}
+
+  .payment-box{
+    background:var(--ink2);
+    border-radius:16px;
+    padding:28px 36px;
+    display:flex;align-items:center;justify-content:center;
+    gap:16px;flex-wrap:wrap;text-align:center;
+  }
+  .payment-box-ico{
+    width:48px;height:48px;border-radius:12px;
+    background:rgba(22,163,74,.2);color:var(--green-l);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;flex-shrink:0;
+  }
+  .payment-box-txt{color:#fff;}
+  .payment-box-txt .label{
+    font-size:11px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:rgba(255,255,255,.5);
+    margin-bottom:6px;
+  }
+  .payment-box-txt p{
+    font-size:17px;color:rgba(255,255,255,.9);line-height:1.6;
+  }
+  .payment-box-txt strong{color:var(--green-l);}
+
+  /* ── Route Cards ────────────────────────────────────────── */
+  .routes-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:28px;
+  }
+  .route-card{
+    background:#fff;border:1.5px solid var(--border);
+    border-radius:20px;overflow:hidden;
+    box-shadow:var(--sh1);transition:var(--tr);
+  }
+  .route-card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
+  .route-card-hdr{
+    padding:28px 28px 20px;
+  }
+  .route-card-hdr.green{border-left:4px solid var(--green);}
+  .route-card-hdr.blue{border-left:4px solid var(--blue);}
+  .route-flag{font-size:28px;margin-bottom:10px;line-height:1;}
+  .route-name{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:24px;font-weight:800;letter-spacing:-.3px;
+    color:var(--ink);margin-bottom:4px;
+  }
+  .route-ports{font-size:13px;color:var(--gray);font-weight:600;margin-bottom:14px;}
+  .route-transit{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:7px 14px;border-radius:100px;
+    font-size:13px;font-weight:700;
+  }
+  .route-transit.green{background:rgba(22,163,74,.1);color:var(--green-d);}
+  .route-transit.blue{background:rgba(29,78,216,.08);color:var(--blue-d);}
+  .route-steps{
+    padding:0 28px 28px;
+    display:flex;flex-direction:column;gap:0;
+  }
+  .route-step{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:10px 0;
+  }
+  .route-step:not(:last-child){
+    border-bottom:1px dashed var(--border);
+  }
+  .route-step-dot{
+    width:28px;height:28px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;color:#fff;flex-shrink:0;
+    margin-top:1px;
+  }
+  .route-step-dot.green{background:var(--green);}
+  .route-step-dot.blue{background:var(--blue);}
+  .route-step-txt{font-size:14px;color:var(--ink3);line-height:1.5;}
+
+  /* ── CTA Final Section ──────────────────────────────────── */
+  .cta-final-sec{
+    background:linear-gradient(155deg,#060d1a 0%,#0a1628 45%,#061a10 100%);
+    padding:100px 0;
+    text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .cta-final-sec::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(22,163,74,.14) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .cta-final-sec::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--green),var(--blue),var(--green));
+  }
+  .cta-final-inner{position:relative;z-index:1;}
+  .cta-final-inner h2{color:#fff;margin-bottom:14px;}
+  .cta-final-inner .lead{color:rgba(255,255,255,.68);max-width:540px;margin:0 auto 32px;}
+  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media(max-width:900px){
+    .modal-grid{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr 1fr;gap:32px;}
+    .timeline::before{display:none;}
+    .routes-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .timeline{grid-template-columns:1fr;}
+    .tl-step{align-items:flex-start;text-align:left;flex-direction:row;gap:16px;}
+    .tl-num{margin-bottom:0;flex-shrink:0;}
+    .payment-box{padding:20px;}
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><div class="brand-ico">B</div><span class="brand-txt">BRECOTO<em>SG</em></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nl" data-page="index">Inicio</a>
+      <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+      <a href="importaciones.html" class="nl act" data-page="importaciones">Importaciones</a>
+      <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+      <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+      <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+      <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="nl" data-page="index">Inicio</a>
+    <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+    <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+    <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+    <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+    <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+    <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+    <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ph-inner">
+    <div class="chip chip-b fi">🇨🇳 → 🇻🇪 Importación Directa</div>
+    <h1 class="h1 fi d1">Importa desde China<br><span class="gtxt-g">sin complicaciones</span></h1>
+    <p class="lead fi d2">Modalidades flexibles, proceso transparente y acompañamiento completo desde la fábrica hasta tu almacén.</p>
+    <div class="ph-btns fi d3">
+      <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20una%20importaci%C3%B3n%20desde%20China" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Cotizar importación</a>
+      <a href="#proceso" class="btn btn-out-w">Ver proceso →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-g fi">Modalidades</div>
+      <h2 class="h2 fi d1">Elige tu <span class="gtxt-b">modalidad</span> de importación</h2>
+      <p class="sub fi d2">Tres opciones según tu volumen y presupuesto</p>
+    </div>
+
+    <div class="modal-grid">
+
+      <!-- FCL 40ft -->
+      <div class="modal-card fi d1">
+        <div class="modal-card-top blue"></div>
+        <div class="modal-card-body">
+          <div class="modal-icon blue"><i class="fas fa-ship"></i></div>
+          <div class="modal-badge blue">Contenedor Completo</div>
+          <div class="modal-title">FCL 40 Pies</div>
+          <div class="modal-subtitle">Volumen: 67 CBM · ~26 toneladas</div>
+          <p class="modal-desc">La opción más económica por unidad. Contenedor exclusivo de 40 pies para clientes con alto volumen de importación.</p>
+          <ul class="modal-features">
+            <li><i class="fas fa-check-circle blue"></i> Precio unitario más bajo</li>
+            <li><i class="fas fa-check-circle blue"></i> Carga exclusiva sin mezcla</li>
+            <li><i class="fas fa-check-circle blue"></i> Ideal para distribuidores grandes</li>
+            <li><i class="fas fa-check-circle blue"></i> Máxima capacidad de carga</li>
+          </ul>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20me%20interesa%20cotizar%20un%20FCL%2040%20pies" target="_blank" rel="noopener" class="btn btn-b btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar FCL 40ft
+          </a>
+        </div>
+      </div>
+
+      <!-- FCL 20ft (más popular) -->
+      <div class="modal-card fi d2">
+        <div class="modal-card-top green"></div>
+        <div class="modal-card-body">
+          <div class="modal-icon green"><i class="fas fa-box"></i></div>
+          <div style="margin-bottom:12px;">
+            <span class="modal-badge green">Contenedor Completo</span>
+            <span class="popular-badge"><i class="fas fa-star" style="font-size:9px;"></i> Más popular</span>
+          </div>
+          <div class="modal-title">FCL 20 Pies</div>
+          <div class="modal-subtitle">Volumen: 28 CBM · ~18 toneladas</div>
+          <p class="modal-desc">El equilibrio perfecto entre volumen y costo. Ideal para importadores medianos que quieren exclusividad en el contenedor.</p>
+          <ul class="modal-features">
+            <li><i class="fas fa-check-circle green"></i> Sin mínimo de referencias</li>
+            <li><i class="fas fa-check-circle green"></i> Carga 100% personalizada</li>
+            <li><i class="fas fa-check-circle green"></i> Mejor relación costo-volumen</li>
+            <li><i class="fas fa-check-circle green"></i> Sin compartir espacio</li>
+          </ul>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20me%20interesa%20cotizar%20un%20FCL%2020%20pies" target="_blank" rel="noopener" class="btn btn-g btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar FCL 20ft
+          </a>
+        </div>
+      </div>
+
+      <!-- LCL -->
+      <div class="modal-card fi d3">
+        <div class="modal-card-top gold"></div>
+        <div class="modal-card-body">
+          <div class="modal-icon gold"><i class="fas fa-boxes-stacked"></i></div>
+          <div class="modal-badge gold">Carga Consolidada</div>
+          <div class="modal-title">LCL — Carga Parcial</div>
+          <div class="modal-subtitle">Desde 1 CBM · pago proporcional</div>
+          <p class="modal-desc">Espacio compartido en un mismo contenedor. Pagas solo por el volumen que ocupas. La entrada ideal al mundo de la importación.</p>
+          <ul class="modal-features">
+            <li><i class="fas fa-check-circle gold"></i> Sin mínimo de contenedor</li>
+            <li><i class="fas fa-check-circle gold"></i> Pago por volumen real</li>
+            <li><i class="fas fa-check-circle gold"></i> Acceso desde cualquier capital</li>
+            <li><i class="fas fa-check-circle gold"></i> Recepción en bodega San Cristóbal</li>
+          </ul>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20me%20interesa%20importar%20en%20modalidad%20LCL" target="_blank" rel="noopener" class="btn btn-sm" style="width:100%;justify-content:center;background:var(--gold);color:#fff;box-shadow:0 4px 18px rgba(217,119,6,.32);">
+            <i class="fab fa-whatsapp"></i> Cotizar LCL
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-g fi">¿Cómo funciona?</div>
+      <h2 class="h2 fi d1">Proceso <span class="gtxt-g">paso a paso</span></h2>
+      <p class="sub fi d2">4 etapas claras desde tu primera consulta hasta la entrega</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-step fi d1">
+        <div class="tl-num">1</div>
+        <div class="tl-icon"><i class="fas fa-handshake"></i></div>
+        <div class="tl-title">Cotización y Acuerdo</div>
+        <p class="tl-desc">Defines qué repuestos necesitas, volumen y presupuesto. Te enviamos propuesta detallada con precios FOB desde China.</p>
+      </div>
+
+      <div class="tl-step fi d2">
+        <div class="tl-num">2</div>
+        <div class="tl-icon"><i class="fas fa-industry"></i></div>
+        <div class="tl-title">Fabricación y Control</div>
+        <p class="tl-desc">Gestionamos la producción con tu fábrica aliada. Supervisión de calidad antes del embarque con fotos y certificados.</p>
+      </div>
+
+      <div class="tl-step fi d3">
+        <div class="tl-num">3</div>
+        <div class="tl-icon"><i class="fas fa-ship"></i></div>
+        <div class="tl-title">Embarque y Tránsito</div>
+        <p class="tl-desc">Consolidación en contenedor, documentación aduanera completa, seguro de carga y seguimiento en tiempo real.</p>
+      </div>
+
+      <div class="tl-step fi d4">
+        <div class="tl-num">4</div>
+        <div class="tl-icon"><i class="fas fa-box-open"></i></div>
+        <div class="tl-title">Entrega en Destino</div>
+        <p class="tl-desc">Recepción en bodega en San Cristóbal vía Colombia (35 días) o Venezuela directo (60–70 días). Desaduanamiento incluido.</p>
+      </div>
+
+    </div>
+
+    <div class="payment-box fi">
+      <div class="payment-box-ico"><i class="fas fa-wallet"></i></div>
+      <div class="payment-box-txt">
+        <div class="label">Estructura de pago</div>
+        <p><strong>30% anticipo</strong> al inicio de la producción · <strong>70% restante</strong> antes del embarque</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RUTAS -->
+<section id="rutas" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-b fi">Rutas disponibles</div>
+      <h2 class="h2 fi d1">Dos <span class="gtxt-b">rutas</span> a tu elección</h2>
+    </div>
+
+    <div class="routes-grid">
+
+      <!-- Ruta Colombia -->
+      <div class="route-card fi d1">
+        <div class="route-card-hdr green">
+          <div class="route-flag">🇨🇳 → 🇨🇴 → 🇻🇪</div>
+          <div class="route-name">Vía Colombia</div>
+          <div class="route-ports"><i class="fas fa-anchor" style="color:var(--green);margin-right:5px;"></i> Buenaventura · Cartagena · Barranquilla</div>
+          <span class="route-transit green"><i class="fas fa-clock"></i> ~35 días de tránsito</span>
+        </div>
+        <div class="route-steps">
+          <div class="route-step">
+            <div class="route-step-dot green">1</div>
+            <div class="route-step-txt"><strong>Shanghai / Guangzhou</strong> — Puerto de origen en China</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot green">2</div>
+            <div class="route-step-txt"><strong>Puerto colombiano</strong> — Buenaventura, Cartagena o Barranquilla</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot green">3</div>
+            <div class="route-step-txt"><strong>Aduana Colombia</strong> — Trámites y liberación de carga</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot green">4</div>
+            <div class="route-step-txt"><strong>San Cristóbal, Táchira</strong> — Entrega en tu bodega</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ruta Directa Venezuela -->
+      <div class="route-card fi d2">
+        <div class="route-card-hdr blue">
+          <div class="route-flag">🇨🇳 → 🇻🇪</div>
+          <div class="route-name">Directo a Venezuela</div>
+          <div class="route-ports"><i class="fas fa-anchor" style="color:var(--blue);margin-right:5px;"></i> Puerto Cabello · La Guaira</div>
+          <span class="route-transit blue"><i class="fas fa-clock"></i> 60–70 días de tránsito</span>
+        </div>
+        <div class="route-steps">
+          <div class="route-step">
+            <div class="route-step-dot blue">1</div>
+            <div class="route-step-txt"><strong>Puerto chino</strong> — Embarque desde China</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot blue">2</div>
+            <div class="route-step-txt"><strong>Océano Pacífico</strong> — Travesía marítima directa</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot blue">3</div>
+            <div class="route-step-txt"><strong>Venezuela</strong> — Puerto Cabello o La Guaira</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-dot blue">4</div>
+            <div class="route-step-txt"><strong>Destino final</strong> — Entrega coordinada en tu ubicación</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec sec-alt">
+  <div class="wrap" style="max-width:860px;">
+    <div class="sec-head">
+      <div class="chip fi">Preguntas Frecuentes</div>
+      <h2 class="h2 fi d1">Resolvemos tus <span class="gtxt-cool">dudas</span></h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item fi d1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <i class="fas fa-circle-question faq-q-ico"></i>
+          <span class="faq-q-txt">¿Cuál es el mínimo de pedido para importar?</span>
+          <i class="fas fa-chevron-down faq-q-chev"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-in">No existe un mínimo en unidades. En LCL pagas solo por el volumen (CBM) que ocupa tu carga, desde 1 CBM. Para FCL 20ft necesitas llenar aproximadamente 28 CBM. Te ayudamos a calcular la combinación óptima de productos según tu presupuesto.</div>
+        </div>
+      </div>
+
+      <div class="faq-item fi d2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <i class="fas fa-circle-question faq-q-ico"></i>
+          <span class="faq-q-txt">¿Qué incluye el 30% de anticipo?</span>
+          <i class="fas fa-chevron-down faq-q-chev"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-in">El anticipo del 30% cubre el inicio de la producción en la fábrica, la reserva de materiales, la gestión del pedido y los costos administrativos del proceso. El 70% restante se paga una vez terminada la producción, antes del embarque.</div>
+        </div>
+      </div>
+
+      <div class="faq-item fi d3">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <i class="fas fa-circle-question faq-q-ico"></i>
+          <span class="faq-q-txt">¿Cómo funciona la ruta por Colombia?</span>
+          <i class="fas fa-chevron-down faq-q-chev"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-in">Tu mercancía llega al puerto de Buenaventura, Cartagena o Barranquilla en Colombia. Desde allí se traslada por tierra hasta la frontera colombo-venezolana y luego a San Cristóbal, Táchira. El tiempo total es de aproximadamente 35 días desde China.</div>
+        </div>
+      </div>
+
+      <div class="faq-item fi d4">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <i class="fas fa-circle-question faq-q-ico"></i>
+          <span class="faq-q-txt">¿Pueden importar cualquier tipo de repuesto?</span>
+          <i class="fas fa-chevron-down faq-q-chev"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-in">Sí. Trabajamos con 5 categorías principales: Sistema Eléctrico, Motor &amp; Mecánica, Frenos, Transmisión y Carrocería. También gestionamos repuestos específicos bajo pedido si tienes proveedores en China con quienes ya trabajas.</div>
+        </div>
+      </div>
+
+      <div class="faq-item fi d5">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <i class="fas fa-circle-question faq-q-ico"></i>
+          <span class="faq-q-txt">¿Qué documentación necesito para importar?</span>
+          <i class="fas fa-chevron-down faq-q-chev"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-in">Para Venezuela: RIF vigente, documento de identidad y cuenta bancaria activa. BRECOTO gestiona todos los documentos de importación: BL (Bill of Lading), factura comercial, packing list, certificado de origen y trámites aduaneros.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final" class="cta-final-sec">
+  <div class="wrap cta-final-inner">
+    <div class="chip chip-w fi" style="margin-bottom:20px;">¿Listo para importar?</div>
+    <h2 class="h2 fi d1">¿Listo para <span class="gtxt-g">importar</span>?</h2>
+    <p class="lead fi d2">Contáctanos hoy y recibe una cotización personalizada en menos de 24 horas.</p>
+    <div class="cta-btns fi d3">
+      <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20iniciar%20una%20importaci%C3%B3n%20desde%20China" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+      <a href="catalogo.html" class="btn btn-out-w btn-lg">Ver catálogo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLE VERSE -->
+<section id="versiculo">
+  <div class="vs-inner">
+    <div class="vs-cross fi"><i class="fas fa-cross"></i></div>
+    <div class="vs-ref fi d1"><span>Proverbios 16:3</span></div>
+    <blockquote class="vs-quote fi d2">
+      "Pon en manos del Señor todo lo que haces,<br>
+      y tus planes <em>se cumplirán</em>."
+    </blockquote>
+    <div class="vs-divider fi d3">
+      <div class="vs-line"></div>
+      <div class="vs-dot"></div>
+      <div class="vs-line vs-line-r"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-row"><div class="ft-brand-ico">B</div><div class="ft-brand-name">BRECOTO<span>SG</span></div></div>
+        <p class="ft-desc">Importación directa de repuestos para motocicletas desde China. Marca propia <strong style="color:#fff;">BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.</p>
+        <div class="ft-soc">
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:brecotosg@gmail.com" class="ft-si"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Navegación</div>
+        <a href="index.html" class="ft-link">Inicio</a><a href="catalogo.html" class="ft-link">Catálogo</a><a href="importaciones.html" class="ft-link">Importaciones</a><a href="marcas.html" class="ft-link">Marcas</a><a href="promociones.html" class="ft-link">Promociones</a><a href="nosotros.html" class="ft-link">Nosotros</a><a href="contacto.html" class="ft-link">Contacto</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Empresa</div>
+        <a href="nosotros.html" class="ft-link">Quiénes somos</a><a href="marcas.html" class="ft-link">Líneas de calidad</a><a href="importaciones.html" class="ft-link">Modalidades</a><a href="importaciones.html#proceso" class="ft-link">Proceso</a><a href="importaciones.html#faq" class="ft-link">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Contacto</div>
+        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-whatsapp"></i> +58 412 680 1743</a>
+        <a href="mailto:brecotosg@gmail.com" class="ft-link"><i class="fas fa-envelope"></i> brecotosg@gmail.com</a>
+        <span class="ft-link"><i class="fas fa-location-dot"></i> San Cristóbal, Táchira</span>
+        <span class="ft-link"><i class="fas fa-building"></i> Venezuela</span>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2014 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO 2025. Todos los derechos reservados.</span>
+      <span class="ft-certs"><span class="ft-cert">ISO 9001</span><span class="ft-cert">Calidad Triple A</span><span class="ft-cert">Importación Directa</span></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/584126801743" target="_blank" rel="noopener" id="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+/* ── Navbar scroll ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+/* ── Mobile menu ── */
+function toggleMenu(){
+  const burger=document.getElementById('burger');
+  const mob=document.getElementById('mob-menu');
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+}
+
+/* ── FAQ accordion ── */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+/* ── Scroll reveal ── */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});
+},{threshold:0.12});
+document.querySelectorAll('.fi,.sl,.sr').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Promociones · BRECOTO SG — Ofertas Especiales</title>
+<meta name="description" content="Próximamente: ofertas exclusivas para distribuidores, talleres y comercializadores. Suscríbete para ser el primero en conocerlas.">
+<meta name="author" content="Inversiones y Comercializadora SG C.A.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2316a34a'/%3E%3Ctext x='20' y='29' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23dc2626'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ── PROMO HERO ── */
+#hero-promo{
+  min-height:100vh;
+  background:linear-gradient(155deg,#04080f 0%,#060d1a 35%,#040e08 70%,#020a05 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:100px 24px 80px;
+  position:relative;overflow:hidden;
+}
+#hero-promo::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 50%,rgba(22,163,74,.13) 0%,transparent 60%),
+    radial-gradient(ellipse 35% 35% at 15% 85%,rgba(239,68,68,.07) 0%,transparent 55%),
+    radial-gradient(ellipse 35% 35% at 85% 15%,rgba(245,158,11,.07) 0%,transparent 55%);
+}
+#hero-promo::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green),#f59e0b,var(--green));
+}
+.hero-promo-inner{position:relative;z-index:1;max-width:780px;}
+#hero-promo h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(48px,8vw,90px);font-weight:900;letter-spacing:-3px;
+  color:#fff;line-height:1.05;margin:20px 0 22px;
+}
+#hero-promo .lead{
+  color:rgba(255,255,255,.68);font-size:18px;max-width:580px;
+  margin:0 auto 36px;line-height:1.7;
+}
+
+/* Animated coming-soon boxes */
+.cs-boxes{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  margin:40px auto 0;max-width:480px;
+}
+.cs-box{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:18px 20px;min-width:100px;
+  text-align:center;backdrop-filter:blur(8px);
+}
+.cs-box-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;
+  color:#fff;letter-spacing:-2px;line-height:1;
+  animation:pulseDim 2.5s ease-in-out infinite;
+}
+.cs-box:nth-child(1) .cs-box-num{color:#4ade80;animation-delay:0s;}
+.cs-box:nth-child(2) .cs-box-num{color:#fbbf24;animation-delay:.5s;}
+.cs-box:nth-child(3) .cs-box-num{color:#f87171;animation-delay:1s;}
+.cs-box-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;}
+@keyframes pulseDim{
+  0%,100%{opacity:.7;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.04);}
+}
+.cs-sep{display:flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:rgba(255,255,255,.2);padding-bottom:24px;}
+
+/* Teaser product cards */
+.teaser-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.teaser-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:20px;overflow:hidden;box-shadow:var(--sh1);
+  transition:var(--tr);position:relative;
+}
+.teaser-card:hover{box-shadow:var(--sh3);transform:translateY(-4px);}
+.teaser-img-wrap{position:relative;overflow:hidden;}
+.teaser-img{
+  width:100%;height:200px;object-fit:contain;
+  background:linear-gradient(145deg,#f8fafc,#f1f5f9);
+  padding:16px;display:block;
+}
+.teaser-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(15,23,42,.55) 100%);
+}
+.teaser-badge{
+  position:absolute;top:12px;left:12px;
+  background:#dc2626;color:#fff;
+  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 12px;border-radius:999px;
+  display:flex;align-items:center;gap:5px;
+}
+.teaser-body{padding:16px;}
+.teaser-cat{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+.teaser-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.2;}
+
+/* Steps for newsletter */
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0;}
+.step-card{text-align:center;padding:32px 20px;}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(22,163,74,.15);border:2px solid rgba(74,222,128,.3);
+  font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;
+  color:#4ade80;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;color:#fff;margin-bottom:8px;}
+.step-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;}
+
+@media(max-width:900px){
+  .teaser-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-row{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .teaser-grid{grid-template-columns:1fr 1fr;}
+  .cs-boxes{gap:10px;}
+  .cs-box{min-width:80px;padding:14px 12px;}
+  .cs-box-num{font-size:30px;}
+}
+@media(max-width:400px){
+  .teaser-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><div class="brand-ico">B</div><span class="brand-txt">BRECOTO<em>SG</em></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nl" data-page="index">Inicio</a>
+      <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+      <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+      <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+      <a href="promociones.html" class="nl act" data-page="promociones">Promociones</a>
+      <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+      <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="nl" data-page="index">Inicio</a>
+    <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+    <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+    <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+    <a href="promociones.html" class="nl act" data-page="promociones">Promociones</a>
+    <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+    <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+    <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ── 1. HERO PROMO ── -->
+<section id="hero-promo">
+  <div class="hero-promo-inner">
+    <span class="chip chip-w"><i class="fas fa-fire"></i> Próximamente</span>
+    <h1>Promociones <span class="gtxt-vibrant">Especiales</span></h1>
+    <p class="lead">Estamos preparando ofertas exclusivas para distribuidores, talleres y comercializadores. Suscríbete por WhatsApp para ser el primero en conocerlas.</p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/584126801743?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20promociones%20de%20BRECOTO" target="_blank" rel="noopener" class="btn btn-wa btn-lg">
+        <i class="fab fa-whatsapp"></i> Suscribirse por WhatsApp
+      </a>
+      <a href="catalogo.html" class="btn btn-out-w btn-lg">
+        <i class="fas fa-book-open"></i> Ver catálogo
+      </a>
+    </div>
+
+    <!-- Coming soon visual -->
+    <div class="cs-boxes">
+      <div class="cs-box">
+        <div class="cs-box-num">∞</div>
+        <div class="cs-box-lbl">Descuentos</div>
+      </div>
+      <div class="cs-sep">·</div>
+      <div class="cs-box">
+        <div class="cs-box-num"><i class="fas fa-tag" style="font-size:28px;"></i></div>
+        <div class="cs-box-lbl">Ofertas</div>
+      </div>
+      <div class="cs-sep">·</div>
+      <div class="cs-box">
+        <div class="cs-box-num"><i class="fas fa-bolt" style="font-size:28px;"></i></div>
+        <div class="cs-box-lbl">Exclusivas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. TEASER PRODUCTOS ── -->
+<section class="sec sec-alt" id="teaser">
+  <div class="wrap">
+    <div class="sec-head fi">
+      <span class="chip chip-g"><i class="fas fa-boxes-stacked"></i> Algunos de nuestros productos</span>
+      <h2 class="h2">Repuestos que pronto <span class="gtxt-g">tendrán oferta</span></h2>
+    </div>
+
+    <div class="teaser-grid">
+
+      <div class="teaser-card fi d1">
+        <div class="teaser-img-wrap">
+          <img src="images/productos/bateria-12v.jpg" alt="Batería 12V BRECOTO" class="teaser-img" loading="lazy">
+          <div class="teaser-overlay"></div>
+          <div class="teaser-badge"><i class="fas fa-tag"></i> Próxima oferta</div>
+        </div>
+        <div class="teaser-body">
+          <div class="teaser-cat">Motor &amp; Eléctrico</div>
+          <div class="teaser-name">Batería 12V BRECOTO</div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20la%20Bater%C3%ADa%2012V." target="_blank" rel="noopener" class="btn btn-wa btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="teaser-card fi d2">
+        <div class="teaser-img-wrap">
+          <img src="images/productos/cdi-brecoto.jpg" alt="CDI BRECOTO" class="teaser-img" loading="lazy">
+          <div class="teaser-overlay"></div>
+          <div class="teaser-badge"><i class="fas fa-tag"></i> Próxima oferta</div>
+        </div>
+        <div class="teaser-body">
+          <div class="teaser-cat">Sistema Eléctrico</div>
+          <div class="teaser-name">CDI BRECOTO</div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20el%20CDI%20BRECOTO." target="_blank" rel="noopener" class="btn btn-wa btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="teaser-card fi d3">
+        <div class="teaser-img-wrap">
+          <img src="images/productos/cadena-428h.jpg" alt="Cadena 428H" class="teaser-img" loading="lazy">
+          <div class="teaser-overlay"></div>
+          <div class="teaser-badge"><i class="fas fa-tag"></i> Próxima oferta</div>
+        </div>
+        <div class="teaser-body">
+          <div class="teaser-cat">Transmisión</div>
+          <div class="teaser-name">Cadena 428H</div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20la%20Cadena%20428H." target="_blank" rel="noopener" class="btn btn-wa btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="teaser-card fi d4">
+        <div class="teaser-img-wrap">
+          <img src="images/productos/carburador.jpg" alt="Carburador" class="teaser-img" loading="lazy">
+          <div class="teaser-overlay"></div>
+          <div class="teaser-badge"><i class="fas fa-tag"></i> Próxima oferta</div>
+        </div>
+        <div class="teaser-body">
+          <div class="teaser-cat">Motor &amp; Mecánica</div>
+          <div class="teaser-name">Carburador</div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20el%20Carburador." target="_blank" rel="noopener" class="btn btn-wa btn-sm" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar ahora
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. NEWSLETTER / SUSCRIPCIÓN ── -->
+<section class="sec sec-dark" id="newsletter">
+  <div class="wrap">
+    <div class="sec-head fi">
+      <span class="chip chip-w"><i class="fab fa-whatsapp"></i> Lista de distribuidores</span>
+      <h2 class="h2" style="color:#fff;">¿Cómo enterarte primero?</h2>
+      <p class="sub">Únete a nuestra lista de distribuidores y recibe las ofertas antes que nadie.</p>
+    </div>
+
+    <div class="steps-row">
+      <div class="step-card fi d1">
+        <div class="step-num">1</div>
+        <div class="step-title">Escríbenos por WhatsApp</div>
+        <p class="step-desc">Envíanos un mensaje indicando que quieres unirte a la lista de promociones BRECOTO.</p>
+      </div>
+      <div class="step-card fi d2">
+        <div class="step-num">2</div>
+        <div class="step-title">Te agregamos a la lista</div>
+        <p class="step-desc">Quedas registrado como distribuidor o comercializador en nuestra base de contactos prioritarios.</p>
+      </div>
+      <div class="step-card fi d3">
+        <div class="step-num">3</div>
+        <div class="step-title">Recibes ofertas exclusivas</div>
+        <p class="step-desc">Te notificamos antes que el mercado general sobre descuentos, paquetes y liquidaciones de stock.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;" class="fi">
+      <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20unirme%20a%20la%20lista%20de%20distribuidores%20para%20recibir%20promociones%20exclusivas." target="_blank" rel="noopener" class="btn btn-wa btn-lg">
+        <i class="fab fa-whatsapp"></i> Unirme ahora por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-row"><div class="ft-brand-ico">B</div><div class="ft-brand-name">BRECOTO<span>SG</span></div></div>
+        <p class="ft-desc">Importación directa de repuestos para motocicletas desde China. Marca propia <strong style="color:#fff;">BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.</p>
+        <div class="ft-soc">
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:brecotosg@gmail.com" class="ft-si"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Navegación</div>
+        <a href="index.html" class="ft-link">Inicio</a><a href="catalogo.html" class="ft-link">Catálogo</a><a href="importaciones.html" class="ft-link">Importaciones</a><a href="marcas.html" class="ft-link">Marcas</a><a href="promociones.html" class="ft-link">Promociones</a><a href="nosotros.html" class="ft-link">Nosotros</a><a href="contacto.html" class="ft-link">Contacto</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Empresa</div>
+        <a href="nosotros.html" class="ft-link">Quiénes somos</a><a href="marcas.html" class="ft-link">Líneas de calidad</a><a href="importaciones.html" class="ft-link">Modalidades</a><a href="importaciones.html#proceso" class="ft-link">Proceso</a><a href="importaciones.html#faq" class="ft-link">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Contacto</div>
+        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-whatsapp"></i> +58 412 680 1743</a>
+        <a href="mailto:brecotosg@gmail.com" class="ft-link"><i class="fas fa-envelope"></i> brecotosg@gmail.com</a>
+        <span class="ft-link"><i class="fas fa-location-dot"></i> San Cristóbal, Táchira</span>
+        <span class="ft-link"><i class="fas fa-building"></i> Venezuela</span>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2014 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO 2025. Todos los derechos reservados.</span>
+      <span class="ft-certs"><span class="ft-cert">ISO 9001</span><span class="ft-cert">Calidad Triple A</span><span class="ft-cert">Importación Directa</span></span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/584126801743" target="_blank" rel="noopener" id="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

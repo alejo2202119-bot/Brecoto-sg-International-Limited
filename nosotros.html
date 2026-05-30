@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nosotros · BRECOTO SG — Empresa de Importación de Repuestos</title>
+  <meta name="description" content="Conoce la historia, misión, visión y valores de BRECOTO SG. +15 años importando repuestos para motocicletas desde China a Venezuela.">
+  <meta name="author" content="Inversiones y Comercializadora SG C.A.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nosotros · BRECOTO SG — Empresa de Importación de Repuestos">
+  <meta property="og:description" content="Conoce la historia, misión, visión y valores de BRECOTO SG. +15 años importando repuestos para motocicletas desde China a Venezuela.">
+  <meta property="og:locale" content="es_VE">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2316a34a'/%3E%3Ctext x='20' y='29' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23fff'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+  /* ── Historia 2-col ─────────────────────────────────────── */
+  .historia-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .historia-img{
+    border-radius:20px;
+    box-shadow:0 12px 48px rgba(15,23,42,.16),0 4px 16px rgba(15,23,42,.08);
+    width:100%;
+    object-fit:cover;
+    height:440px;
+  }
+  .historia-txt p{
+    font-size:15.5px;color:var(--ink3);line-height:1.75;
+    margin-bottom:18px;
+  }
+  .historia-txt p strong{color:var(--ink);font-weight:700;}
+  .historia-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+
+  /* ── Stats dark ─────────────────────────────────────────── */
+  .stats-sec{
+    background:var(--ink2);
+    padding:80px 0;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .stat-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:28px 24px;
+    text-align:center;
+    transition:var(--tr);
+  }
+  .stat-card:hover{
+    background:rgba(255,255,255,.08);
+    transform:translateY(-3px);
+  }
+  .stat-num{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:52px;font-weight:900;letter-spacing:-2px;
+    background:linear-gradient(135deg,var(--green-l),#4ade80);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;line-height:1.05;margin-bottom:6px;
+  }
+  .stat-label{
+    font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;
+  }
+  .stat-sub{
+    font-size:12.5px;color:rgba(255,255,255,.45);font-weight:500;
+  }
+
+  /* ── MVV Cards ──────────────────────────────────────────── */
+  .mvv-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .mvv-card{
+    background:#fff;
+    border:1.5px solid var(--border);
+    border-radius:20px;
+    padding:32px;
+    box-shadow:var(--sh1);
+    transition:var(--tr);
+  }
+  .mvv-card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
+  .mvv-icon{
+    width:56px;height:56px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:24px;margin-bottom:20px;
+  }
+  .mvv-icon.green{background:rgba(22,163,74,.1);color:var(--green);}
+  .mvv-icon.blue{background:rgba(29,78,216,.08);color:var(--blue);}
+  .mvv-icon.gold{background:rgba(217,119,6,.1);color:var(--gold);}
+  .mvv-title{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:22px;font-weight:800;letter-spacing:-.3px;
+    color:var(--ink);margin-bottom:12px;
+  }
+  .mvv-text{font-size:15px;color:var(--ink3);line-height:1.72;}
+  .mvv-list{list-style:none;margin-top:12px;}
+  .mvv-list li{
+    display:flex;align-items:center;gap:9px;
+    font-size:14.5px;color:var(--ink3);padding:6px 0;
+    border-bottom:1px solid var(--bg2);
+  }
+  .mvv-list li:last-child{border-bottom:none;}
+  .mvv-list li::before{
+    content:'';width:7px;height:7px;border-radius:50%;
+    background:var(--gold);flex-shrink:0;
+  }
+
+  /* ── Líneas de Calidad ──────────────────────────────────── */
+  .calidad-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:28px;
+  }
+  .calidad-card{
+    border-radius:24px;overflow:hidden;
+    border:1.5px solid var(--border);
+    box-shadow:var(--sh2);transition:var(--tr);
+  }
+  .calidad-card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
+  .calidad-card-hdr{padding:36px 36px 28px;position:relative;}
+  .calidad-card-hdr.dark{background:var(--ink2);border-bottom:3px solid var(--green);}
+  .calidad-card-hdr.light{background:#fff;border-bottom:3px solid var(--blue);}
+  .calidad-big-badge{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:80px;font-weight:900;line-height:1;letter-spacing:-3px;
+    margin-bottom:10px;
+  }
+  .calidad-big-badge.green-txt{
+    background:linear-gradient(135deg,var(--green),var(--green-l));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .calidad-big-badge.blue-txt{
+    background:linear-gradient(135deg,var(--blue),var(--blue-l));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .calidad-line-name{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:22px;font-weight:800;letter-spacing:-.3px;
+    margin-bottom:10px;
+  }
+  .calidad-card-hdr.dark .calidad-line-name{color:#fff;}
+  .calidad-card-hdr.light .calidad-line-name{color:var(--ink);}
+  .calidad-desc{font-size:15px;line-height:1.7;margin-bottom:12px;}
+  .calidad-card-hdr.dark .calidad-desc{color:rgba(255,255,255,.65);}
+  .calidad-card-hdr.light .calidad-desc{color:var(--ink3);}
+  .calidad-target{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:6px 14px;border-radius:100px;
+    font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  }
+  .calidad-target.green{background:rgba(22,163,74,.15);color:var(--green-l);}
+  .calidad-target.blue{background:rgba(29,78,216,.08);color:var(--blue-d);}
+  .calidad-card-body{padding:28px 36px 32px;background:#fff;}
+  .calidad-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+  .calidad-feature{
+    display:flex;align-items:center;gap:9px;
+    font-size:14px;color:var(--ink3);
+  }
+  .calidad-feature i.green{color:var(--green);}
+  .calidad-feature i.blue{color:var(--blue);}
+
+  /* ── Presencia / Partners ───────────────────────────────── */
+  .partners-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .partner-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;overflow:hidden;
+    transition:var(--tr);
+  }
+  .partner-card:hover{
+    background:rgba(255,255,255,.09);
+    transform:translateY(-3px);
+    border-color:rgba(255,255,255,.18);
+  }
+  .partner-img{
+    width:100%;height:160px;object-fit:cover;
+    display:block;
+  }
+  .partner-img-placeholder{
+    width:100%;height:160px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.04);
+    font-size:36px;color:rgba(255,255,255,.25);
+  }
+  .partner-body{padding:18px 20px 22px;}
+  .partner-name{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:17px;font-weight:800;letter-spacing:-.3px;
+    color:#fff;margin-bottom:5px;
+  }
+  .partner-sub{font-size:12.5px;color:rgba(255,255,255,.48);line-height:1.55;}
+  .partner-note{
+    text-align:center;margin-top:36px;
+    font-size:13.5px;color:rgba(255,255,255,.45);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .partner-note i{color:var(--green-l);}
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media(max-width:1024px){
+    .partners-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:900px){
+    .historia-grid{grid-template-columns:1fr;gap:36px;}
+    .historia-img{height:280px;}
+    .mvv-grid{grid-template-columns:1fr;}
+    .calidad-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .calidad-features{grid-template-columns:1fr;}
+    .partners-grid{grid-template-columns:1fr 1fr;}
+    .historia-btns{flex-direction:column;}
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><div class="brand-ico">B</div><span class="brand-txt">BRECOTO<em>SG</em></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nl" data-page="index">Inicio</a>
+      <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+      <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+      <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+      <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+      <a href="nosotros.html" class="nl act" data-page="nosotros">Nosotros</a>
+      <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="nl" data-page="index">Inicio</a>
+    <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+    <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+    <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+    <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+    <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+    <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+    <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ph-inner">
+    <div class="chip chip-g fi">🏢 Nuestra Empresa</div>
+    <h1 class="h1 fi d1">Quiénes <span class="gtxt-g">somos</span></h1>
+    <p class="lead fi d2">Más de 15 años importando repuestos de calidad Triple A directamente desde China para el mercado venezolano.</p>
+    <div class="ph-btns fi d3">
+      <a href="catalogo.html" class="btn btn-g"><i class="fas fa-boxes-stacked"></i> Ver catálogo</a>
+      <a href="contacto.html" class="btn btn-out-w">Contactar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section id="historia" class="sec">
+  <div class="wrap">
+    <div class="historia-grid">
+      <!-- Image col -->
+      <div class="sl">
+        <img src="images/galeria.jpg" alt="BRECOTO SG — Galería" class="historia-img" loading="lazy">
+      </div>
+      <!-- Text col -->
+      <div class="sr">
+        <div class="chip chip-g" style="margin-bottom:18px;">Nuestra Historia</div>
+        <h2 class="h2" style="margin-bottom:24px;">Desde <span class="gtxt-g">2010</span> transformando el mercado</h2>
+        <div class="historia-txt">
+          <p>Fundada en 2010 en San Cristóbal, Táchira, <strong>Inversiones y Comercializadora SG C.A.</strong> nació con una visión clara: llevar repuestos de calidad superior directamente desde las fábricas de China hasta el mercado venezolano.</p>
+          <p>En 2015 lanzamos nuestra <strong>marca propia BRECOTO</strong>, símbolo de calidad Triple A bajo certificación <strong>ISO 9001</strong>. Cada repuesto que lleva nuestra marca ha sido evaluado, probado y aprobado por nuestro equipo técnico.</p>
+          <p>Hoy somos referentes en importación directa para distribuidores, talleres y comercializadores de repuestos para motocicletas en Venezuela y Colombia.</p>
+          <p>Nuestro compromiso es simple: <strong>calidad sin compromiso</strong>, transparencia total en el proceso y alianzas directas con las mejores fábricas de China.</p>
+        </div>
+        <div class="historia-btns">
+          <a href="catalogo.html" class="btn btn-g"><i class="fas fa-boxes-stacked"></i> Ver catálogo</a>
+          <a href="importaciones.html" class="btn btn-out">Conocer proceso →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats-nosotros" class="stats-sec">
+  <div class="wrap">
+    <div class="stats-grid">
+
+      <div class="stat-card fi d1">
+        <div class="stat-num">+<span class="counter" data-count="15">0</span></div>
+        <div class="stat-label">Años de experiencia</div>
+        <div class="stat-sub">En el mercado venezolano</div>
+      </div>
+
+      <div class="stat-card fi d2">
+        <div class="stat-num">+<span class="counter" data-count="500">0</span></div>
+        <div class="stat-label">Referencias de catálogo</div>
+        <div class="stat-sub">Repuestos disponibles</div>
+      </div>
+
+      <div class="stat-card fi d3">
+        <div class="stat-num"><span class="counter" data-count="5">0</span></div>
+        <div class="stat-label">Líneas de productos</div>
+        <div class="stat-sub">Eléctrico · Motor · Frenos · Transmisión · Carrocería</div>
+      </div>
+
+      <div class="stat-card fi d4">
+        <div class="stat-num" style="font-size:36px;background:linear-gradient(135deg,#fbbf24,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ISO 9001</div>
+        <div class="stat-label">Certificación</div>
+        <div class="stat-sub">Internacional de calidad</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MISIÓN VISIÓN VALORES -->
+<section id="mvv" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-g fi">Identidad Corporativa</div>
+      <h2 class="h2 fi d1">Misión, Visión <span class="gtxt-b">y Valores</span></h2>
+      <p class="sub fi d2">Los principios que guían cada decisión en BRECOTO SG</p>
+    </div>
+
+    <div class="mvv-grid">
+
+      <!-- Misión -->
+      <div class="mvv-card fi d1">
+        <div class="mvv-icon green"><i class="fas fa-bullseye"></i></div>
+        <div class="mvv-title">Nuestra Misión</div>
+        <p class="mvv-text">Proveer repuestos para motocicletas de alta calidad mediante importación directa desde China, garantizando el mejor precio, durabilidad y soporte a distribuidores, talleres y comercializadores en Venezuela.</p>
+      </div>
+
+      <!-- Visión -->
+      <div class="mvv-card fi d2">
+        <div class="mvv-icon blue"><i class="fas fa-eye"></i></div>
+        <div class="mvv-title">Nuestra Visión</div>
+        <p class="mvv-text">Ser la empresa líder en importación y distribución de repuestos para motocicletas en Venezuela y los países de la región andina, reconocidos por calidad, confianza y excelencia en el servicio.</p>
+      </div>
+
+      <!-- Valores -->
+      <div class="mvv-card fi d3">
+        <div class="mvv-icon gold"><i class="fas fa-star"></i></div>
+        <div class="mvv-title">Nuestros Valores</div>
+        <ul class="mvv-list">
+          <li>Calidad sin compromiso</li>
+          <li>Transparencia en cada operación</li>
+          <li>Alianzas directas con fabricantes</li>
+          <li>Compromiso con el cliente</li>
+          <li>Responsabilidad e integridad</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LÍNEAS DE CALIDAD -->
+<section id="calidad" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-gold fi">Líneas de Producto</div>
+      <h2 class="h2 fi d1">Dos líneas para cada <span class="gtxt-vibrant">necesidad</span></h2>
+      <p class="sub fi d2">Calidad Triple A premium o la opción económica de alto rendimiento</p>
+    </div>
+
+    <div class="calidad-grid">
+
+      <!-- Triple A -->
+      <div class="calidad-card fi d1">
+        <div class="calidad-card-hdr dark">
+          <div class="calidad-big-badge green-txt">3A</div>
+          <div class="calidad-line-name">Línea Premium BRECOTO</div>
+          <p class="calidad-desc">La línea más exigente del mercado. Fabricada bajo estándar ISO 9001, materiales de primera selección y pruebas de rendimiento en planta.</p>
+          <span class="calidad-target green"><i class="fas fa-bullseye"></i> Distribuidores premium, exportadores, flotas corporativas</span>
+        </div>
+        <div class="calidad-card-body">
+          <div class="calidad-features">
+            <div class="calidad-feature"><i class="fas fa-certificate green"></i> ISO 9001 Certificado</div>
+            <div class="calidad-feature"><i class="fas fa-ruler-combined green"></i> Tolerancias mínimas</div>
+            <div class="calidad-feature"><i class="fas fa-infinity green"></i> Vida útil extendida</div>
+            <div class="calidad-feature"><i class="fas fa-shield-halved green"></i> Garantía de calidad</div>
+          </div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20la%20l%C3%ADnea%20Triple%20A%20premium" target="_blank" rel="noopener" class="btn btn-g" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar línea Triple A
+          </a>
+        </div>
+      </div>
+
+      <!-- Económica A·B -->
+      <div class="calidad-card fi d2">
+        <div class="calidad-card-hdr light">
+          <div class="calidad-big-badge blue-txt">A·B</div>
+          <div class="calidad-line-name">Línea Económica</div>
+          <p class="calidad-desc">La opción inteligente para el mercado de volumen. Excelente relación calidad-precio, ideal para talleres y distribuidores enfocados en competitividad.</p>
+          <span class="calidad-target blue"><i class="fas fa-store"></i> Talleres mecánicos, distribuidores masivos, comercializadores</span>
+        </div>
+        <div class="calidad-card-body">
+          <div class="calidad-features">
+            <div class="calidad-feature"><i class="fas fa-tag blue"></i> Precios competitivos</div>
+            <div class="calidad-feature"><i class="fas fa-warehouse blue"></i> Amplio stock disponible</div>
+            <div class="calidad-feature"><i class="fas fa-truck blue"></i> Entrega eficiente</div>
+            <div class="calidad-feature"><i class="fas fa-headset blue"></i> Soporte técnico</div>
+          </div>
+          <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20la%20l%C3%ADnea%20Econ%C3%B3mica%20A%C2%B7B" target="_blank" rel="noopener" class="btn btn-b" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Cotizar línea Económica
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESENCIA INTERNACIONAL -->
+<section id="presencia" class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="chip chip-w fi">Presencia Internacional</div>
+      <h2 class="h2 fi d1" style="color:#fff;">Conectados con los mejores <span class="gtxt-g">fabricantes del mundo</span></h2>
+      <p class="sub fi d2">Alianzas estratégicas confirmadas con fabricantes líderes en China</p>
+    </div>
+
+    <div class="partners-grid">
+
+      <!-- Puregain Tyre -->
+      <div class="partner-card fi d1">
+        <img src="images/feria/feria-puregain.jpg" alt="Puregain Tyre Co., Ltd." class="partner-img" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="partner-img-placeholder" style="display:none;"><i class="fas fa-circle-dot"></i></div>
+        <div class="partner-body">
+          <div class="partner-name">Puregain Tyre Co., Ltd.</div>
+          <div class="partner-sub"><i class="fas fa-circle-dot" style="color:var(--green-l);font-size:10px;margin-right:4px;"></i> Fabricante de neumáticos premium · Qingdao, China</div>
+        </div>
+      </div>
+
+      <!-- Zhengtai Sprocket -->
+      <div class="partner-card fi d2">
+        <img src="images/feria/feria-zhengtai.jpg" alt="Zhengtai Sprocket" class="partner-img" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="partner-img-placeholder" style="display:none;"><i class="fas fa-link"></i></div>
+        <div class="partner-body">
+          <div class="partner-name">Zhengtai Sprocket</div>
+          <div class="partner-sub"><i class="fas fa-link" style="color:var(--green-l);font-size:10px;margin-right:4px;"></i> Fabricante de piñones, coronas y cadenas · China</div>
+        </div>
+      </div>
+
+      <!-- Qingdao Jinruifeng -->
+      <div class="partner-card fi d3">
+        <img src="images/feria/feria-jinruifeng.jpg" alt="Qingdao Jinruifeng Tools" class="partner-img" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="partner-img-placeholder" style="display:none;"><i class="fas fa-wrench"></i></div>
+        <div class="partner-body">
+          <div class="partner-name">Qingdao Jinruifeng Tools</div>
+          <div class="partner-sub"><i class="fas fa-wrench" style="color:var(--green-l);font-size:10px;margin-right:4px;"></i> Herramientas y llantas para motocicleta · China</div>
+        </div>
+      </div>
+
+      <!-- Suntire -->
+      <div class="partner-card fi d4">
+        <img src="images/feria/feria-suntire.jpg" alt="Suntire" class="partner-img" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="partner-img-placeholder" style="display:none;"><i class="fas fa-circle-dot"></i></div>
+        <div class="partner-body">
+          <div class="partner-name">Suntire</div>
+          <div class="partner-sub"><i class="fas fa-circle-dot" style="color:var(--green-l);font-size:10px;margin-right:4px;"></i> Neumáticos high-end para motocicletas · China</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="partner-note fi">
+      <i class="fas fa-star"></i>
+      Alianzas confirmadas en Feria 2 Ruedas Colombia, Medellín 2024
+    </p>
+
+  </div>
+</section>
+
+<!-- BIBLE VERSE -->
+<section id="versiculo">
+  <div class="vs-inner">
+    <div class="vs-cross fi"><i class="fas fa-cross"></i></div>
+    <div class="vs-ref fi d1"><span>Jeremías 29:11</span></div>
+    <blockquote class="vs-quote fi d2">
+      "Porque yo sé los planes que tengo para ustedes,<br>
+      planes de <em>bienestar y no de calamidad</em>,<br>
+      para darles un futuro y una esperanza."
+    </blockquote>
+    <div class="vs-divider fi d3">
+      <div class="vs-line"></div>
+      <div class="vs-dot"></div>
+      <div class="vs-line vs-line-r"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-row"><div class="ft-brand-ico">B</div><div class="ft-brand-name">BRECOTO<span>SG</span></div></div>
+        <p class="ft-desc">Importación directa de repuestos para motocicletas desde China. Marca propia <strong style="color:#fff;">BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.</p>
+        <div class="ft-soc">
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:brecotosg@gmail.com" class="ft-si"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Navegación</div>
+        <a href="index.html" class="ft-link">Inicio</a><a href="catalogo.html" class="ft-link">Catálogo</a><a href="importaciones.html" class="ft-link">Importaciones</a><a href="marcas.html" class="ft-link">Marcas</a><a href="promociones.html" class="ft-link">Promociones</a><a href="nosotros.html" class="ft-link">Nosotros</a><a href="contacto.html" class="ft-link">Contacto</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Empresa</div>
+        <a href="nosotros.html" class="ft-link">Quiénes somos</a><a href="marcas.html" class="ft-link">Líneas de calidad</a><a href="importaciones.html" class="ft-link">Modalidades</a><a href="importaciones.html#proceso" class="ft-link">Proceso</a><a href="importaciones.html#faq" class="ft-link">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Contacto</div>
+        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-whatsapp"></i> +58 412 680 1743</a>
+        <a href="mailto:brecotosg@gmail.com" class="ft-link"><i class="fas fa-envelope"></i> brecotosg@gmail.com</a>
+        <span class="ft-link"><i class="fas fa-location-dot"></i> San Cristóbal, Táchira</span>
+        <span class="ft-link"><i class="fas fa-building"></i> Venezuela</span>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2014 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO 2025. Todos los derechos reservados.</span>
+      <span class="ft-certs"><span class="ft-cert">ISO 9001</span><span class="ft-cert">Calidad Triple A</span><span class="ft-cert">Importación Directa</span></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/584126801743" target="_blank" rel="noopener" id="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+/* ── Navbar scroll ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+/* ── Mobile menu ── */
+function toggleMenu(){
+  const burger=document.getElementById('burger');
+  const mob=document.getElementById('mob-menu');
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+}
+
+/* ── Scroll reveal ── */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});
+},{threshold:0.10});
+document.querySelectorAll('.fi,.sl,.sr').forEach(el=>obs.observe(el));
+
+/* ── Counter animation ── */
+function animateCounter(el){
+  const target=parseInt(el.dataset.count,10);
+  const duration=1800;
+  const step=Math.ceil(target/(duration/16));
+  let current=0;
+  const timer=setInterval(()=>{
+    current=Math.min(current+step,target);
+    el.textContent=current;
+    if(current>=target) clearInterval(timer);
+  },16);
+}
+
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.counter').forEach(el=>counterObs.observe(el));
+</script>
+</body>
+</html>

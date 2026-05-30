@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto · BRECOTO SG — WhatsApp, Correo y Ubicación</title>
+  <meta name="description" content="Contáctanos por WhatsApp, correo o formulario. Respondemos en menos de 24 horas. San Cristóbal, Táchira, Venezuela.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto · BRECOTO SG — WhatsApp, Correo y Ubicación">
+  <meta property="og:description" content="Contáctanos por WhatsApp, correo o formulario. Respondemos en menos de 24 horas. San Cristóbal, Táchira, Venezuela.">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:site_name" content="BRECOTO SG">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2316a34a'/%3E%3Ctext x='20' y='29' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23dc2626'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ══════════════════════════════════════════════════════
+       CONTACTO — Page-specific styles
+       ══════════════════════════════════════════════════════ */
+
+    /* ── Contact cards grid ── */
+    #contact-cards { padding: 72px 0 64px; }
+    .ct-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) {
+      .ct-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .ct-grid { grid-template-columns: 1fr; }
+    }
+
+    .ct-card-body { flex: 1; }
+    .ct-card-body h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .ct-card-body a,
+    .ct-card-body p { font-size: 14px; color: var(--ink3); display: block; line-height: 1.5; transition: var(--tr); }
+    .ct-card-body a:hover { color: var(--green); }
+    .ct-card-badge {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--green-d);
+      background: var(--green-s);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── Social row ── */
+    .ct-soc-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .ct-soc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--tr);
+      border: 1.5px solid var(--border);
+      color: var(--ink3);
+      background: var(--white);
+    }
+    .ct-soc-btn:hover { transform: translateY(-2px); box-shadow: var(--sh2); }
+    .ct-soc-btn.wa { border-color: #25D366; color: #25D366; }
+    .ct-soc-btn.wa:hover { background: #25D366; color: #fff; }
+    .ct-soc-btn.ig { border-color: #e1306c; color: #e1306c; }
+    .ct-soc-btn.ig:hover { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); color: #fff; border-color: transparent; }
+    .ct-soc-btn.em { border-color: var(--blue); color: var(--blue); }
+    .ct-soc-btn.em:hover { background: var(--blue); color: #fff; }
+
+    /* ── Form section layout ── */
+    #form-section { padding: 80px 0; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Info panel ── */
+    .info-panel { display: flex; flex-direction: column; gap: 20px; }
+    .ip-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--sh1);
+    }
+    .ip-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.2px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ip-card-title i { color: var(--green); font-size: 15px; }
+
+    /* Horario entries */
+    .hor-list { display: flex; flex-direction: column; gap: 8px; }
+    .hor-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--bg);
+    }
+    .hor-row.today { background: var(--green-s); }
+    .hor-day { font-weight: 600; color: var(--ink2); }
+    .hor-time { color: var(--ink3); font-size: 13px; }
+    .hor-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--green-d);
+      background: #bbf7d0;
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+    .hor-note {
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--ink3);
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.5;
+    }
+    .hor-note i { color: var(--green); margin-top: 2px; flex-shrink: 0; }
+
+    /* Why WA bullets */
+    .why-list { display: flex; flex-direction: column; gap: 10px; }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink3);
+      line-height: 1.5;
+    }
+    .why-ico {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--green-s);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+      color: var(--green);
+    }
+    .why-txt strong { display: block; font-weight: 600; color: var(--ink2); font-size: 14px; }
+
+    /* Map placeholder */
+    .map-ph {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border-radius: var(--radius-sm);
+      height: 180px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .map-ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(22,163,74,.15) 0%, transparent 70%);
+    }
+    .map-ph i { font-size: 28px; color: var(--green-l); position: relative; z-index: 1; }
+    .map-ph span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); position: relative; z-index: 1; letter-spacing: .3px; }
+    .map-addr { font-size: 13.5px; color: var(--ink3); line-height: 1.6; display: flex; flex-direction: column; gap: 4px; }
+    .map-addr strong { color: var(--ink2); font-size: 14px; }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      transition: var(--tr);
+    }
+    .map-link:hover { color: var(--green-d); }
+
+    /* Panel social row */
+    .panel-soc { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 4px; }
+    .panel-soc-btn {
+      flex: 1;
+      min-width: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: var(--tr);
+      border: 1.5px solid var(--border);
+      color: var(--ink3);
+      background: var(--white);
+    }
+    .panel-soc-btn:hover { transform: translateY(-2px); box-shadow: var(--sh1); }
+    .panel-soc-btn.wa { border-color: #25D366; color: #25D366; }
+    .panel-soc-btn.wa:hover { background: #25D366; color: #fff; }
+    .panel-soc-btn.ig { border-color: #e1306c; color: #e1306c; }
+    .panel-soc-btn.ig:hover { background: #e1306c; color: #fff; }
+    .panel-soc-btn.em { border-color: var(--blue-l); color: var(--blue); }
+    .panel-soc-btn.em:hover { background: var(--blue); color: #fff; }
+
+    /* ── Section header for form section ── */
+    .sec-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* ── Contact card link full ── */
+    .ct-card-link { display: block; text-decoration: none; }
+    .ct-card-link .ct-card { display: flex; }
+
+    /* ── Hero badge grid ── */
+    .ph-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .ph-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: rgba(255,255,255,.6);
+    }
+    .ph-meta-item i { color: var(--green-l); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><div class="brand-ico">B</div><span class="brand-txt">BRECOTO<em>SG</em></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nl" data-page="index">Inicio</a>
+      <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+      <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+      <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+      <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+      <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+      <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="nl" data-page="index">Inicio</a>
+    <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+    <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+    <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+    <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+    <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+    <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+    <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+     ══════════════════════════════════ -->
+<section class="page-hero">
+  <div class="ph-inner">
+    <div class="chip chip-g fi"><i class="fas fa-phone-alt"></i> Contáctanos</div>
+    <h1 class="fi d1">Hablemos de <span class="gtxt-g">negocios</span></h1>
+    <p class="lead fi d2">Cotizaciones, consultas de importación o información de productos.<br>Respondemos en menos de 24 horas.</p>
+    <div class="ph-btns fi d3">
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
+      <a href="catalogo.html" class="btn btn-out-w btn-lg"><i class="fas fa-book-open"></i> Ver catálogo</a>
+    </div>
+    <div class="ph-meta fi d4">
+      <div class="ph-meta-item"><i class="fas fa-clock"></i> Respuesta en menos de 24h</div>
+      <div class="ph-meta-item"><i class="fas fa-location-dot"></i> San Cristóbal, Táchira, Venezuela</div>
+      <div class="ph-meta-item"><i class="fas fa-shield-halved"></i> Empresa registrada</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT CARDS
+     ══════════════════════════════════ -->
+<section id="contact-cards" class="sec">
+  <div class="wrap">
+
+    <div class="ct-grid">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ct-card-link fi d1">
+        <div class="ct-card">
+          <div class="ct-ic ct-ic-g"><i class="fab fa-whatsapp"></i></div>
+          <div class="ct-card-body">
+            <h4>WhatsApp</h4>
+            <span style="font-size:14px;color:var(--ink3);display:block;line-height:1.5;">+58 412 680 1743</span>
+            <span class="ct-card-badge">Respuesta rápida</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:brecotosg@gmail.com" class="ct-card-link fi d2">
+        <div class="ct-card">
+          <div class="ct-ic ct-ic-b"><i class="fas fa-envelope"></i></div>
+          <div class="ct-card-body">
+            <h4>Correo Electrónico</h4>
+            <span style="font-size:14px;color:var(--ink3);display:block;line-height:1.5;">brecotosg@gmail.com</span>
+            <span class="ct-card-badge" style="background:var(--blue-s);color:var(--blue-d);">Consultas comerciales</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ct-card-link fi d3">
+        <div class="ct-card">
+          <div class="ct-ic ct-ic-p"><i class="fab fa-instagram"></i></div>
+          <div class="ct-card-body">
+            <h4>Instagram</h4>
+            <span style="font-size:14px;color:var(--ink3);display:block;line-height:1.5;">@brecoto_sg</span>
+            <span class="ct-card-badge" style="background:rgba(124,58,237,.1);color:var(--purple);">Síguenos</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Location -->
+      <div class="ct-card-link fi d4">
+        <div class="ct-card">
+          <div class="ct-ic ct-ic-t"><i class="fas fa-location-dot"></i></div>
+          <div class="ct-card-body">
+            <h4>Ubicación</h4>
+            <span style="font-size:14px;color:var(--ink3);display:block;line-height:1.5;">San Cristóbal, Táchira, Venezuela</span>
+            <span class="ct-card-badge" style="background:rgba(13,148,136,.08);color:var(--teal);">Estado Táchira</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.ct-grid -->
+
+    <!-- Social row -->
+    <div class="ct-soc-row fi d5">
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ct-soc-btn wa">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ct-soc-btn ig">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="mailto:brecotosg@gmail.com" class="ct-soc-btn em">
+        <i class="fas fa-envelope"></i> Correo
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FORM SECTION
+     ══════════════════════════════════ -->
+<section id="form-section" class="sec-alt">
+  <div class="wrap">
+    <div class="form-grid">
+
+      <!-- ── LEFT: Form ── -->
+      <div class="sl">
+        <div class="cf-outer">
+
+          <!-- Header -->
+          <div class="cf-hdr">
+            <div class="cf-hdr-ico"><i class="fab fa-whatsapp"></i></div>
+            <h3>Solicita tu Cotización</h3>
+            <p>Tu mensaje llegará directo a nuestro WhatsApp &middot; +58 412 680 1743</p>
+          </div>
+
+          <!-- Body -->
+          <div class="cf-body">
+
+            <!-- Form -->
+            <form id="contact-form" onsubmit="sendForm(event)" novalidate>
+
+              <!-- Row 1: Nombre + Empresa -->
+              <div class="f-row">
+                <div class="fg" id="fg-nom">
+                  <label for="f-nom">Nombre completo *</label>
+                  <div class="fi-wrap">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="f-nom" placeholder="Tu nombre completo" required autocomplete="name" oninput="clearErr('fg-nom')">
+                  </div>
+                  <div class="fg-err">Por favor ingresa tu nombre.</div>
+                </div>
+                <div class="fg">
+                  <label for="f-emp">Empresa / Comercio</label>
+                  <div class="fi-wrap">
+                    <i class="fas fa-building"></i>
+                    <input type="text" id="f-emp" placeholder="Nombre de tu negocio (opcional)" autocomplete="organization">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Teléfono + Correo -->
+              <div class="f-row">
+                <div class="fg" id="fg-tel">
+                  <label for="f-tel">WhatsApp / Teléfono *</label>
+                  <div class="fi-wrap">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="f-tel" placeholder="+58 412 000 0000" required autocomplete="tel" oninput="clearErr('fg-tel')">
+                  </div>
+                  <div class="fg-err">Por favor ingresa tu número de teléfono.</div>
+                </div>
+                <div class="fg">
+                  <label for="f-cor">Correo electrónico</label>
+                  <div class="fi-wrap">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="f-cor" placeholder="tu@correo.com (opcional)" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tipo de cliente -->
+              <div class="fg">
+                <label for="f-tip">Tipo de cliente</label>
+                <div class="fi-wrap">
+                  <i class="fas fa-id-badge"></i>
+                  <select id="f-tip" onchange="updateConsOptions()">
+                    <option value="">— Selecciona tu perfil —</option>
+                    <option value="Motociclista / Usuario final">Motociclista / Usuario final</option>
+                    <option value="Taller mecánico">Taller mecánico</option>
+                    <option value="Distribuidor de repuestos">Distribuidor de repuestos</option>
+                    <option value="Importador / Mayorista">Importador / Mayorista</option>
+                    <option value="Empresa con flota de motos">Empresa con flota de motos</option>
+                    <option value="Revendedor / Comerciante">Revendedor / Comerciante</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tipo de consulta -->
+              <div class="fg">
+                <label for="f-cons">Tipo de consulta</label>
+                <div class="fi-wrap">
+                  <i class="fas fa-list-check"></i>
+                  <select id="f-cons">
+                    <option value="">— Tipo de consulta —</option>
+                    <option value="Información general">Información general</option>
+                    <option value="Solicitar catálogo">Solicitar catálogo</option>
+                    <option value="Consulta de precios">Consulta de precios</option>
+                    <option value="Proceso de importación">Proceso de importación</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="fg" id="fg-msg">
+                <label for="f-msg">Mensaje *</label>
+                <textarea id="f-msg" rows="5" placeholder="Cuéntanos qué necesitas: repuesto específico, cotización, consulta de importación..." required oninput="clearErr('fg-msg')"></textarea>
+                <div class="fg-err">Por favor escribe tu mensaje.</div>
+              </div>
+
+              <!-- Buttons -->
+              <button type="submit" class="btn btn-g btn-send">
+                <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+              </button>
+
+              <div class="form-or">o</div>
+
+              <button type="button" class="btn-email-alt" onclick="sendEmail()">
+                <i class="fas fa-envelope"></i> Enviar por correo electrónico
+              </button>
+
+            </form>
+
+            <!-- ── Success screen ── -->
+            <div id="ok-msg">
+              <div class="ok-banner">
+                <div class="ok-ico"><i class="fas fa-circle-check" style="color:#16a34a;"></i></div>
+                <h3>¡Mensaje enviado!</h3>
+                <p>Tu consulta llegó directamente a nuestro WhatsApp.</p>
+              </div>
+
+              <div class="ok-receipt">
+                <div class="ok-receipt-h"><i class="fas fa-receipt" style="color:var(--green);"></i> Resumen de tu consulta</div>
+                <div id="ok-summary">
+                  <!-- populated by JS -->
+                </div>
+              </div>
+
+              <div class="ok-steps">
+                <div class="ok-step ok-step-done"><i class="fas fa-check" style="color:var(--green);display:block;font-size:16px;margin-bottom:4px;"></i>Enviado</div>
+                <div class="ok-step-line"></div>
+                <div class="ok-step"><i class="fas fa-magnifying-glass" style="color:var(--gray);display:block;font-size:16px;margin-bottom:4px;"></i>En revisión</div>
+                <div class="ok-step-line"></div>
+                <div class="ok-step"><i class="fab fa-whatsapp" style="color:var(--gray);display:block;font-size:16px;margin-bottom:4px;"></i>Respuesta WA</div>
+              </div>
+
+              <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ok-cta">
+                <i class="fab fa-whatsapp"></i> Abrir WhatsApp ahora
+              </a>
+            </div>
+            <!-- /#ok-msg -->
+
+          </div><!-- /.cf-body -->
+        </div><!-- /.cf-outer -->
+      </div><!-- /form col -->
+
+      <!-- ── RIGHT: Info Panel ── -->
+      <aside class="info-panel sr">
+
+        <!-- Horario -->
+        <div class="ip-card">
+          <div class="ip-card-title"><i class="fas fa-clock"></i> Horario de atención</div>
+          <div class="hor-list">
+            <div class="hor-row">
+              <span class="hor-day">Lunes — Viernes</span>
+              <span class="hor-time">8:00am – 6:00pm</span>
+            </div>
+            <div class="hor-row">
+              <span class="hor-day">Sábado</span>
+              <span class="hor-time">8:00am – 1:00pm</span>
+            </div>
+            <div class="hor-row" style="background:rgba(220,38,38,.07);">
+              <span class="hor-day" style="color:#991b1b;">Domingo</span>
+              <span class="hor-time" style="color:#991b1b;">Cerrado</span>
+            </div>
+          </div>
+          <div class="hor-note">
+            <i class="fas fa-bolt"></i>
+            <span>Respondemos consultas de WhatsApp durante todo el horario de atención. Generalmente en menos de 1 hora.</span>
+          </div>
+        </div>
+
+        <!-- ¿Por qué WhatsApp? -->
+        <div class="ip-card">
+          <div class="ip-card-title"><i class="fab fa-whatsapp"></i> ¿Por qué WhatsApp?</div>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-ico"><i class="fas fa-bolt"></i></div>
+              <div class="why-txt">
+                <strong>Rápido y directo</strong>
+                Tu mensaje llega directamente a nuestro equipo, sin intermediarios ni formularios complicados.
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-ico"><i class="fas fa-image"></i></div>
+              <div class="why-txt">
+                <strong>Comparte fotos e imágenes</strong>
+                Envía fotos del repuesto que necesitas para una cotización más precisa y rápida.
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-ico"><i class="fas fa-shield-halved"></i></div>
+              <div class="why-txt">
+                <strong>Seguro y confiable</strong>
+                Comunicación encriptada y atención personalizada por nuestro equipo especialista.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ubicación -->
+        <div class="ip-card">
+          <div class="ip-card-title"><i class="fas fa-location-dot"></i> Ubicación</div>
+          <div class="map-ph">
+            <i class="fas fa-map-location-dot"></i>
+            <span>San Cristóbal, Táchira</span>
+          </div>
+          <div class="map-addr">
+            <strong>BRECOTO SG International Limited</strong>
+            <span>San Cristóbal, Estado Táchira</span>
+            <span>Venezuela</span>
+          </div>
+          <a href="https://wa.me/584126801743?text=Hola%2C+quisiera+saber+la+dirección+exacta+de+BRECOTO+SG" target="_blank" rel="noopener" class="map-link">
+            <i class="fas fa-directions"></i> Pedir dirección exacta por WhatsApp
+          </a>
+        </div>
+
+        <!-- Social links -->
+        <div class="ip-card">
+          <div class="ip-card-title"><i class="fas fa-share-nodes"></i> Redes sociales</div>
+          <div class="panel-soc">
+            <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="panel-soc-btn wa">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="panel-soc-btn ig">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="mailto:brecotosg@gmail.com" class="panel-soc-btn em">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+
+      </aside><!-- /info-panel -->
+
+    </div><!-- /.form-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     BIBLE VERSE
+     ══════════════════════════════════ -->
+<section id="versiculo">
+  <div class="vs-inner">
+    <div class="vs-cross fi"><i class="fas fa-cross"></i></div>
+    <div class="vs-ref fi d1"><span>Salmo 23 : 1</span></div>
+    <blockquote class="vs-quote fi d2">
+      Jehová es mi pastor;<br><em>nada me faltará.</em>
+    </blockquote>
+    <div class="vs-divider fi d3">
+      <div class="vs-line"></div>
+      <div class="vs-dot"></div>
+      <div class="vs-line vs-line-r"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+     ══════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-row"><div class="ft-brand-ico">B</div><div class="ft-brand-name">BRECOTO<span>SG</span></div></div>
+        <p class="ft-desc">Importación directa de repuestos para motocicletas desde China. Marca propia <strong style="color:#fff;">BRECOTO</strong>, calidad Triple A ISO 9001. San Cristóbal, Táchira, Venezuela.</p>
+        <div class="ft-soc">
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-si"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:brecotosg@gmail.com" class="ft-si"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Navegación</div>
+        <a href="index.html" class="ft-link">Inicio</a><a href="catalogo.html" class="ft-link">Catálogo</a><a href="importaciones.html" class="ft-link">Importaciones</a><a href="marcas.html" class="ft-link">Marcas</a><a href="promociones.html" class="ft-link">Promociones</a><a href="nosotros.html" class="ft-link">Nosotros</a><a href="contacto.html" class="ft-link">Contacto</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Empresa</div>
+        <a href="nosotros.html" class="ft-link">Quiénes somos</a><a href="marcas.html" class="ft-link">Líneas de calidad</a><a href="importaciones.html" class="ft-link">Modalidades</a><a href="importaciones.html#proceso" class="ft-link">Proceso</a><a href="importaciones.html#faq" class="ft-link">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Contacto</div>
+        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-whatsapp"></i> +58 412 680 1743</a>
+        <a href="mailto:brecotosg@gmail.com" class="ft-link"><i class="fas fa-envelope"></i> brecotosg@gmail.com</a>
+        <span class="ft-link"><i class="fas fa-location-dot"></i> San Cristóbal, Táchira</span>
+        <span class="ft-link"><i class="fas fa-building"></i> Venezuela</span>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2014 <strong>Inversiones y Comercializadora SG C.A.</strong> — Marca BRECOTO 2025. Todos los derechos reservados.</span>
+      <span class="ft-certs"><span class="ft-cert">ISO 9001</span><span class="ft-cert">Calidad Triple A</span><span class="ft-cert">Importación Directa</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/584126801743" target="_blank" rel="noopener" id="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<!-- ══════════════════════════════════
+     EMAIL MODAL
+     ══════════════════════════════════ -->
+<div class="eml-ov" id="eml-ov" onclick="if(event.target===this)closeEmailModal()">
+  <div class="eml-box">
+    <div class="eml-ico"><i class="fas fa-envelope"></i></div>
+    <div class="eml-title">Enviar por Correo</div>
+    <div class="eml-sub">Elige cómo abrir tu correo para enviar tu consulta a BRECOTO</div>
+    <div class="eml-addr"><span>brecotosg@gmail.com</span><button class="eml-copy" onclick="copyEmail()" title="Copiar"><i class="fas fa-copy"></i></button></div>
+    <div class="eml-btns">
+      <button class="eml-btn-gmail" onclick="openGmail()"><i class="fab fa-google"></i> Abrir en Gmail</button>
+      <button class="eml-btn-mailto" onclick="openMailto()"><i class="fas fa-envelope"></i> Otra aplicación de correo</button>
+    </div>
+    <span class="eml-close" onclick="closeEmailModal()">Cancelar</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SCRIPTS
+     ══════════════════════════════════ -->
+<script src="assets/main.js"></script>
+<script>
+/* ── Form state ── */
+var _emlSubject = '', _emlBody = '', _emlMailto = '';
+
+/* ── Error helpers ── */
+function clearErr(id){ var el = document.getElementById(id); if(el) el.classList.remove('fg-error'); }
+function showErr(id){ var el = document.getElementById(id); if(el) el.classList.add('fg-error'); }
+
+/* ── Dynamic consultation options based on client type ── */
+var consMap = {
+  0: ['— Tipo de consulta —','Información general','Solicitar catálogo','Consulta de precios','Proceso de importación'],
+  1: ['— Selecciona —','Precio de repuesto específico','Compatibilidad con mi moto','Disponibilidad en stock','Cómo hacer mi pedido'],
+  2: ['— Selecciona —','Precios para taller','Pedido de repuestos al por mayor','Disponibilidad para reparación urgente','Crédito o plazo de pago'],
+  3: ['— Selecciona —','Cotización al por mayor','Condiciones de distribución','Exclusividad de zona','Línea de crédito comercial','Catálogo de referencias'],
+  4: ['— Selecciona —','Cotización FCL 40ft','Cotización FCL 20ft','Cotización LCL','Proceso y documentación','Precios FOB China'],
+  5: ['— Selecciona —','Contrato de suministro','Precios por volumen','Garantías y repuestos','Logística y entregas','Mantenimiento preventivo'],
+  6: ['— Selecciona —','Precios de reventa','Márgenes comerciales','Exclusividad de productos','Condiciones de entrega']
+};
+
+function updateConsOptions(){
+  var tipEl = document.getElementById('f-tip');
+  var consEl = document.getElementById('f-cons');
+  if(!tipEl || !consEl) return;
+  var idx = tipEl.selectedIndex;
+  var opts = consMap[idx] || consMap[0];
+  var cur = consEl.value;
+  consEl.innerHTML = opts.map(function(o,i){ return '<option value="'+(i===0?'':o)+'">'+o+'</option>'; }).join('');
+  if(cur) consEl.value = cur;
+}
+updateConsOptions();
+
+/* ── Form submission → WhatsApp ── */
+function sendForm(e){
+  e.preventDefault();
+  var nom = document.getElementById('f-nom').value.trim();
+  var emp = document.getElementById('f-emp').value.trim();
+  var tel = document.getElementById('f-tel').value.trim();
+  var cor = document.getElementById('f-cor').value.trim();
+  var tip = document.getElementById('f-tip').value;
+  var cons = document.getElementById('f-cons').value;
+  var msg = document.getElementById('f-msg').value.trim();
+  var ok = true;
+  clearErr('fg-nom'); clearErr('fg-tel'); clearErr('fg-msg');
+  if(!nom){ showErr('fg-nom'); ok = false; }
+  if(!tel){ showErr('fg-tel'); ok = false; }
+  if(!msg){ showErr('fg-msg'); ok = false; }
+  if(!ok) return;
+
+  var lines = [];
+  lines.push('👋 *Hola BRECOTO SG* — Nueva consulta desde el sitio web');
+  lines.push('');
+  lines.push('*Nombre:* ' + nom);
+  if(emp) lines.push('*Empresa:* ' + emp);
+  lines.push('*Teléfono:* ' + tel);
+  if(cor) lines.push('*Correo:* ' + cor);
+  if(tip) lines.push('*Tipo de cliente:* ' + tip);
+  if(cons) lines.push('*Consulta:* ' + cons);
+  lines.push('');
+  lines.push('*Mensaje:*');
+  lines.push(msg);
+
+  var waUrl = 'https://wa.me/584126801743?text=' + encodeURIComponent(lines.join('\n'));
+  window.open(waUrl, '_blank');
+  showOkMsg(nom, tip || 'No especificado', cons || 'General', msg);
+}
+
+function showOkMsg(nom, tip, cons, msg){
+  var f = document.getElementById('contact-form');
+  var ok = document.getElementById('ok-msg');
+  if(f) f.style.display = 'none';
+  if(!ok) return;
+  ok.classList.add('show');
+  var summary = document.getElementById('ok-summary');
+  if(summary){
+    summary.innerHTML =
+      '<div class="ok-row"><span>Nombre</span><strong>'+nom+'</strong></div>' +
+      '<div class="ok-row"><span>Tipo de cliente</span><strong>'+tip+'</strong></div>' +
+      '<div class="ok-row"><span>Consulta</span><strong>'+cons+'</strong></div>' +
+      '<div class="ok-row"><span>Mensaje</span><strong>'+(msg.length>60?msg.substring(0,60)+'…':msg)+'</strong></div>';
+  }
+}
+
+/* ── Email modal ── */
+function sendEmail(){
+  var nom = document.getElementById('f-nom').value.trim() || 'Cliente';
+  var msg = document.getElementById('f-msg').value.trim() || '';
+  var tip = document.getElementById('f-tip').value || '';
+  _emlSubject = 'Consulta desde el sitio web — ' + nom;
+  _emlBody = 'Hola BRECOTO SG,\n\nMi nombre es ' + nom + '.\nTipo de cliente: ' + (tip || 'No especificado') + '\n\n' + msg + '\n\nSaludos.';
+  _emlMailto = 'mailto:brecotosg@gmail.com?subject=' + encodeURIComponent(_emlSubject) + '&body=' + encodeURIComponent(_emlBody);
+  document.getElementById('eml-ov').classList.add('open');
+}
+
+function openGmail(){
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=brecotosg%40gmail.com&su=' + encodeURIComponent(_emlSubject) + '&body=' + encodeURIComponent(_emlBody), '_blank');
+  closeEmailModal();
+}
+
+function openMailto(){
+  window.location.href = _emlMailto;
+  closeEmailModal();
+}
+
+function copyEmail(){
+  navigator.clipboard.writeText('brecotosg@gmail.com').then(function(){
+    var btn = document.querySelector('.eml-copy');
+    if(btn){ btn.innerHTML = '<i class="fas fa-check"></i>'; setTimeout(function(){ btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000); }
+  });
+}
+
+function closeEmailModal(){
+  document.getElementById('eml-ov').classList.remove('open');
+}
+</script>
+
+</body>
+</html>

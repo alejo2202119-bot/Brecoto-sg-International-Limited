@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -21,17 +22,14 @@
 }
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
 
-/* ── PRINT BAR (no aparece al imprimir) ── */
-.print-bar{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:var(--ink);padding:12px 24px;
+/* ── TOOLBAR DE CATÁLOGO (oculta al imprimir) ── */
+.cat-toolbar{
+  background:var(--ink2);padding:10px 24px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
-  box-shadow:0 2px 16px rgba(0,0,0,.35);
+  flex-wrap:wrap;
 }
-.print-bar-brand{display:flex;align-items:center;gap:10px;}
-.print-bar-brand span{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:#fff;letter-spacing:-.3px;}
-.print-bar-brand small{font-size:11px;color:rgba(255,255,255,.5);font-weight:500;}
-.print-bar-actions{display:flex;gap:10px;align-items:center;}
+.cat-toolbar-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:rgba(255,255,255,.75);letter-spacing:.05em;text-transform:uppercase;}
+.cat-toolbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 .btn-pdf{
   display:inline-flex;align-items:center;gap:8px;
   background:linear-gradient(135deg,var(--green),#15803d);
@@ -229,7 +227,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
 
 /* ══════════ PRINT STYLES ══════════ */
 @media print{
-  .print-bar{display:none!important;}
+  #nav{display:none!important;}
+  .cat-toolbar{display:none!important;}
   .catalog{padding-top:0;}
   body{background:#fff;}
   .page{max-width:100%;padding:0;}
@@ -257,10 +256,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
   .cat-footer-contacts a{justify-content:center;}
 }
 @media(max-width:500px){
-  .print-bar{flex-wrap:wrap;gap:8px;padding:10px 14px;}
-  .print-bar-actions{gap:6px;flex-wrap:wrap;}
+  .cat-toolbar{flex-wrap:wrap;gap:8px;padding:8px 14px;}
+  .cat-toolbar-actions{gap:6px;flex-wrap:wrap;}
   .btn-pdf,.btn-wa{padding:8px 14px;font-size:12px;}
-  .btn-back{font-size:11px;}
   .cover{height:280px;}
   .cover h1{font-size:clamp(28px,8vw,42px);letter-spacing:-1px;}
   .cover-sub{font-size:13px;}
@@ -289,17 +287,42 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
 </head>
 <body>
 
-<!-- ── BARRA FIJA ── -->
-<div class="print-bar">
-  <div class="print-bar-brand">
-    <div>
-      <span>BRECOTO SG</span><br>
-      <small>Catálogo Oficial</small>
+<!-- ── NAVBAR ── -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <div class="brand-ico">B</div>
+      <span class="brand-txt">BRECOTO<em>SG</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nl" data-page="index">Inicio</a>
+      <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+      <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+      <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+      <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+      <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+      <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+      <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a>
     </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
-  <div class="print-bar-actions">
-    <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Volver al sitio</a>
-    <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20solicito%20el%20Cat%C3%A1logo%202026%20con%20precios%20mayoristas%20y%20disponibilidad%20de%20stock." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Cotizar</a>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="nl" data-page="index">Inicio</a>
+    <a href="catalogo.html" class="nl" data-page="catalogo">Catálogo</a>
+    <a href="importaciones.html" class="nl" data-page="importaciones">Importaciones</a>
+    <a href="marcas.html" class="nl" data-page="marcas">Marcas</a>
+    <a href="promociones.html" class="nl" data-page="promociones">Promociones</a>
+    <a href="nosotros.html" class="nl" data-page="nosotros">Nosotros</a>
+    <a href="contacto.html" class="nl" data-page="contacto">Contacto</a>
+    <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+  </div>
+</nav>
+
+<!-- ── TOOLBAR DE CATÁLOGO ── -->
+<div class="cat-toolbar">
+  <span class="cat-toolbar-title"><i class="fas fa-book-open"></i> Catálogo Oficial 2026</span>
+  <div class="cat-toolbar-actions">
+    <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20solicito%20el%20Cat%C3%A1logo%202026%20con%20precios%20mayoristas%20y%20disponibilidad%20de%20stock." target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Cotizar</a>
     <button class="btn-pdf" onclick="window.print()"><i class="fas fa-file-pdf"></i> Descargar PDF</button>
   </div>
 </div>
@@ -661,5 +684,69 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);}
 </div><!-- /page -->
 </div><!-- /catalog -->
 
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-row">
+          <div class="brand-ico">B</div>
+          <span class="brand-txt" style="color:#fff;">BRECOTO<em>SG</em></span>
+        </div>
+        <p style="color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:12px 0 16px;max-width:280px;">
+          Inversiones y Comercializadora SG C.A. · Importación directa de repuestos para motocicletas desde Asia.
+        </p>
+        <div style="display:flex;gap:8px;">
+          <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-soc wa"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-soc ig"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:brecotosg@gmail.com" class="ft-soc em"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Navegación</div>
+        <a href="index.html" class="ft-link">Inicio</a>
+        <a href="catalogo.html" class="ft-link">Catálogo</a>
+        <a href="importaciones.html" class="ft-link">Importaciones</a>
+        <a href="marcas.html" class="ft-link">Marcas</a>
+        <a href="promociones.html" class="ft-link">Promociones</a>
+        <a href="nosotros.html" class="ft-link">Nosotros</a>
+        <a href="contacto.html" class="ft-link">Contacto</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Secciones</div>
+        <a href="#electrico" class="ft-link">Sistema Eléctrico</a>
+        <a href="#motor" class="ft-link">Motor</a>
+        <a href="#frenos" class="ft-link">Frenos</a>
+        <a href="#transmision" class="ft-link">Transmisión</a>
+        <a href="#carroceria" class="ft-link">Carrocería</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Contacto</div>
+        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-whatsapp" style="color:var(--green-l);width:18px;"></i> +58 412 680-1743</a>
+        <a href="mailto:brecotosg@gmail.com" class="ft-link"><i class="fas fa-envelope" style="color:var(--green-l);width:18px;"></i> brecotosg@gmail.com</a>
+        <a href="https://www.instagram.com/brecoto_sg?igsh=eXhyN2drc295OWs=" target="_blank" rel="noopener" class="ft-link"><i class="fab fa-instagram" style="color:var(--green-l);width:18px;"></i> @brecoto_sg</a>
+        <a href="contacto.html" class="ft-link"><i class="fas fa-map-marker-alt" style="color:var(--green-l);width:18px;"></i> San Cristóbal, Táchira</a>
+        <div style="margin-top:16px;">
+          <div class="ft-col-title" style="margin-bottom:8px;">Certificaciones</div>
+          <div class="ft-certs">
+            <span class="ft-cert-badge"><i class="fas fa-certificate"></i> ISO 9001</span>
+            <span class="ft-cert-badge"><i class="fas fa-award"></i> Tecnología Japonesa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Inversiones y Comercializadora SG C.A. · BRECOTO SG International Limited. Todos los derechos reservados.</span>
+      <span>San Cristóbal, Táchira, Venezuela</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp FAB ── -->
+<a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20repuestos%20del%20cat%C3%A1logo." target="_blank" rel="noopener" id="wa-fab" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="assets/main.js"></script>
 </body>
 </html>
