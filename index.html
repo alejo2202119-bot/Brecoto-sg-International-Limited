@@ -203,39 +203,6 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit;}
 .eml-close:hover{color:#475569;}
 
 
-/* ── Feria 2 Ruedas Carousel ── */
-/* ── Feria 2 Ruedas ── */
-#feria{background:linear-gradient(180deg,var(--bg) 0%,#f0fdf4 100%);}
-.frc-outer{width:100%;overflow:hidden;}
-.frc-carousel{position:relative;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.2);background:#0d0d0d;user-select:none;}
-.frc-track{display:flex;width:100%;will-change:transform;transition:transform .55s cubic-bezier(.4,0,.2,1);}
-.frc-slide{flex:0 0 100%;width:100%;position:relative;overflow:hidden;}
-/* Logo slide */
-.frc-slide-logo{background:#060606;display:flex;align-items:center;justify-content:center;height:340px;}
-.frc-slide-logo img{max-width:88%;max-height:290px;width:auto;height:auto;object-fit:contain;display:block;}
-/* Photo slides — blurred backdrop + contained photo */
-.frc-slide-photo{height:580px;display:flex;align-items:center;justify-content:center;}
-.frc-slide-photo .frc-bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(22px) brightness(.45) saturate(1.2);z-index:0;transform:scale(1.1);}
-.frc-slide-photo img{position:relative;z-index:1;height:100%;width:auto;max-width:100%;object-fit:contain;display:block;}
-/* Caption */
-.frc-caption{position:absolute;bottom:0;left:0;right:0;padding:28px 28px 24px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.4) 55%,transparent 100%);color:#fff;pointer-events:none;z-index:2;}
-.frc-cap-tag{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:8px;}
-.frc-cap-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:-.2px;text-shadow:0 2px 8px rgba(0,0,0,.7);line-height:1.2;}
-.frc-cap-sub{font-size:13px;opacity:.85;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.6);}
-/* Controls */
-.frc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:none;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#0f172a;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:10;}
-.frc-btn:hover{background:#fff;transform:translateY(-50%) scale(1.1);box-shadow:0 8px 28px rgba(0,0,0,.35);}
-.frc-prev{left:18px;} .frc-next{right:18px;}
-.frc-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:10;}
-.frc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:none;cursor:pointer;padding:0;transition:all .3s;}
-.frc-dot.frc-act{background:#fff;width:26px;border-radius:4px;}
-.frc-counter{position:absolute;top:16px;right:18px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;z-index:10;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;}
-/* Badges */
-.frc-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;}
-.frc-badge{display:flex;align-items:center;gap:9px;background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:11px 18px;font-size:13.5px;font-weight:700;color:#1e293b;box-shadow:0 2px 10px rgba(0,0,0,.06);}
-.frc-badge i{color:var(--green);font-size:16px;}
-@media(max-width:768px){.frc-slide-photo{height:320px;}.frc-slide-logo{height:220px;}.frc-btn{width:38px;height:38px;font-size:13px;}.frc-cap-title{font-size:18px;}}
-
 /* CARD BASE */
 .card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px;transition:var(--tr);box-shadow:var(--sh1);}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh3);}
@@ -2038,90 +2005,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- ═══════════ FERIA 2 RUEDAS COLOMBIA ═══════════ -->
-<section id="feria" class="sec">
-  <div class="wrap">
-    <div class="sec-head fi">
-      <span class="chip chip-b"><i class="fas fa-flag"></i> <span data-i18n="feria.chip">Presencia Internacional</span></span>
-      <h2 class="h2" data-i18n="feria.h2">Invitados especiales en la <span class="gtxt-b">Feria 2 Ruedas Colombia</span></h2>
-      <p class="sub" data-i18n="feria.sub">El evento más grande de las 2 ruedas en América Latina · Medellín, Colombia · Alianzas estratégicas con fabricantes de primer nivel</p>
-    </div>
-    <div class="frc-outer">
-      <div class="frc-carousel">
-        <div class="frc-track" id="frc-track">
-
-          <!-- Slide 0 — Logo F2R -->
-          <div class="frc-slide frc-slide-logo">
-            <img src="images/feria/feria-logo.webp" alt="Feria 2 Ruedas Colombia">
-          </div>
-
-          <!-- Slide 1 — Puregain -->
-          <div class="frc-slide frc-slide-photo">
-            <div class="frc-bg" style="background-image:url('images/feria/feria-puregain.jpg')"></div>
-            <img src="images/feria/feria-puregain.jpg" alt="BRECOTO con Puregain Tyre — Feria 2 Ruedas Colombia">
-            <div class="frc-caption">
-              <div class="frc-cap-tag"><i class="fas fa-handshake"></i> Alianza estratégica</div>
-              <div class="frc-cap-title" data-i18n="feria.cap1.title">Alianza con Puregain Tyre Co., Ltd.</div>
-              <div class="frc-cap-sub" data-i18n="feria.cap1.sub">Fabricante de neumáticos premium · Qingdao, China</div>
-            </div>
-          </div>
-
-          <!-- Slide 2 — Zhengtai -->
-          <div class="frc-slide frc-slide-photo">
-            <div class="frc-bg" style="background-image:url('images/feria/feria-zhengtai.jpg')"></div>
-            <img src="images/feria/feria-zhengtai.jpg" alt="BRECOTO con Zhengtai Sprocket — Feria 2 Ruedas Colombia">
-            <div class="frc-caption">
-              <div class="frc-cap-tag"><i class="fas fa-handshake"></i> Alianza estratégica</div>
-              <div class="frc-cap-title" data-i18n="feria.cap2.title">Alianza con Zhengtai Sprocket</div>
-              <div class="frc-cap-sub" data-i18n="feria.cap2.sub">Fabricante de piñones, coronas y cadenas · China</div>
-            </div>
-          </div>
-
-          <!-- Slide 3 — Jinruifeng -->
-          <div class="frc-slide frc-slide-photo">
-            <div class="frc-bg" style="background-image:url('images/feria/feria-jinruifeng.jpg')"></div>
-            <img src="images/feria/feria-jinruifeng.jpg" alt="BRECOTO negociando con Jinruifeng — Feria 2 Ruedas">
-            <div class="frc-caption">
-              <div class="frc-cap-tag"><i class="fas fa-comments-dollar"></i> Negociación</div>
-              <div class="frc-cap-title" data-i18n="feria.cap3.title">Negociación con Qingdao Jinruifeng Tools</div>
-              <div class="frc-cap-sub" data-i18n="feria.cap3.sub">Fabricante de llantas y herramientas para moto · China</div>
-            </div>
-          </div>
-
-          <!-- Slide 4 — Suntire -->
-          <div class="frc-slide frc-slide-photo">
-            <div class="frc-bg" style="background-image:url('images/feria/feria-suntire.jpg')"></div>
-            <img src="images/feria/feria-suntire.jpg" alt="BRECOTO en reunión con Suntire — Feria 2 Ruedas">
-            <div class="frc-caption">
-              <div class="frc-cap-tag"><i class="fas fa-handshake"></i> Reunión estratégica</div>
-              <div class="frc-cap-title" data-i18n="feria.cap4.title">Reunión estratégica con Suntire</div>
-              <div class="frc-cap-sub" data-i18n="feria.cap4.sub">Fabricante de neumáticos high-end · China</div>
-            </div>
-          </div>
-
-        </div>
-        <!-- Controles -->
-        <button class="frc-btn frc-prev" onclick="frcMove(-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-        <button class="frc-btn frc-next" onclick="frcMove(1)"  aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-        <div class="frc-counter" id="frc-counter">1 / 5</div>
-        <div class="frc-dots" id="frc-dots">
-          <button class="frc-dot frc-act" onclick="frcGoTo(0)"></button>
-          <button class="frc-dot" onclick="frcGoTo(1)"></button>
-          <button class="frc-dot" onclick="frcGoTo(2)"></button>
-          <button class="frc-dot" onclick="frcGoTo(3)"></button>
-          <button class="frc-dot" onclick="frcGoTo(4)"></button>
-        </div>
-      </div>
-    </div>
-    <!-- Badges -->
-    <div class="frc-badges">
-      <div class="frc-badge"><i class="fas fa-handshake"></i> <span data-i18n="feria.b1">Alianzas estratégicas confirmadas</span></div>
-      <div class="frc-badge"><i class="fas fa-location-dot"></i> <span data-i18n="feria.b2">Medellín, Colombia</span></div>
-      <div class="frc-badge"><i class="fas fa-industry"></i> <span data-i18n="feria.b3">Fabricantes de primer nivel</span></div>
-      <div class="frc-badge"><i class="fas fa-star"></i> <span data-i18n="feria.b4">Invitados especiales F2R</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════ CONTACTO ═══════════ -->
 <section id="contact" class="sec">
@@ -2437,31 +2320,6 @@ var cio = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.4});
 document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
-
-/* ── Carrusel Feria 2 Ruedas ── */
-(function(){
-  var idx = 0, total = 5, timer;
-  function goTo(n){
-    idx = ((n % total) + total) % total;
-    document.getElementById('frc-track').style.transform = 'translateX(-'+(idx*100)+'%)';
-    document.querySelectorAll('.frc-dot').forEach(function(d,i){ d.classList.toggle('frc-act', i===idx); });
-    var ctr = document.getElementById('frc-counter');
-    if(ctr) ctr.textContent = (idx+1) + ' / ' + total;
-  }
-  window.frcGoTo = goTo;
-  window.frcMove = function(dir){
-    clearInterval(timer);
-    goTo(idx + dir);
-    timer = setInterval(function(){ goTo(idx+1); }, 5000);
-  };
-  timer = setInterval(function(){ goTo(idx+1); }, 5000);
-  /* swipe */
-  var el = document.getElementById('frc-track'), sx = 0;
-  if(el){
-    el.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; },{passive:true});
-    el.addEventListener('touchend',   function(e){ var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) window.frcMove(dx<0?1:-1); });
-  }
-})();
 
 /* ── Consulta dinámica según perfil de cliente ── */
 function updateConsOptions(){
