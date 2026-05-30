@@ -630,6 +630,14 @@
       box-shadow: 0 10px 32px rgba(37,211,102,.7);
     }
 
+    /* ─── Quiénes somos ─────────────────────────────────────── */
+    .qs-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .qs-info-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:22px;}
+    .qs-info-row{display:flex;align-items:flex-start;gap:14px;}
+    .qs-info-ico{width:40px;height:40px;border-radius:10px;background:var(--green-s);color:var(--green);font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .qs-info-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--gray);margin-bottom:3px;}
+    .qs-info-val{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+
     /* ─── Responsive ────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .hero-inner {
@@ -653,6 +661,7 @@
     }
     @media (max-width: 768px) {
       #hero { padding: 120px 0 80px; }
+      .qs-grid { grid-template-columns: 1fr; gap: 32px; }
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -832,7 +841,70 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════
-     3. CATEGORÍAS
+     3. QUIÉNES SOMOS
+════════════════════════════════════════════════════════════════ -->
+<section id="quienes-somos" class="sec sec-alt">
+  <div class="wrap">
+    <div class="qs-grid">
+
+      <div class="sl">
+        <span class="chip chip-g">Quiénes somos</span>
+        <h2 class="h2" style="margin:14px 0 16px;">Importación directa<br><span class="gtxt-g">desde China a Venezuela</span></h2>
+        <p style="font-size:17px;line-height:1.7;color:var(--ink3);margin-bottom:16px;">Somos <strong style="color:var(--ink);">Inversiones y Comercializadora SG C.A.</strong>, empresa venezolana especializada en la importación directa de repuestos para motocicletas desde fabricantes aliados en China, bajo nuestra marca propia <strong style="color:var(--green);">BRECOTO</strong>.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--ink3);margin-bottom:28px;">Más de 15 años conectando distribuidores, talleres y revendedores con la mejor calidad a precios mayoristas. Toda la línea Triple A cuenta con certificación ISO 9001.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="nosotros.html" class="btn btn-g"><i class="fas fa-arrow-right"></i> Conocernos más</a>
+          <a href="catalogo.html" class="btn btn-out"><i class="fas fa-book-open"></i> Ver catálogo</a>
+        </div>
+      </div>
+
+      <div class="sr">
+        <div class="qs-info-card">
+          <div class="qs-info-row">
+            <div class="qs-info-ico"><i class="fas fa-building"></i></div>
+            <div>
+              <div class="qs-info-label">Razón Social</div>
+              <div class="qs-info-val">Inversiones y Comercializadora SG C.A.</div>
+            </div>
+          </div>
+          <div class="qs-info-row">
+            <div class="qs-info-ico"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <div class="qs-info-label">Ubicación</div>
+              <div class="qs-info-val">San Cristóbal, Táchira — Venezuela</div>
+            </div>
+          </div>
+          <div class="qs-info-row">
+            <div class="qs-info-ico"><i class="fas fa-calendar-check"></i></div>
+            <div>
+              <div class="qs-info-label">Trayectoria</div>
+              <div class="qs-info-val">Desde 2010 · más de 15 años en el sector</div>
+            </div>
+          </div>
+          <div class="qs-info-row">
+            <div class="qs-info-ico"><i class="fas fa-certificate"></i></div>
+            <div>
+              <div class="qs-info-label">Certificación</div>
+              <div class="qs-info-val">ISO 9001 · Tecnología Japonesa</div>
+            </div>
+          </div>
+          <div class="qs-info-row">
+            <div class="qs-info-ico"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="qs-info-label">WhatsApp</div>
+              <div class="qs-info-val"><a href="https://wa.me/584126801743" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">+58 412 680-1743</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     4. CATEGORÍAS
 ════════════════════════════════════════════════════════════════ -->
 <section id="categorias" class="sec">
   <div class="wrap">
@@ -1100,47 +1172,15 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════
-     7. CONTACTO RÁPIDO
+     7. CTA COTIZAR
 ════════════════════════════════════════════════════════════════ -->
-<section id="contacto-rapido" class="sec sec-alt">
-  <div class="wrap">
-    <div class="sec-head text-center">
-      <span class="chip chip-b">Contáctanos</span>
-      <h2 class="h2">Estamos para <span class="gtxt-b">ayudarte</span></h2>
-    </div>
-
-    <div class="qc-grid">
-
-      <!-- WhatsApp -->
-      <div class="qc-card">
-        <div class="qc-ico g"><i class="fab fa-whatsapp"></i></div>
-        <div class="qc-val">+58 412 680 1743</div>
-        <p class="qc-sub">Respuesta en menos de 24h</p>
-        <a href="https://wa.me/584126801743" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center;">
-          <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-        </a>
-      </div>
-
-      <!-- Email -->
-      <div class="qc-card">
-        <div class="qc-ico b"><i class="fas fa-envelope"></i></div>
-        <div class="qc-val">brecotosg@gmail.com</div>
-        <p class="qc-sub">Consultas comerciales</p>
-        <a href="mailto:brecotosg@gmail.com" class="btn btn-b" style="width:100%;justify-content:center;">
-          <i class="fas fa-envelope"></i> Enviar correo
-        </a>
-      </div>
-
-      <!-- Ubicación -->
-      <div class="qc-card">
-        <div class="qc-ico ink"><i class="fas fa-location-dot"></i></div>
-        <div class="qc-val">San Cristóbal, Táchira</div>
-        <p class="qc-sub">Venezuela</p>
-        <a href="https://www.google.com/maps/search/San+Crist%C3%B3bal+T%C3%A1chira+Venezuela" target="_blank" rel="noopener" class="btn btn-out" style="width:100%;justify-content:center;">
-          <i class="fas fa-map"></i> Ver en mapa
-        </a>
-      </div>
-
+<section style="background:var(--green);padding:72px 0;">
+  <div class="wrap" style="text-align:center;">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(30px,5vw,48px);color:#fff;margin-bottom:12px;">¿Listo para cotizar?</h2>
+    <p style="color:rgba(255,255,255,.85);margin-bottom:32px;font-size:1.05rem;max-width:480px;margin-left:auto;margin-right:auto;">Escríbenos por WhatsApp o déjanos tu consulta desde la página de contacto.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/584126801743?text=Hola%20BRECOTO%2C%20quiero%20cotizar%20repuestos." target="_blank" rel="noopener" class="btn" style="background:#fff;color:var(--green);font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,.15);"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+      <a href="contacto.html" class="btn btn-out-w"><i class="fas fa-envelope"></i> Página de contacto</a>
     </div>
   </div>
 </section>
