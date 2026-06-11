@@ -264,6 +264,76 @@
     /* ── Contact card link full ── */
     .ct-card-link { display: block; text-decoration: none; }
     .ct-card-link .ct-card { display: flex; }
+    .ct-card-link:hover .ct-card { border-color: var(--green-l); transform: translateY(-3px); }
+
+    /* ── Payment section ── */
+    #pagos { background: var(--bg2); }
+    .pay-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+    @media(max-width:900px){ .pay-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:520px){ .pay-grid{ grid-template-columns:1fr; } }
+
+    .pay-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--sh1);
+      transition: var(--tr);
+    }
+    .pay-card:hover { box-shadow: var(--sh2); transform: translateY(-4px); }
+
+    .pay-ico {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .pay-ico-pm  { background: rgba(22,163,74,.12);  color: var(--green); }
+    .pay-ico-bn  { background: rgba(217,119,6,.12);  color: var(--gold); }
+    .pay-ico-ze  { background: rgba(29,78,216,.1);   color: var(--blue); }
+    .pay-ico-bc  { background: rgba(220,38,38,.1);   color: var(--red); }
+
+    .pay-card h4 { font-size: 16px; font-weight: 800; color: var(--ink); margin: 0; }
+    .pay-card > p { font-size: 13px; color: var(--ink3); line-height: 1.55; margin: 0; flex: 1; }
+
+    .pay-rows { display: flex; flex-direction: column; gap: 6px; }
+    .pay-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      gap: 8px;
+    }
+    .pay-label { color: var(--ink3); font-weight: 600; white-space: nowrap; }
+    .pay-val { color: var(--ink2); font-weight: 700; text-align: right; word-break: break-all; }
+
+    .pay-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 13.5px; font-weight: 700;
+      text-decoration: none;
+      transition: var(--tr);
+      margin-top: 4px;
+    }
+    .pay-btn-pm  { background: var(--green-s); color: var(--green-d); }
+    .pay-btn-pm:hover  { background: var(--green); color: #fff; box-shadow: var(--sh-g); }
+    .pay-btn-bn  { background: rgba(217,119,6,.1); color: #92400e; }
+    .pay-btn-bn:hover  { background: var(--gold); color: #fff; }
+    .pay-btn-ze  { background: var(--blue-s); color: var(--blue-d); }
+    .pay-btn-ze:hover  { background: var(--blue); color: #fff; box-shadow: var(--sh-b); }
+    .pay-btn-bc  { background: rgba(220,38,38,.08); color: var(--red); }
+    .pay-btn-bc:hover  { background: var(--red); color: #fff; }
 
     /* ── Hero badge grid ── */
     .ph-meta {
@@ -380,16 +450,16 @@
       </a>
 
       <!-- Location -->
-      <div class="ct-card-link fi d4">
+      <a href="https://maps.google.com/?q=San+Crist%C3%B3bal,+T%C3%A1chira,+Venezuela" target="_blank" rel="noopener" class="ct-card-link fi d4">
         <div class="ct-card">
           <div class="ct-ic ct-ic-t"><i class="fas fa-location-dot"></i></div>
           <div class="ct-card-body">
             <h4>Ubicación</h4>
             <span style="font-size:14px;color:var(--ink3);display:block;line-height:1.5;">San Cristóbal, Táchira, Venezuela</span>
-            <span class="ct-card-badge" style="background:rgba(13,148,136,.08);color:var(--teal);">Estado Táchira</span>
+            <span class="ct-card-badge" style="background:rgba(13,148,136,.08);color:var(--teal);">Ver en Google Maps</span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div><!-- /.ct-grid -->
 
@@ -646,6 +716,119 @@
       </aside><!-- /info-panel -->
 
     </div><!-- /.form-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MÉTODOS DE PAGO
+     ══════════════════════════════════ -->
+<section id="pagos" class="sec">
+  <div class="wrap">
+    <div class="sec-head text-center fi" style="margin-bottom:48px;">
+      <span class="chip chip-g"><i class="fas fa-credit-card"></i> Métodos de pago</span>
+      <h2 class="h2 fi d1">Formas de <span class="gtxt-g">Pago</span></h2>
+      <p class="lead fi d2" style="max-width:560px;margin:0 auto;">Aceptamos múltiples métodos para Venezuela, Colombia y pagos internacionales.</p>
+    </div>
+
+    <div class="pay-grid">
+
+      <!-- Pago Móvil -->
+      <div class="pay-card fi">
+        <div class="pay-ico pay-ico-pm"><i class="fas fa-mobile-screen-button"></i></div>
+        <h4>Pago Móvil</h4>
+        <p>Transferencia bancaria móvil en bolívares (VES). Disponible para clientes en Venezuela.</p>
+        <div class="pay-rows">
+          <div class="pay-row">
+            <span class="pay-label">Banco</span>
+            <span class="pay-val">Banesco</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Teléfono</span>
+            <span class="pay-val">0412-6801743</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Cédula</span>
+            <span class="pay-val">Consultar WA</span>
+          </div>
+        </div>
+        <a href="https://wa.me/584126801743?text=Hola%2C+quiero+confirmar+los+datos+de+Pago+M%C3%B3vil" target="_blank" rel="noopener" class="pay-btn pay-btn-pm">
+          <i class="fab fa-whatsapp"></i> Confirmar datos
+        </a>
+      </div>
+
+      <!-- Binance -->
+      <div class="pay-card fi d1">
+        <div class="pay-ico pay-ico-bn"><i class="fab fa-bitcoin"></i></div>
+        <h4>Binance Pay</h4>
+        <p>Pago en USDT u otras criptomonedas vía Binance Pay. Sin fronteras, sin límites.</p>
+        <div class="pay-rows">
+          <div class="pay-row">
+            <span class="pay-label">Red</span>
+            <span class="pay-val">Binance Pay</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Moneda</span>
+            <span class="pay-val">USDT / BNB</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Pay ID</span>
+            <span class="pay-val">Consultar WA</span>
+          </div>
+        </div>
+        <a href="https://wa.me/584126801743?text=Hola%2C+quiero+el+Pay+ID+de+Binance+para+realizar+un+pago" target="_blank" rel="noopener" class="pay-btn pay-btn-bn">
+          <i class="fab fa-whatsapp"></i> Solicitar Pay ID
+        </a>
+      </div>
+
+      <!-- Zelle -->
+      <div class="pay-card fi d2">
+        <div class="pay-ico pay-ico-ze"><i class="fas fa-dollar-sign"></i></div>
+        <h4>Zelle</h4>
+        <p>Transferencia en dólares (USD) para clientes con cuenta bancaria en EE.UU.</p>
+        <div class="pay-rows">
+          <div class="pay-row">
+            <span class="pay-label">Moneda</span>
+            <span class="pay-val">USD</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Cuenta</span>
+            <span class="pay-val">Banco americano</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Email / Tel</span>
+            <span class="pay-val">Consultar WA</span>
+          </div>
+        </div>
+        <a href="https://wa.me/584126801743?text=Hola%2C+quiero+los+datos+de+Zelle+para+realizar+un+pago" target="_blank" rel="noopener" class="pay-btn pay-btn-ze">
+          <i class="fab fa-whatsapp"></i> Solicitar datos
+        </a>
+      </div>
+
+      <!-- Bancolombia -->
+      <div class="pay-card fi d3">
+        <div class="pay-ico pay-ico-bc"><i class="fas fa-building-columns"></i></div>
+        <h4>Bancolombia</h4>
+        <p>Transferencia en pesos colombianos (COP) para clientes desde Colombia.</p>
+        <div class="pay-rows">
+          <div class="pay-row">
+            <span class="pay-label">Banco</span>
+            <span class="pay-val">Bancolombia</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Moneda</span>
+            <span class="pay-val">COP</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">No. Cuenta</span>
+            <span class="pay-val">Consultar WA</span>
+          </div>
+        </div>
+        <a href="https://wa.me/584126801743?text=Hola%2C+quiero+los+datos+de+Bancolombia+para+realizar+un+pago" target="_blank" rel="noopener" class="pay-btn pay-btn-bc">
+          <i class="fab fa-whatsapp"></i> Solicitar cuenta
+        </a>
+      </div>
+
+    </div><!-- /.pay-grid -->
   </div>
 </section>
 
